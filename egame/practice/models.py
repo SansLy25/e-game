@@ -65,7 +65,9 @@ class Task(models.Model):
 class Answer(models.Model):
     answer = models.CharField("текст ответа", max_length=40)
     task = models.ForeignKey(
-        Task, on_delete=models.CASCADE, related_name="answers"
+        Task,
+        on_delete=models.CASCADE,
+        related_name="answers",
     )
 
     class Meta:
@@ -74,3 +76,6 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.answer[:100]
+
+
+__all__ = ()

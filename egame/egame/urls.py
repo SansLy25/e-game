@@ -1,6 +1,7 @@
-from django.contrib import admin
 from django.conf.urls.static import static
-from django.urls import path, include
+from django.contrib import admin
+import django.urls
+from django.urls import include, path
 
 from egame import settings
 
@@ -14,3 +15,14 @@ if settings.DEBUG:
         settings.STATIC_URL,
         document_root=settings.STATICFILES_DIRS[0],
     )
+
+
+if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns += (
+        django.urls.path("__debug/", django.urls.include(debug_toolbar.urls)),
+    )
+
+
+__all__ = ()

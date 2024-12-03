@@ -1,6 +1,8 @@
 [flake8]
 max-line-length = 79
-application-import-names = myapp
-exclude = */migrations/, venv/, verdict.py, .venv/
-application_import_names = lyceum, catalog, about, homepage, core, feedback, users
+application_import_names = egame, homepage, practice
 import-order-style = google
+exclude = */migrations/, venv/, verdict.py, .venv/,  env/, venv, .git, __pycache__, parse_tasks.py
+max-complexity = 10
+max-expression-complexity = 7
+inline-quotes = double

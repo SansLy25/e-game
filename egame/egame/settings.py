@@ -1,14 +1,23 @@
+import os
 from pathlib import Path
+
+import dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = (
-    "django-insecure-@9b1@k3flporj=$unq2+c8yq_6=#oa%ecd0lcjpj_mkph5_quo"
-)
 
-DEBUG = True
+def load_bool(name, default):
+    env_value = os.getenv(name, str(default)).lower()
+    return env_value in ("true", "yes", "1", "y", "t")
 
-ALLOWED_HOSTS = []
+
+dotenv.load_dotenv()
+
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "cat")
+
+DEBUG = load_bool("DJANGO_DEBUG", True)
+
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
 
 INSTALLED_APPS = [
     "homepage.apps.HomepageConfig",
@@ -55,25 +64,25 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
-    }
+    },
 }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation."
-                "UserAttributeSimilarityValidator",
+        "UserAttributeSimilarityValidator",
     },
     {
         "NAME": "django.contrib.auth.password_validation."
-                "MinimumLengthValidator",
+        "MinimumLengthValidator",
     },
     {
         "NAME": "django.contrib.auth.password_validation."
-                "CommonPasswordValidator",
+        "CommonPasswordValidator",
     },
     {
         "NAME": "django.contrib.auth.password_validation."
-                "NumericPasswordValidator",
+        "NumericPasswordValidator",
     },
 ]
 
@@ -82,9 +91,9 @@ if DEBUG:
 else:
     STATIC_ROOT = BASE_DIR / "static"
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ru-ru"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Moscow"
 
 USE_I18N = True
 
@@ -93,3 +102,14 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+if DEBUG is True:
+    MIDDLEWARE += ("debug_toolbar.middleware.DebugToolbarMiddleware",)
+    INSTALLED_APPS += ("debug_toolbar",)
+    INTERNAL_IPS = [
+        "127.0.0.1",
+    ]
+
+
+__all__ = ()

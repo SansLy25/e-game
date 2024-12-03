@@ -1,9 +1,8 @@
-import re
 import json
+import re
 
-import requests
 import bs4
-
+import requests
 from tqdm import tqdm
 
 """
