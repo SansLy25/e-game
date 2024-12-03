@@ -2,6 +2,8 @@ PYTHON_VERSION = 3.11
 PIP = pip install --upgrade pip
 
 check-test-requirements:
+	$(PIP)
+	pip install sort-requirements
 	sort-requirements --check requirements/prod.txt
 	sort-requirements --check requirements/test.txt
 
@@ -26,7 +28,7 @@ install-isort:
 	$(PIP)
 	pip install isort
 
-test: install-prod install-test check-test-requirements
+test: install-prod install-test
 	cd egame && python manage.py test
 
 black-check:
