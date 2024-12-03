@@ -18,5 +18,5 @@ django_tests:
     - pip install --upgrade pip
     - pip install -r requirements/prod.txt
   script:
-    - cd lyceum
+    - cd egame
     - python3 manage.py test
