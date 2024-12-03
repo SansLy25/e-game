@@ -1,0 +1,6 @@
+[flake8]
+max-line-length = 79
+application-import-names = myapp
+exclude = */migrations/, venv/, verdict.py, .venv/
+application_import_names = lyceum, catalog, about, homepage, core, feedback, users
+import-order-style = google
