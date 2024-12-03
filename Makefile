@@ -26,7 +26,7 @@ install-isort:
 	$(PIP)
 	pip install isort
 
-test: install-prod install-test
+test: install-prod install-test check-test-requirements
 	cd egame && python manage.py test
 
 black-check:
