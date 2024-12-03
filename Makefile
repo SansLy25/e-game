@@ -6,6 +6,8 @@ check-test-requirements:
 	sort-requirements --check requirements/test.txt
 
 check-flake8-requirements:
+	$(PIP)
+	pip install sort-requirements
 	sort-requirements --check requirements/flake8.txt
 
 install-prod:
