@@ -1,34 +1,35 @@
 stages:
+  - build
   - linting
   - test
 
 variables:
-  PYTHON_VERSION: "3.11"
+  DOCKER_IMAGE: my-backend-image
 
-black:
-  stage: linting
-  image: registry.gitlab.com/pipeline-components/black:latest
+build-job:
+  stage: build
   script:
-    - apk add --no-cache make
-    - make black-check
+    - docker build -t $DOCKER_IMAGE .
 
-isort:
+black-job:
   stage: linting
-  image: python:${PYTHON_VERSION}
   script:
-    - make isort-check
+    - docker run --rm $DOCKER_IMAGE black-check
 
-flake8:
+isort-job:
   stage: linting
-  image: registry.gitlab.com/pipeline-components/flake8:latest
   script:
-    - apk add --no-cache make
-    - make check-flake8-requirements
-    - make flake8-check
+    - docker run --rm $DOCKER_IMAGE isort-check
 
-test:
+flake8-job:
+  stage: linting
+  script:
+    - docker run --rm $DOCKER_IMAGE make check-flake8-requirements
+    - docker run --rm $DOCKER_IMAGE make flake8-check
+
+test-job:
   stage: test
-  image: python:${PYTHON_VERSION}
   script:
-    - make check-test-requirements
-    - make test
+    - docker run --rm $DOCKER_IMAGE make check-test-requirements
+    - docker run --rm $DOCKER_IMAGE make test
+
