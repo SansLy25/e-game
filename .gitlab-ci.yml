@@ -8,7 +8,13 @@ variables:
 
 build-job:
   stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay2
   script:
+    - docker info
     - docker build -t $DOCKER_IMAGE .
 
 black-job:
