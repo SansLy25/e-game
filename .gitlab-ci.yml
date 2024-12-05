@@ -12,14 +12,7 @@ variables:
 build-job:
   stage: build
   image: docker:latest
-  services:
-    - name: docker:dind
-      alias: docker
-  variables:
-    DOCKER_DRIVER: overlay2
   script:
-    - echo "Running Docker info"
-    - docker info
     - docker build --cache-from=$DOCKER_IMAGE -t $DOCKER_IMAGE .
 
 black-job:
