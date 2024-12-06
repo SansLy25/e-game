@@ -8,28 +8,6 @@ import aiohttp
 import selectolax.parser
 from tqdm.asyncio import tqdm
 
-"""
-
-Могут быть проблемы с `pk`, `id` и `index`, из-за
-асинхронки, ну они вроде исправляются обычным присваиванием
-
-У меня почему-то получилось больше на `27 tasks`, `16 answers` и `1 subtopic`
-Причём `python manage.py loaddata fixtures/async-tasks.json` почему-то работает
-
-Чаще всего из-за огромного количества запросов вылезает
-`TimeoutError`, особенно если интернет или провайдер не очень
-
-Чтобы такого не было, нужно снижать количество одновременного
-выполнения функций через `*_SEMAPHORE_LIMIT`
-(по умолчанию лимиты низкие)
-
-Можно было сделать лучше, но как есть)
-
-P.S. `async-tasks.json` специально пустой
-
-"""
-
-
 __all__ = ()
 
 
@@ -40,7 +18,7 @@ EXAMS = {
 }
 
 ROOT_URL = "https://3.shkolkovo.online"
-OUTPUT_PATH = "egame/fixtures/async-tasks.json"
+OUTPUT_PATH = Path("egame/fixtures/async-tasks.json")
 APP_NAME = "practice"
 
 SRC_REGEX = re.compile(r'(?<=src=["\'])/(?!/)')
@@ -51,9 +29,12 @@ SUBTOPICS_SEMAPHORE_LIMIT = 10
 TASKS_SEMAPHORE_LIMIT = 20
 ANSWERS_SEMAPHORE_LIMIT = 50
 
+MAX_ATTEMPTS_COUNT = 5
+TIMEOUT = 2
+
 theme_bar = tqdm(total=71, desc="Themes", position=1)
-subtopic_bar = tqdm(total=647, desc="Subtopics", position=2)
-task_bar = tqdm(total=9313, desc="Tasks", position=3)
+subtopic_bar = tqdm(total=648, desc="Subtopics", position=2)
+task_bar = tqdm(total=9358, desc="Tasks", position=3)
 
 pk_lock = asyncio.Lock()
 pk_counter = {
@@ -65,7 +46,7 @@ pk_counter = {
 }
 
 
-async def increment_pk_counter(key):
+async def increment_pk_counter(key) -> int:
     async with pk_lock:
         pk_counter[key] += 1
         return pk_counter[key]
@@ -84,19 +65,21 @@ def limited_task(value: int):
     return decorator
 
 
-async def fetch_url(url, session: aiohttp.ClientSession):
-    try:
-        async with session.get(url, timeout=10) as response:
-            if response.status != 200:
-                raise ValueError(f"Bad response: {response.status}")
+async def fetch_url(url, session: aiohttp.ClientSession) -> str:
+    for _ in range(MAX_ATTEMPTS_COUNT):
+        try:
+            async with session.get(url, timeout=TIMEOUT) as response:
+                response.raise_for_status()
+                return await response.text()
+        except asyncio.TimeoutError:
+            continue
 
-            return await response.text()
-    except Exception as e:
-        tqdm.write(f"Failed to fetch {url}: {e}")
-        raise
+    raise aiohttp.ClientError(
+        f"Failed to fetch `{url}` after {MAX_ATTEMPTS_COUNT} attempts",
+    )
 
 
-def add_host_to_links(html_fragment: str):
+def add_host_to_links(html_fragment: str) -> str:
     return SRC_REGEX.sub(f"{ROOT_URL}/", html_fragment)
 
 
@@ -152,7 +135,7 @@ async def get_theme(
     exam_name: str,
     session: aiohttp.ClientSession,
 ):
-    theme_bar.update(1)
+    theme_bar.update()
 
     subtopics = theme.css("a.jsx-549154022")[:-1]
     return [
@@ -196,7 +179,7 @@ async def get_subtopic(
     exam_name: str,
     session: aiohttp.ClientSession,
 ):
-    subtopic_bar.update(1)
+    subtopic_bar.update()
 
     text = await fetch_url(
         ROOT_URL + subtopic_a.attributes.get("href"),
@@ -229,7 +212,7 @@ async def get_task(
     theme_index: int,
     exam_name: str,
 ):
-    task_bar.update(1)
+    task_bar.update()
 
     task_html_node = task.css_first("div.exercise__text")
     if task_html_node:
@@ -295,6 +278,9 @@ async def get_answer(answer: selectolax.parser.Node, task_id):
 
 
 async def main():
+    if not OUTPUT_PATH.exists():
+        raise FileNotFoundError(OUTPUT_PATH)
+
     async with aiohttp.ClientSession() as session:
         data = list(
             chain.from_iterable(
@@ -307,7 +293,7 @@ async def main():
             ),
         )
 
-        with Path(OUTPUT_PATH).open("w", encoding="utf-8") as f:
+        with OUTPUT_PATH.open("w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
 
     tqdm.write("Completed 🌟!")
