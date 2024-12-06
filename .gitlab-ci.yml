@@ -1,39 +1,15 @@
 stages:
   - build
-  - linting
-  - test
 
-variables:
-  DOCKER_IMAGE: my-backend-image
-  DOCKER_HOST: tcp://docker:2375
-  DOCKER_TLS_CERTDIR: ""
-  DOCKER_DRIVER: overlay2
 
-build-job:
+build-image-job:
   stage: build
-  image: docker:latest
+  image: docker:27.3
+  services:
+    - docker:27.3:dind
   script:
-    - docker build --cache-from=$DOCKER_IMAGE -t $DOCKER_IMAGE .
+    - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker push $CI_REGISTRY_IMAGE
 
-black-job:
-  stage: linting
-  script:
-    - docker run --rm $DOCKER_IMAGE black-check
-
-isort-job:
-  stage: linting
-  script:
-    - docker run --rm $DOCKER_IMAGE isort-check
-
-flake8-job:
-  stage: linting
-  script:
-    - docker run --rm $DOCKER_IMAGE make check-flake8-requirements
-    - docker run --rm $DOCKER_IMAGE make flake8-check
-
-test-job:
-  stage: test
-  script:
-    - docker run --rm $DOCKER_IMAGE make check-test-requirements
-    - docker run --rm $DOCKER_IMAGE make test
 
