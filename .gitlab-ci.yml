@@ -8,6 +8,7 @@ build-image-job:
   services:
     - docker:27.3:dind
   script:
+    - curl https://gitlab.crja72.ru:5050/v2/
     - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER gitlab.crja72.ru:5050 --password-stdin
     - docker build -t gitlab.crja72.ru:5050/django/2024/autumn/course/projects/team-13 .
     - docker push gitlab.crja72.ru:5050/django/2024/autumn/course/projects/team-13
