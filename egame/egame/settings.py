@@ -22,6 +22,7 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
 INSTALLED_APPS = [
     "homepage.apps.HomepageConfig",
     "practice.apps.PracticeConfig",
+    "users.apps.UsersConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -103,6 +104,10 @@ STATIC_URL = "/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+AUTH_USER_MODEL = "users.User"
+
+LOGIN_URL = "users:login"
+LOGIN_REDIRECT_URL = "users:profile"
 
 if DEBUG is True:
     MIDDLEWARE += ("debug_toolbar.middleware.DebugToolbarMiddleware",)
