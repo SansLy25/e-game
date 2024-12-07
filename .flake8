@@ -2,7 +2,7 @@
 max-line-length = 79
 application_import_names = egame, homepage, practice
 import-order-style = google
-exclude = */migrations/, venv/, verdict.py, .venv/,  env/, venv, .git, __pycache__, parse_tasks.py
+exclude = */migrations/, venv/, verdict.py, .venv/,  env/, venv, .git, __pycache__, parse_tasks.py,  async-parser.py
 max-complexity = 10
 max-expression-complexity = 7
 inline-quotes = double
