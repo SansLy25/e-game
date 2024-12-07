@@ -13,11 +13,13 @@ class VariantCreationView(TemplateView):
         context = super().get_context_data(**kwargs)
         exam = get_object_or_404(Exam, name=self.kwargs["exam_name"])
         themes_with_short_answer = Theme.objects.filter(
-            exam=exam, is_answered=True,
+            exam=exam,
+            is_answered=True,
         ).order_by("task_number")
 
         themes_with_long_answer = Theme.objects.filter(
-            exam=exam, is_answered=False,
+            exam=exam,
+            is_answered=False,
         ).order_by("task_number")
         forms = {}
 

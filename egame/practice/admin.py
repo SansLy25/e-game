@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from practice import models
 
 admin.site.register(models.Exam)
