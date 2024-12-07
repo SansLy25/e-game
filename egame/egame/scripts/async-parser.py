@@ -98,6 +98,16 @@ async def get_exam(
         ),
     ).css("div.jsx-1658459108.accordion__item")
 
+    match exam_name:
+        case "Математика":
+            answered_range = range(1, 13)
+        case "Физика":
+            answered_range = range(1, 24)
+        case "Русский язык":
+            answered_range = range(1, 27)
+        case _:
+            answered_range = range(1, 10)
+
     return [
         {
             "model": f"{APP_NAME}.exam",
@@ -114,7 +124,7 @@ async def get_exam(
                         theme,
                         theme_index,
                         pk_counter["exam"],
-                        exam_name,
+                        answered_range,
                         session,
                     )
                     for theme_index, theme in enumerate(
@@ -132,7 +142,7 @@ async def get_theme(
     theme: selectolax.parser.Node,
     theme_index: int,
     exam_id: int,
-    exam_name: str,
+    answered_range: str,
     session: aiohttp.ClientSession,
 ):
     theme_bar.update()
@@ -148,6 +158,7 @@ async def get_theme(
                 ).text(),
                 "task_number": theme_index,
                 "exam": exam_id,
+                "is_answered": theme_index in answered_range,
             },
         },
     ] + list(
@@ -158,7 +169,6 @@ async def get_theme(
                         subtopic_a,
                         subtopic_index,
                         theme_index,
-                        exam_name,
                         session,
                     )
                     for subtopic_index, subtopic_a in enumerate(
@@ -176,7 +186,6 @@ async def get_subtopic(
     subtopic_a: selectolax.parser.Node,
     subtopic_index: int,
     theme_index: int,
-    exam_name: str,
     session: aiohttp.ClientSession,
 ):
     subtopic_bar.update()
@@ -199,19 +208,13 @@ async def get_subtopic(
         },
     ] + list(
         chain.from_iterable(
-            await asyncio.gather(
-                *(get_task(task, theme_index, exam_name) for task in tasks),
-            ),
+            await asyncio.gather(*(get_task(task) for task in tasks)),
         ),
     )
 
 
 @limited_task(TASKS_SEMAPHORE_LIMIT)
-async def get_task(
-    task: selectolax.parser.Node,
-    theme_index: int,
-    exam_name: str,
-):
+async def get_task(task: selectolax.parser.Node):
     task_bar.update()
 
     task_html_node = task.css_first("div.exercise__text")
@@ -237,16 +240,6 @@ async def get_task(
     if task_html is None or solution_html is None:
         return []
 
-    match exam_name:
-        case "Математика":
-            answered_range = range(1, 13)
-        case "Физика":
-            answered_range = range(1, 24)
-        case "Русский язык":
-            answered_range = range(1, 27)
-        case _:
-            answered_range = range(1, 10)
-
     return [
         {
             "model": f"{APP_NAME}.task",
@@ -254,7 +247,6 @@ async def get_task(
             "fields": {
                 "task_text_html": task_html,
                 "task_solution_html": solution_html,
-                "is_answered": theme_index in answered_range,
             },
         },
     ] + await asyncio.gather(
