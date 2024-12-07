@@ -22,9 +22,17 @@ class Theme(models.Model):
         related_name="themes",
     )
 
+    is_answered = models.BooleanField(
+        "из развернутой части",
+        help_text="есть ли четкий ответ на задание",
+    )
+
     class Meta:
         verbose_name = "тема"
         verbose_name_plural = "темы"
+
+    def get_form_key(self):  # метод нужен для шаблона, вызвать str там нельзя
+        return "form_" + str(self.id)
 
     def __str__(self):
         return self.name[:15]
@@ -51,11 +59,6 @@ class Subtopic(models.Model):
 class Task(models.Model):
     task_text_html = models.TextField("текст задания")
     task_solution_html = models.TextField("текст решения")
-    is_answered = models.BooleanField(
-        "из развернутой части",
-        default=False,
-        help_text="есть ли четкий ответ на задание",
-    )
 
     class Meta:
         verbose_name = "задание"
@@ -76,6 +79,18 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.answer[:100]
+
+
+class Variant(models.Model):
+    expiration_time = models.DateTimeField()
+    tasks = models.ManyToManyField(Task, blank=True)
+
+    class Meta:
+        verbose_name = "вариант"
+        verbose_name_plural = "варианты"
+
+    def __str__(self):
+        return
 
 
 __all__ = ()

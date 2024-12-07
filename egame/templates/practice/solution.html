@@ -1,0 +1,312 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + React + TS</title>
+    <script type="module" crossorigin="" src="{% static 'js/solution.js' %}"></script>
+    <link rel="stylesheet" crossorigin="" href="{% static 'css/solution.css' %}">
+</head>
+<body>
+<div id="root">
+    <div class="h-screen flex flex-col">
+        <nav class="bg-gray-800 border-b border-gray-700 px-4 py-2 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-menu w-6 h-6 text-gray-300 cursor-pointer hover:text-white">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+                <h1 class="text-xl font-semibold text-white">Exam Practice</h1></div>
+            <div class="flex items-center space-x-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-clock w-5 h-5 text-gray-300 hover:text-white cursor-pointer">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-home w-5 h-5 text-gray-300 hover:text-white cursor-pointer">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-book w-5 h-5 text-gray-300 hover:text-white cursor-pointer">
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-settings w-5 h-5 text-gray-300 hover:text-white cursor-pointer">
+                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+            </div>
+        </nav>
+        <div class="flex flex-1 overflow-hidden">
+            <div class="w-64 bg-gray-800 h-full border-r border-gray-700">
+                <div class="p-4"><h2 class="text-lg font-semibold text-white mb-4">Topics</h2>
+                    <div class="space-y-3">
+                        <div class="cursor-pointer hover:bg-gray-700 p-2 rounded transition-colors">
+                            <div class="flex items-center justify-between mb-1.5"><span
+                                    class="flex items-center text-gray-200"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 width="24" height="24"
+                                                                                 viewBox="0 0 24 24" fill="none"
+                                                                                 stroke="currentColor" stroke-width="2"
+                                                                                 stroke-linecap="round"
+                                                                                 stroke-linejoin="round"
+                                                                                 class="lucide lucide-book-open w-4 h-4 mr-2 text-blue-400"><path
+                                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path
+                                    d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Mathematics</span><span
+                                    class="text-sm text-gray-400">60%</span></div>
+                            <div class="w-full bg-gray-700 rounded-full h-1">
+                                <div class="bg-blue-500 h-1 rounded-full transition-all duration-300"
+                                     style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="cursor-pointer hover:bg-gray-700 p-2 rounded transition-colors">
+                            <div class="flex items-center justify-between mb-1.5"><span
+                                    class="flex items-center text-gray-200"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 width="24" height="24"
+                                                                                 viewBox="0 0 24 24" fill="none"
+                                                                                 stroke="currentColor" stroke-width="2"
+                                                                                 stroke-linecap="round"
+                                                                                 stroke-linejoin="round"
+                                                                                 class="lucide lucide-book-open w-4 h-4 mr-2 text-blue-400"><path
+                                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path
+                                    d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Physics</span><span
+                                    class="text-sm text-gray-400">40%</span></div>
+                            <div class="w-full bg-gray-700 rounded-full h-1">
+                                <div class="bg-blue-500 h-1 rounded-full transition-all duration-300"
+                                     style="width: 40%;"></div>
+                            </div>
+                        </div>
+                        <div class="cursor-pointer hover:bg-gray-700 p-2 rounded transition-colors">
+                            <div class="flex items-center justify-between mb-1.5"><span
+                                    class="flex items-center text-gray-200"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 width="24" height="24"
+                                                                                 viewBox="0 0 24 24" fill="none"
+                                                                                 stroke="currentColor" stroke-width="2"
+                                                                                 stroke-linecap="round"
+                                                                                 stroke-linejoin="round"
+                                                                                 class="lucide lucide-book-open w-4 h-4 mr-2 text-blue-400"><path
+                                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path
+                                    d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Chemistry</span><span
+                                    class="text-sm text-gray-400">75%</span></div>
+                            <div class="w-full bg-gray-700 rounded-full h-1">
+                                <div class="bg-blue-500 h-1 rounded-full transition-all duration-300"
+                                     style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="cursor-pointer hover:bg-gray-700 p-2 rounded transition-colors">
+                            <div class="flex items-center justify-between mb-1.5"><span
+                                    class="flex items-center text-gray-200"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 width="24" height="24"
+                                                                                 viewBox="0 0 24 24" fill="none"
+                                                                                 stroke="currentColor" stroke-width="2"
+                                                                                 stroke-linecap="round"
+                                                                                 stroke-linejoin="round"
+                                                                                 class="lucide lucide-book-open w-4 h-4 mr-2 text-blue-400"><path
+                                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path
+                                    d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Biology</span><span
+                                    class="text-sm text-gray-400">25%</span></div>
+                            <div class="w-full bg-gray-700 rounded-full h-1">
+                                <div class="bg-blue-500 h-1 rounded-full transition-all duration-300"
+                                     style="width: 25%;"></div>
+                            </div>
+                        </div>
+                        <div class="cursor-pointer hover:bg-gray-700 p-2 rounded transition-colors">
+                            <div class="flex items-center justify-between mb-1.5"><span
+                                    class="flex items-center text-gray-200"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 width="24" height="24"
+                                                                                 viewBox="0 0 24 24" fill="none"
+                                                                                 stroke="currentColor" stroke-width="2"
+                                                                                 stroke-linecap="round"
+                                                                                 stroke-linejoin="round"
+                                                                                 class="lucide lucide-book-open w-4 h-4 mr-2 text-blue-400"><path
+                                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path
+                                    d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>Computer Science</span><span
+                                    class="text-sm text-gray-400">90%</span></div>
+                            <div class="w-full bg-gray-700 rounded-full h-1">
+                                <div class="bg-blue-500 h-1 rounded-full transition-all duration-300"
+                                     style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <main class="flex-1 overflow-auto bg-gray-900 p-4">
+                <div class="max-w-3xl mx-auto">
+                    <div class="sticky top-0 pt-1 space-y-1 z-10">
+                        <div class="flex items-center gap-2">
+                            <div class="flex-1 bg-gray-700 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full transition-all duration-300"
+                                     style="width: 35%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-300 min-w-[3rem] text-right">35%</span></div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex-1 bg-gray-700 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                                     style="width: 94.9167%;"></div>
+                            </div>
+                            <span class="text-sm text-gray-300 min-w-[3rem] text-right">56:57</span></div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="bg-gray-800 rounded-lg border border-gray-700 p-4 mb-4">
+                            <div class="flex justify-between items-center mb-3"><h3
+                                    class="text-lg font-semibold text-white">Question 1</h3>
+                                <button class="text-gray-400 hover:text-white transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-chevron-up w-5 h-5">
+                                        <path d="m18 15-6-6-6 6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mb-4"><p class="text-gray-300 mb-3">Solve the quadratic equation: x² + 5x + 6 =
+                                0. Show your work and explain your reasoning.</p><img
+                                    src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&amp;fit=crop&amp;q=80&amp;w=800"
+                                    alt="Question illustration" class="max-w-full h-auto rounded-lg mb-3"></div>
+                            <div class="mb-3"><input
+                                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                    placeholder="Enter your answer here..." value=""></div>
+                            <div>
+                                <button class="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-eye w-4 h-4 mr-2">
+                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Show Solution
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg border border-gray-700 p-4 mb-4">
+                            <div class="flex justify-between items-center mb-3"><h3
+                                    class="text-lg font-semibold text-white">Question 2</h3>
+                                <button class="text-gray-400 hover:text-white transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-chevron-up w-5 h-5">
+                                        <path d="m18 15-6-6-6 6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mb-4"><p class="text-gray-300 mb-3">Calculate the derivative of f(x) = x³ - 2x²
+                                + 4x - 1</p></div>
+                            <div class="mb-3"><input
+                                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                    placeholder="Enter your answer here..." value=""></div>
+                            <div>
+                                <button class="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-eye w-4 h-4 mr-2">
+                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Show Solution
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg border border-gray-700 p-4 mb-4">
+                            <div class="flex justify-between items-center mb-3"><h3
+                                    class="text-lg font-semibold text-white">Question 3</h3>
+                                <button class="text-gray-400 hover:text-white transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-chevron-up w-5 h-5">
+                                        <path d="m18 15-6-6-6 6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mb-4"><p class="text-gray-300 mb-3">What is the probability of drawing a king
+                                from a standard deck of 52 cards?</p><img
+                                    src="https://images.unsplash.com/photo-1593645510102-6aa3b0cd4c34?auto=format&amp;fit=crop&amp;q=80&amp;w=800"
+                                    alt="Question illustration" class="max-w-full h-auto rounded-lg mb-3"></div>
+                            <div class="mb-3"><input
+                                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                    placeholder="Enter your answer here..." value=""></div>
+                            <div>
+                                <button class="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-eye w-4 h-4 mr-2">
+                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Show Solution
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg border border-gray-700 p-4 mb-4">
+                            <div class="flex justify-between items-center mb-3"><h3
+                                    class="text-lg font-semibold text-white">Question 4</h3>
+                                <button class="text-gray-400 hover:text-white transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-chevron-up w-5 h-5">
+                                        <path d="m18 15-6-6-6 6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mb-4"><p class="text-gray-300 mb-3">Explain the concept of potential energy and
+                                provide a real-world example.</p></div>
+                            <div class="mb-3"><input
+                                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                    placeholder="Enter your answer here..." value=""></div>
+                            <div>
+                                <button class="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-eye w-4 h-4 mr-2">
+                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Show Solution
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg border border-gray-700 p-4 mb-4">
+                            <div class="flex justify-between items-center mb-3"><h3
+                                    class="text-lg font-semibold text-white">Question 5</h3>
+                                <button class="text-gray-400 hover:text-white transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-chevron-up w-5 h-5">
+                                        <path d="m18 15-6-6-6 6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mb-4"><p class="text-gray-300 mb-3">Balance the following chemical equation: Fe
+                                + O₂ → Fe₂O₃</p><img
+                                    src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&amp;fit=crop&amp;q=80&amp;w=800"
+                                    alt="Question illustration" class="max-w-full h-auto rounded-lg mb-3"></div>
+                            <div class="mb-3"><input
+                                    class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                    placeholder="Enter your answer here..." value=""></div>
+                            <div>
+                                <button class="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-eye w-4 h-4 mr-2">
+                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Show Solution{% static 'js/solution.js' %}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -8,6 +8,7 @@ from egame import settings
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("homepage.urls")),
+    path("practice/<str:exam_name>/", include("practice.urls")),
 ]
 
 if settings.DEBUG:
