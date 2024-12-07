@@ -1,13 +1,12 @@
 stages:
   - build
 
-
 build-image-job:
   stage: build
-  image: docker:27.3
+  image: docker
   services:
-    - docker:27.3:dind
+    - docker:dind
   script:
-    - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER gitlab.crja72.ru:5050 --password-stdin
-    - docker build -t gitlab.crja72.ru:5050/django/2024/autumn/course/projects/team-13 .
-    - docker push gitlab.crja72.ru:5050/django/2024/autumn/course/projects/team-13
+    - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker push $CI_REGISTRY_IMAGE
