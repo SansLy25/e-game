@@ -67,6 +67,16 @@ for exam_name, subject_id in EXAMS.items():
             "div", class_="jsx-1658459108 accordion__title-wrap"
         ).text
 
+        match exam_name:
+            case "Математика":
+                answered_range = range(1, 13)
+            case "Физика":
+                answered_range = range(1, 24)
+            case "Русский язык":
+                answered_range = range(1, 27)
+            case _:
+                answered_range = range(1, 10)
+
         fixture.append(
             {
                 "model": f"{APP_NAME}.theme",
@@ -75,6 +85,7 @@ for exam_name, subject_id in EXAMS.items():
                     "name": theme_name,
                     "task_number": theme_index,
                     "exam": current_exam_id,
+                    "is_answered": theme_index in answered_range,
                 },
             }
         )
@@ -130,16 +141,6 @@ for exam_name, subject_id in EXAMS.items():
                         .decode_contents()
                     )
 
-                    match exam_name:
-                        case "Математика":
-                            answered_range = range(1, 13)
-                        case "Физика":
-                            answered_range = range(1, 24)
-                        case "Русский язык":
-                            answered_range = range(1, 27)
-                        case _:
-                            answered_range = range(1, 10)
-
                     fixture.append(
                         {
                             "model": f"{APP_NAME}.task",
@@ -147,10 +148,10 @@ for exam_name, subject_id in EXAMS.items():
                             "fields": {
                                 "task_text_html": task_html,
                                 "task_solution_html": task_solution_html,
-                                "is_answered": theme_index in answered_range,
                             },
                         }
                     )
+
                     current_task_id = pk_counter["task"]
                     pk_counter["task"] += 1
                     answers = task_div.find_all(
