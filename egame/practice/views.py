@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.views.generic import FormView, TemplateView
+
 from practice.forms import TaskForm
 from practice.models import Exam, Theme
 
