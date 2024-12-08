@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto py-8 space-y-8">
+    <!-- Search Section -->
+    <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Поиск друзей</h2>
+        <form method="get" action="{% url 'users:friends:search' %}" class="flex gap-4">
+            <div class="flex-1">
+                {{ search_form }}
+            </div>
+            <button type="submit" 
+                    class="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg 
+                           hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-md">
+                Найти
+            </button>
+        </form>
+    </section>
+
+    <!-- Friends List -->
+    <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Мои друзья</h2>
+        
+        <div class="space-y-4">
+            {% if friends %}
+                {% for friend in friends %}
+                    <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-xl 
+                                transition-all duration-300 hover:shadow-md">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full 
+                                      flex items-center justify-center text-white font-bold text-lg shadow-inner">
+                                {{ friend.username|make_list|first|upper }}
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 dark:text-white text-lg">
+                                    {{ friend.username }}
+                                </h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">
+                                    Экзамены: 
+                                    {% for exam in friend.exams.all %}
+                                        <span class="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-600 
+                                                   dark:text-blue-400 rounded px-2 py-1 text-xs mr-1">
+                                            {{ exam.name }}
+                                        </span>
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <form method="post" action="{% url 'users:friends:remove' friend.id %}">
+                            {% csrf_token %}
+                            <button type="submit" 
+                                    class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 
+                                           transition-colors duration-300">
+                                Удалить
+                            </button>
+                        </form>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="text-center py-12 bg-gray-50 dark:bg-gray-700 rounded-xl">
+                    <p class="text-gray-500 dark:text-gray-400">
+                        У вас пока нет друзей
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Friend Invite Link -->
+    <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Пригласить друга
+        </h3>
+        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-xl">
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                Поделитесь этой ссылкой с друзьями:
+            </p>
+            <div class="flex gap-2">
+                <input type="text" 
+                       value="{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}" 
+                       class="flex-1 px-4 py-2 bg-white dark:bg-gray-600 border border-gray-300 
+                              dark:border-gray-500 rounded-lg text-gray-900 dark:text-white"
+                       readonly>
+                <button onclick="navigator.clipboard.writeText('{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}')"
+                        class="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg 
+                               hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-md">
+                    Копировать
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% if messages %}
+<div class="fixed bottom-4 right-4 space-y-2">
+    {% for message in messages %}
+        <div class="{% if message.tags == 'success' %}bg-green-500{% else %}bg-red-500{% endif %} 
+                    text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in-up">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
