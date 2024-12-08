@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from practice.models import Exam
-from users.forms import CustomUserCreationForm
+from users.forms import CustomUserCreationForm, UserSearchForm
 
 __all__ = ()
 
@@ -47,3 +47,35 @@ class CustomUserCreationFormTest(TestCase):
             },
         )
         self.assertFalse(form.is_valid())
+
+    def test_form_username_already_exists(self):
+        form1 = CustomUserCreationForm(
+            data={
+                "username": "testuser",
+                "password1": "testpass123",
+                "password2": "testpass123",
+                "exams": [self.exam.id],
+            },
+        )
+        form1.save()
+
+        form2 = CustomUserCreationForm(
+            data={
+                "username": "testuser",
+                "password1": "testpass123",
+                "password2": "testpass123",
+                "exams": [self.exam.id],
+            },
+        )
+        self.assertFalse(form2.is_valid())
+        self.assertIn("username", form2.errors)
+
+
+class UserSearchFormTest(TestCase):
+    def test_form_empty_data(self):
+        form = UserSearchForm(data={})
+        self.assertTrue(form.is_valid())
+
+    def test_form_with_username(self):
+        form = UserSearchForm(data={"username": "testuser"})
+        self.assertTrue(form.is_valid())

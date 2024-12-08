@@ -1,4 +1,5 @@
 from django.test import TestCase
+from django.urls import reverse
 
 from practice.models import Exam
 from users.models import User
@@ -12,6 +13,10 @@ class UserModelTest(TestCase):
         cls.exam = Exam.objects.create(name="Test Exam")
         cls.user = User.objects.create_user(
             username="testuser",
+            password="testpass123",
+        )
+        cls.friend = User.objects.create_user(
+            username="frienduser",
             password="testpass123",
         )
         cls.user.exams.set([cls.exam])
@@ -38,3 +43,21 @@ class UserModelTest(TestCase):
             password="testpass123",
         )
         self.assertFalse(user.exams.exists())
+
+    def test_add_friend(self):
+        self.user.friends.add(self.friend)
+        self.assertIn(self.friend, self.user.friends.all())
+        self.assertIn(self.user, self.friend.friends.all())
+
+    def test_remove_friend(self):
+        self.user.friends.add(self.friend)
+        self.user.friends.remove(self.friend)
+        self.assertNotIn(self.friend, self.user.friends.all())
+        self.assertNotIn(self.user, self.friend.friends.all())
+
+    def test_get_friend_link(self):
+        expected_url = reverse(
+            "users:friends:add_by_username",
+            args=[self.user.username],
+        )
+        self.assertEqual(self.user.get_friend_link(), expected_url)
