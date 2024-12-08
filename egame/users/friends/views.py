@@ -52,13 +52,24 @@ class AddFriendView(LoginRequiredMixin, RedirectView):
     url = reverse_lazy("users:friends:list")
 
     def get_redirect_url(self, *args, **kwargs):
-        friend = get_object_or_404(User, pk=kwargs["pk"])
-        if friend != self.request.user:
-            self.request.user.friends.add(friend)
-            messages.success(
-                self.request,
-                f"Пользователь {friend.username} добавлен в друзья!",
+        try:
+            username = kwargs.get("username")
+            friend = get_object_or_404(
+                User,
+                **(
+                    {"username": username}
+                    if username
+                    else {"pk": kwargs.get("pk")}
+                ),
             )
+            if friend != self.request.user:
+                self.request.user.friends.add(friend)
+                messages.success(
+                    self.request,
+                    f"Пользователь {friend.username} добавлен в друзья!",
+                )
+        except User.DoesNotExist:
+            messages.error(self.request, "Пользователь не найден")
 
         return super().get_redirect_url(*args, **kwargs)
 
@@ -73,22 +84,4 @@ class RemoveFriendView(LoginRequiredMixin, RedirectView):
             self.request,
             f"Пользователь {friend.username} удален из друзей",
         )
-        return super().get_redirect_url(*args, **kwargs)
-
-
-class AddFriendByUsernameView(LoginRequiredMixin, RedirectView):
-    url = reverse_lazy("users:friends:list")
-
-    def get_redirect_url(self, *args, **kwargs):
-        try:
-            friend = get_object_or_404(User, username=kwargs["username"])
-            if friend != self.request.user:
-                self.request.user.friends.add(friend)
-                messages.success(
-                    self.request,
-                    f"Пользователь {friend.username} добавлен в друзья!",
-                )
-        except User.DoesNotExist:
-            messages.error(self.request, "Пользователь не найден")
-
         return super().get_redirect_url(*args, **kwargs)
