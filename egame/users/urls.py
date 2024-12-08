@@ -1,10 +1,8 @@
 from django.contrib.auth.views import LogoutView
-from django.urls import path
+from django.urls import include, path
 
 from users import views
-
-__all__ = ()
-
+import users.friends.urls
 
 app_name = "users"
 
@@ -17,4 +15,5 @@ urlpatterns = [
         name="logout",
     ),
     path("profile/", views.ProfileView.as_view(), name="profile"),
+    path("friends/", include(users.friends.urls, namespace="friends")),
 ]
