@@ -2,7 +2,7 @@ from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, TemplateView
+from django.views.generic import CreateView, ListView
 
 from users.forms import CustomUserCreationForm
 
@@ -25,10 +25,9 @@ class CustomLoginView(LoginView):
     success_url = reverse_lazy("users:profile")
 
 
-class ProfileView(LoginRequiredMixin, TemplateView):
+class ProfileView(LoginRequiredMixin, ListView):
     template_name = "users/profile.html"
+    context_object_name = "friends"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["friends"] = self.request.user.friends.all()
-        return context
+    def get_queryset(self):
+        return self.request.user.friends.all()
