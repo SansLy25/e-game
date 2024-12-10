@@ -178,7 +178,8 @@ class VariantSolutionView(TemplateView):
 
                 if answer in task_answers and answer != "":
                     if Fine.objects.filter(
-                        task=task, variant=variant,
+                        task=task,
+                        variant=variant,
                     ).exists():
                         task_score = 0
                     else:
