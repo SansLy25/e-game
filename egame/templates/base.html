@@ -1,56 +1,105 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/static/img/favicon-RHtpAgq_.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/static/img/favicon-RHtpAgq_.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>ЕГЭйм - как ЕГЭ, но проще</title>
-    <meta name="title" content="ЕГЭ больше не будет прежним">
-    <meta name="description" content="Обучение с игровыми механиками и умным планированием">
+    <meta name="title" content="ЕГЭ больше не будет прежним" />
+    <meta name="description" content="Обучение с игровыми механиками и умным планированием" />
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="ЕГЭ больше не будет прежним">
-    <meta property="og:description" content="Обучение с игровыми механиками и умным планированием">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
-    <meta property="og:image" content="https://i.ibb.co/WKN22tZ/logo-square.png">
-    <meta property="og:site_name" content="E-Game">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ЕГЭ больше не будет прежним" />
+    <meta property="og:description" content="Обучение с игровыми механиками и умным планированием" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image" content="https://i.ibb.co/WKN22tZ/logo-square.png" />
+    <meta property="og:site_name" content="E-Game" />
 
-    <meta name="twitter:card" content="summary">
-    <meta property="og:image" content="https://i.ibb.co/WKN22tZ/logo-square.png">
-    <meta name="twitter:title" content="ЕГЭ больше не будет прежним">
-    <meta name="twitter:description" content="Обучение с игровыми механиками и умным планированием">
-    <link rel="stylesheet" crossorigin="" href="{% static 'css/getting_started.css' %}">
-
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://i.ibb.co/WKN22tZ/logo-square.png" />
+    <meta name="twitter:title" content="ЕГЭ больше не будет прежним" />
+    <meta name="twitter:description" content="Обучение с игровыми механиками и умным планированием" />
+    {% comment %} <link rel="stylesheet" crossorigin="" href="{% static 'css/getting_started.css' %}" /> {% endcomment %}
 
     {% block head_meta %}
-    {% endblock %}
-</head>
-<body>
-<div id="root">
-    <div class="min-h-screen bg-white dark:bg-gray-900">
 
+    {% endblock %}
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+
+  </head>
+  <body>
+    <div id="root">
+      <div class="min-h-screen">
         <header>
-            {% include 'includes/header.html' %}
+          {% include 'includes/header.html' %}
         </header>
 
         <div class="flex flex-1 overflow-hidden pt-16">
-            <aside class="w-64 bg-white dark:bg-gray-800 shadow-lg fixed left-0 h-full">
-                {% include 'includes/left_nav.html' %}
-            </aside>
-            <main class="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900 p-6" style="margin-left: 250px;">
-                {% block content %}
-                {% endblock %}
-            </main>
+          {% comment %} <aside class="w-64 bg-white dark:bg-gray-800 shadow-lg fixed left-0 h-full">
+            {% include 'includes/left_nav.html' %}
+          </aside> {% endcomment %}
+          <main class="flex-1 overflow-y-auto p-6">
+            {% block content %}
+
+            {% endblock %}
+          </main>
         </div>
-        <footer class="bg-gray-900 text-gray-400 py-12" style="margin-left: 250px;">
-            {% include 'includes/footer.html' %}
+        <footer class="bg-gray-900 text-gray-400 py-12 mt-24">
+          {% include 'includes/footer.html' %}
         </footer>
+      </div>
     </div>
-</div>
-</body>
+
+    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const html = document.documentElement
+        const themeSwitch = document.getElementById('themeSwitch')
+        const lightIcon = document.getElementById('lightIcon')
+        const darkIcon = document.getElementById('darkIcon')
+      
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme')
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        const currentTheme = savedTheme || systemTheme
+      
+        // Apply initial theme
+        setTheme(currentTheme)
+      
+        // Theme switch click handler
+        themeSwitch.addEventListener('click', () => {
+          const newTheme = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark'
+          setTheme(newTheme)
+          localStorage.setItem('theme', newTheme)
+        })
+      
+        // Theme setting function
+        function setTheme(theme) {
+          html.setAttribute('data-bs-theme', theme)
+          if (theme === 'dark') {
+            lightIcon.classList.add('d-none')
+            darkIcon.classList.remove('d-none')
+          } else {
+            lightIcon.classList.remove('d-none')
+            darkIcon.classList.add('d-none')
+          }
+        }
+      
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light')
+          }
+        })
+      })
+    </script>
+  </body>
 </html>

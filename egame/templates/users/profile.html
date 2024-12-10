@@ -1,72 +1,77 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="max-w-4xl mx-auto py-8">
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-        <div class="flex items-center space-x-4 mb-6">
-            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                {{ user.username|make_list|first|upper }}
-            </div>
-            <div>
-                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ user.username }}</h1>
-                <p class="text-gray-500 dark:text-gray-400">{{ user.email }}</p>
-            </div>
-        </div>
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
 
-        <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Выбранные экзамены</h2>
-            {% if user.exams.exists %}
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {% for exam in user.exams.all %}
-                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                            <h3 class="font-semibold text-gray-900 dark:text-white">{{ exam.name }}</h3>
-                        </div>
-                    {% endfor %}
+  <div class="container py-5">
+    <div class="profile-container">
+      <div class="profile-header">
+        <div class="profile-avatar-container">
+          <div class="profile-avatar">
+            <span>{{ user.username|make_list|first|upper }}</span>
+          </div>
+        </div>
+        <div class="profile-info">
+          <h1 class="profile-username" title="{{ user.username }}">{{ user.username }}</h1>
+          <p class="profile-email">{{ user.email }}</p>
+          <div class="profile-stats">
+            <div class="profile-stat">
+              <span class="profile-stat-value">{{ user.exams.count }}</span>
+              <span class="profile-stat-label">Экзаменов</span>
+            </div>
+            <div class="profile-stat">
+              <span class="profile-stat-value">{{ friends.count }}</span>
+              <span class="profile-stat-label">Друзей</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-body">
+        <div class="profile-section">
+          <h2 class="profile-section-title">Выбранные экзамены</h2>
+          {% if user.exams.exists %}
+            <div class="exam-list">
+              {% for exam in user.exams.all %}
+                <div class="exam-item" title="{{ exam.name }}">
+                  <span class="exam-name">{{ exam.name }}</span>
                 </div>
-            {% else %}
-                <p class="text-gray-500 dark:text-gray-400">Экзамены не выбраны</p>
-            {% endif %}
-        </div>
-
-        <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Друзья</h2>
-            {% if friends %}
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {% for friend in friends %}
-                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 flex items-center space-x-3">
-                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-                                {{ friend.username|make_list|first|upper }}
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-gray-900 dark:text-white">{{ friend.username }}</h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">
-                                    {{ friend.exams.count }} экзамен(ов)
-                                </p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            {% else %}
-                <p class="text-gray-500 dark:text-gray-400">У вас пока нет друзей</p>
-            {% endif %}
-            
-            <div class="mt-4">
-                <a href="{% url 'users:friends:list' %}" 
-                   class="inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-                    Управление друзьями
-                </a>
+              {% endfor %}
             </div>
+          {% else %}
+            <p class="profile-no-data">Экзамены не выбраны</p>
+          {% endif %}
         </div>
 
-        <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-6">
-            <form method="post" action="{% url 'users:logout' %}">
-                {% csrf_token %}
-                <button type="submit" 
-                        class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors">
-                    Выйти
-                </button>
-            </form>
+        <div class="profile-section">
+          <h2 class="profile-section-title">Друзья</h2>
+          {% if friends %}
+            <div class="friend-list">
+              {% for friend in friends %}
+                <div class="friend-item" title="{{ friend.username }}">
+                  <div class="friend-avatar">
+                    <span>{{ friend.username|make_list|first|upper }}</span>
+                  </div>
+                  <span class="friend-username">{{ friend.username }}</span>
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <p class="profile-no-data">У вас пока нет друзей</p>
+          {% endif %}
         </div>
+      </div>
+
+      <div class="profile-actions">
+        <a href="{% url 'users:friends:list' %}" class="btn btn-base btn-profile-action">Управление друзьями</a>
+        <form method="post" action="{% url 'users:logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger-bg-subtle btn-profile-action">Выйти</button>
+        </form>
+      </div>
     </div>
-</div>
+  </div>
 {% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div style="max-width: 720px; transition: all 0.2s ease;">
+
+            {% include 'includes/form/main.html' %}
+        
+            {% include 'includes/form/footer.html' %}
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
