@@ -24,7 +24,7 @@
     <meta name="twitter:title" content="ЕГЭ больше не будет прежним">
     <meta name="twitter:description" content="Обучение с игровыми механиками и умным планированием">
     <link rel="stylesheet" crossorigin="" href="{% static 'css/getting_started.css' %}">
-
+    <link rel="stylesheet" crossorigin="" href="{% static 'css/nav.css' %}">
     {% block head_meta %}
     {% endblock %}
 </head>
@@ -36,8 +36,8 @@
             {% include 'includes/header.html' %}
         </header>
 
-        <div class="flex flex-1 overflow-hidden pt-16">
-            <aside class="w-64 bg-white dark:bg-gray-800 shadow-lg fixed left-0 h-full">
+        <div class="pt-16" style="padding-top: 3.25rem;">
+            <aside class="w-64 bg-white dark:bg-gray-800 shadow-lg fixed left-0 mt-3 h-full">
                 {% include 'includes/left_nav.html' %}
             </aside>
             <main class="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900 p-6" style="margin-left: 250px;">

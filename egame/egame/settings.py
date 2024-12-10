@@ -20,6 +20,7 @@ DEBUG = load_bool("DJANGO_DEBUG", True)
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
 
 INSTALLED_APPS = [
+    "rest_framework",
     "homepage.apps.HomepageConfig",
     "practice.apps.PracticeConfig",
     "users.apps.UsersConfig",

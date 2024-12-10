@@ -12,10 +12,11 @@ __all__ = ()
 
 
 EXAMS = {
-    "Русский язык": 2,
-    "Математика": 1,
-    "Физика": 4,
+    "Русский язык": {"id": 2, "slug": "russian"},
+    "Математика": {"id": 1, "slug": "math"},
+    "Физика": {"id": 4, "slug": "physics"},
 }
+
 
 ROOT_URL = "https://3.shkolkovo.online"
 OUTPUT_PATH = Path("egame/fixtures/async-tasks.json")
@@ -88,6 +89,7 @@ async def get_exam(
     exam_name: str,
     subject_id: int,
     session: aiohttp.ClientSession,
+    exam_slug: str,
 ):
     tqdm.write(f"Processing exam: {exam_name}")
 
@@ -114,6 +116,7 @@ async def get_exam(
             "pk": await increment_pk_counter("exam"),
             "fields": {
                 "name": exam_name,
+                "slug": exam_slug,
             },
         },
     ] + list(
@@ -278,8 +281,13 @@ async def main():
             chain.from_iterable(
                 await asyncio.gather(
                     *(
-                        get_exam(exam_name, subject_id, session)
-                        for exam_name, subject_id in EXAMS.items()
+                        get_exam(
+                            exam_name,
+                            exam_item["id"],
+                            session,
+                            exam_item["slug"],
+                        )
+                        for exam_name, exam_item in EXAMS.items()
                     ),
                 ),
             ),
