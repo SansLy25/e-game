@@ -1,4 +1,4 @@
-<nav class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-200/80 dark:border-gray-800/80">
+<nav class="fixed w-full bg-white/50 dark:bg-gray-900/50 backdrop-blur-md z-50 border-b border-gray-200/80 dark:border-gray-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center"><span
@@ -21,11 +21,15 @@
                              stroke-linejoin="round" class="lucide lucide-chevron-down w-4 h-4">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
+                        <div class="theme-switch" id="themeSwitch">
+                            <i class="bi bi-sun-fill" id="lightIcon"></i>
+                            <i class="bi bi-moon-fill d-none" id="darkIcon"></i>
+                        </div>
                     </button>
                 </div>
 
-                <button class="px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:shadow-xl transition-shadow">
-                    Войти в аккаунт
+                <button class="btn btn-base px-4">
+                    Войти
                 </button>
             </div>
             <div class="flex md:hidden items-center">

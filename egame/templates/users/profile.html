@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+
+  <div class="container py-5">
+    <div class="profile-container">
+      <div class="profile-header">
+        <div class="profile-avatar-container">
+          <div class="profile-avatar">
+            <span>{{ user.username|make_list|first|upper }}</span>
+          </div>
+        </div>
+        <div class="profile-info">
+          <h1 class="profile-username" title="{{ user.username }}">{{ user.username }}</h1>
+          <p class="profile-email">{{ user.email }}</p>
+          <div class="profile-stats">
+            <div class="profile-stat">
+              <span class="profile-stat-value">{{ user.exams.count }}</span>
+              <span class="profile-stat-label">Экзаменов</span>
+            </div>
+            <div class="profile-stat">
+              <span class="profile-stat-value">{{ friends.count }}</span>
+              <span class="profile-stat-label">Друзей</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-body">
+        <div class="profile-section">
+          <h2 class="profile-section-title">Выбранные экзамены</h2>
+          {% if user.exams.exists %}
+            <div class="exam-list">
+              {% for exam in user.exams.all %}
+                <div class="exam-item" title="{{ exam.name }}">
+                  <span class="exam-name">{{ exam.name }}</span>
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <p class="profile-no-data">Экзамены не выбраны</p>
+          {% endif %}
+        </div>
+
+        <div class="profile-section">
+          <h2 class="profile-section-title">Друзья</h2>
+          {% if friends %}
+            <div class="friend-list">
+              {% for friend in friends %}
+                <div class="friend-item" title="{{ friend.username }}">
+                  <div class="friend-avatar">
+                    <span>{{ friend.username|make_list|first|upper }}</span>
+                  </div>
+                  <span class="friend-username">{{ friend.username }}</span>
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <p class="profile-no-data">У вас пока нет друзей</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="profile-actions">
+        <a href="{% url 'users:friends:list' %}" class="btn btn-base btn-profile-action">Управление друзьями</a>
+        <form method="post" action="{% url 'users:logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger-bg-subtle btn-profile-action">Выйти</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

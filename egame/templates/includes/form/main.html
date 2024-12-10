@@ -1,0 +1,126 @@
+{% load static %}
+{% load i18n %}
+
+<link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/base.css' %}" />
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+
+<div class="form-header">
+    <h1 class="display-4 fw-bold">{% trans title %}</h1>
+
+    {% if info or description %}
+        <div class="info-box">
+            {% if info %}
+            <div class="d-flex align-items-center mb-3">
+                <div class="info-icon">
+                    <i class="bi {{ info_icon }} fs-4"></i>
+                </div>
+                <h6 class="mb-0">{% trans info %}</h6>
+            </div>
+            <hr class="my-3">
+            {% endif %}
+
+            {% if description %}
+                <p class="info-description">
+                    <i class="bi {{ description_icon }} me-2"></i>
+                    {% trans description %}
+                </p>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="form-alert form-alert-{% if message.tags %}{{ message.tags }}{% else %}info{% endif %}" role="alert">
+            <div class="form-alert-content">
+                <div class="form-alert-icon">
+                    {% if message.tags == 'success' %}
+                        <i class="bi bi-check-circle"></i>
+                    {% elif message.tags == 'info' %}
+                        <i class="bi bi-info-circle"></i>
+                    {% elif message.tags == 'warning' %}
+                        <i class="bi bi-exclamation-triangle"></i>
+                    {% elif message.tags == 'error' %}
+                        <i class="bi bi-exclamation-circle"></i>
+                    {% else %}
+                        <i class="bi bi-bell"></i>
+                    {% endif %}
+                </div>
+                <div class="form-alert-body">
+                    <p class="form-alert-text">{{ message }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<div class="form-container">
+    <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        
+        {% for form in forms %}
+            {% if form.non_field_errors %}
+                <div class="form-alert form-alert-error" role="alert">
+                    <div class="form-alert-content">
+                        <div class="form-alert-icon">
+                            <i class="bi bi-exclamation-circle"></i>
+                        </div>
+                        <div class="form-alert-body">
+                            <h6 class="form-alert-title">{% trans 'Ошибка проверки формы' %}</h6>
+                            <ul class="form-alert-list">
+                                {% for error in form.non_field_errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if form.errors %}
+                <div class="form-alert form-alert-warning" role="alert">
+                    <div class="form-alert-content">
+                        <div class="form-alert-icon">
+                            <i class="bi bi-exclamation-triangle"></i>
+                        </div>
+                        <div class="form-alert-body">
+                            <h6 class="form-alert-title">{% trans 'Пожалуйста, исправьте ошибки в форме' %}</h6>
+                            <ul class="form-alert-list">
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                        <li>{{ field.label }}: {{ error }}</li>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% include 'includes/form/fields.html' %}
+        {% endfor %}
+
+        <div class="form-buttons">
+            <button 
+            {% if reset_button_id %}
+                id="{{ reset_button_id }}"
+            {% endif %}
+            {% if not reset_button_url %}
+                type="reset"
+            {% else %}
+                onclick="window.location.href='{% url reset_button_url %}'"
+            {% endif %}
+                class="btn btn-base-bg-subtle btn-md">
+                <i class="bi {{ reset_button_icon }} me-2"></i>
+                {% trans reset_button %}
+            </button>
+            <button type="submit" class="btn btn-base btn-md">
+                <span>
+                    <i class="bi {{ submit_button_icon }} me-2"></i>
+                    {% trans submit_button %}
+                </span>
+            </button>
+        </div>
+    </form>
+</div>
