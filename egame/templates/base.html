@@ -19,12 +19,12 @@
     <meta property="og:image" content="https://i.ibb.co/WKN22tZ/logo-square.png" />
     <meta property="og:site_name" content="E-Game" />
 
-    <meta name="twitter:card" content="summary">
-    <meta property="og:image" content="https://i.ibb.co/WKN22tZ/logo-square.png">
-    <meta name="twitter:title" content="ЕГЭ больше не будет прежним">
-    <meta name="twitter:description" content="Обучение с игровыми механиками и умным планированием">
-    <link rel="stylesheet" crossorigin="" href="{% static 'css/getting_started.css' %}">
-    <link rel="stylesheet" crossorigin="" href="{% static 'css/nav.css' %}">
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://i.ibb.co/WKN22tZ/logo-square.png" />
+    <meta name="twitter:title" content="ЕГЭ больше не будет прежним" />
+    <meta name="twitter:description" content="Обучение с игровыми механиками и умным планированием" />
+    {% comment %} <link rel="stylesheet" crossorigin="" href="{% static 'css/getting_started.css' %}" /> {% endcomment %}
+
     {% block head_meta %}
 
     {% endblock %}
@@ -41,14 +41,15 @@
           {% include 'includes/header.html' %}
         </header>
 
-        <div class="pt-16" style="padding-top: 3.25rem;">
-            <aside class="w-64 bg-white dark:bg-gray-800 shadow-lg fixed left-0 mt-3 h-full">
-                {% include 'includes/left_nav.html' %}
-            </aside>
-            <main class="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900 p-6" style="margin-left: 250px;">
-                {% block content %}
-                {% endblock %}
-            </main>
+        <div class="flex flex-1 overflow-hidden pt-16">
+          {% comment %} <aside class="w-64 bg-white dark:bg-gray-800 shadow-lg fixed left-0 h-full">
+            {% include 'includes/left_nav.html' %}
+          </aside> {% endcomment %}
+          <main class="flex-1 overflow-y-auto p-6">
+            {% block content %}
+
+            {% endblock %}
+          </main>
         </div>
         <footer class="bg-gray-900 text-gray-400 py-12 mt-24">
           {% include 'includes/footer.html' %}
