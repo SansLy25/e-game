@@ -17,6 +17,7 @@ def get_form_field(forms, form_key, field):
     """
     try:
         form = forms.get(form_key)
+
         return form[field]
     except (AttributeError, KeyError):
         pass

@@ -3,6 +3,7 @@ from django.db import models
 
 class Exam(models.Model):
     name = models.CharField("название", max_length=50)
+    slug = models.SlugField("слаг", unique=True)
 
     class Meta:
         verbose_name = "экзамен"
@@ -57,12 +58,20 @@ class Subtopic(models.Model):
 
 
 class Task(models.Model):
+    subtopic = models.ForeignKey(
+        Subtopic,
+        on_delete=models.CASCADE,
+        related_name="tasks",
+    )
     task_text_html = models.TextField("текст задания")
     task_solution_html = models.TextField("текст решения")
 
     class Meta:
         verbose_name = "задание"
         verbose_name_plural = "задания"
+
+    def get_form_key(self):  # метод нужен для шаблона, вызвать str там нельзя
+        return "form_" + str(self.id)
 
 
 class Answer(models.Model):
@@ -82,15 +91,62 @@ class Answer(models.Model):
 
 
 class Variant(models.Model):
-    expiration_time = models.DateTimeField()
-    tasks = models.ManyToManyField(Task, blank=True)
+    expiration_time = models.DateTimeField("время окончания")
+    date_created = models.DateTimeField("время создания", auto_now_add=True)
+    tasks = models.ManyToManyField(Task, blank=True, verbose_name="задания")
 
     class Meta:
         verbose_name = "вариант"
         verbose_name_plural = "варианты"
 
-    def __str__(self):
-        return
+
+class Solution(models.Model):
+    date = models.DateField(
+        "дата создания",
+        auto_now_add=True,
+    )
+
+    exam = models.ForeignKey(
+        Exam,
+        on_delete=models.CASCADE,
+        verbose_name="экзамен",
+    )
+
+    max_score = models.PositiveIntegerField("максимальный балл")
+    score = models.PositiveIntegerField("набранный балл")
+    duration = models.DurationField("время решения")
+
+    full_variant = models.BooleanField(
+        "полный вариант",
+        default=False,
+    )
+
+    user = models.ForeignKey(
+        "users.User",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        verbose_name="пользователь",
+    )
+
+    class Meta:
+        verbose_name = "решение"
+        verbose_name_plural = "решения"
+
+
+class Fine(models.Model):
+    variant = models.ForeignKey(
+        Variant,
+        on_delete=models.CASCADE,
+        verbose_name="вариант",
+        related_name="fines",
+    )
+
+    task = models.ForeignKey(
+        Task,
+        on_delete=models.CASCADE,
+        verbose_name="задание",
+    )
 
 
 __all__ = ()
