@@ -23,7 +23,10 @@ class PreparationListView(BaseLoginRequired, django.views.generic.ListView):
             name=self.kwargs["exam"],
         )
 
-        return preparation.models.Task.objects.filter(exam=exam)
+        return (
+            preparation.models.Task.objects.filter(exam=exam)
+            .select_related("exam")
+        )
 
 
 class TaskDetailView(
