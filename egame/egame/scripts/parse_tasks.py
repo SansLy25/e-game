@@ -15,9 +15,9 @@ from tqdm import tqdm
 """
 
 EXAMS = {
-    "Русский язык": 2,
-    "Математика": 1,
-    "Физика": 4,
+    "Русский язык": {"id": 2, "slug": "russian"},
+    "Математика": {"id": 1, "slug": "math"},
+    "Физика": {"id": 4, "slug": "physics"},
 }
 
 ROOT_URL = "https://3.shkolkovo.online"
@@ -43,7 +43,7 @@ def add_host_to_links(html_fragment):
 
 fixture = []
 
-for exam_name, subject_id in EXAMS.items():
+for exam_name, exam_item in EXAMS.items():
     tqdm.write(f"Processing exam: {exam_name}")
 
     fixture.append(
@@ -52,13 +52,16 @@ for exam_name, subject_id in EXAMS.items():
             "pk": pk_counter["exam"],
             "fields": {
                 "name": exam_name,
+                "slug": exam_item["slug"],
             },
         }
     )
     current_exam_id = pk_counter["exam"]
     pk_counter["exam"] += 1
 
-    response = requests.get(f"{ROOT_URL}/catalog?SubjectId={subject_id}").text
+    response = requests.get(
+        f"{ROOT_URL}/catalog?SubjectId={exam_item['id']}"
+    ).text
     soup = bs4.BeautifulSoup(response, "lxml")
     themes_divs = soup.find_all("div", class_="jsx-1658459108 accordion__item")
 
@@ -148,6 +151,7 @@ for exam_name, subject_id in EXAMS.items():
                             "fields": {
                                 "task_text_html": task_html,
                                 "task_solution_html": task_solution_html,
+                                "subtopic": current_subtopic_id,
                             },
                         }
                     )

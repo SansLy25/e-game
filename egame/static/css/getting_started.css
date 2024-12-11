@@ -1583,6 +1583,16 @@ img, video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(.75rem* var(--tw-space-x-reverse));
+    margin-left: calc(.75rem* calc(1 - var(--tw-space-x-reverse)));
+}
+
+.mt-3 {
+    margin-top: .75rem;
+}
+
 @media (min-width: 640px) {
     .sm\:w-auto {
         width: auto
