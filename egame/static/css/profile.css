@@ -35,7 +35,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 4px solid var(--base-color-bg-subtle);
+  border: 4px solid var(--base-color-subtle);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
@@ -257,7 +257,7 @@ body {
   left: 0;
   width: 100%;
   height: 130px;
-  background: linear-gradient(45deg, var(--base-color), var(--base-color-bg-subtle));
+  background: linear-gradient(45deg, var(--base-color), var(--base-color-subtle));
   border-radius: var(--base-border-radius) var(--base-border-radius) 0 0;
   z-index: 0;
 }

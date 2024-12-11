@@ -1,5 +1,3 @@
-
-
 .friends-container {
     background-color: var(--bg-color-main);
     border-radius: calc(var(--base-border-radius) * 2);
@@ -160,38 +158,37 @@
         opacity: 0;
         transform: translateX(20px);
     }
+
     10% {
         opacity: 1;
         transform: translateX(0);
     }
+
     90% {
         opacity: 1;
         transform: translateX(0);
     }
+
     100% {
         opacity: 0;
         transform: translateX(20px);
     }
 }
 
-.search-form button,
-.friend-card form button,
-.invite-link button {
-    flex-shrink: 0 !important;
-    width: 150px;
-}
-
 .search-form .input-group {
     flex-grow: 1;
 }
 
+/* Стили для маленьких экранов (меньше 768px) */
 @media (max-width: 768px) {
     .search-form {
         flex-direction: column;
+        align-items: center;
     }
 
     .friend-card {
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .friend-info {
@@ -199,13 +196,22 @@
         margin-bottom: 1rem;
     }
 
+    .friend-card form {
+        width: 100%;
+    }
+
     .invite-link {
         flex-direction: column;
+        align-items: center;
     }
 
     .search-form button,
     .friend-card form button,
     .invite-link button {
-        width: 100%;
+        width: 100% !important;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        /* padding: 0.5rem 1rem; Убираем дублирование отступов */
     }
 }

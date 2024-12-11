@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base-bs.html' %}
 {% load static %}
 
 {% block content %}
@@ -19,7 +19,7 @@
               {{ form }}
             </div>
           </div>
-          <button type="submit" class="btn btn-base">
+          <button type="submit" class="btn btn-solid">
             <i class="bi bi-search me-1"></i>
             Найти
           </button>
@@ -46,7 +46,7 @@
               </div>
               <form method="post" action="{% url 'users:friends:add' user.id %}">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-base">
+                <button type="submit" class="btn btn-bg-subtle-outline">
                   <i class="bi bi-person-plus me-1"></i>
                   Пригласить
                 </button>

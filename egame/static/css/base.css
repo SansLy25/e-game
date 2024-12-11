@@ -5,7 +5,7 @@
 
 [data-bs-theme="light"] {
     --base-color: #660ff1;
-    --base-color-bg-subtle: #dab0ff;
+    --base-color-subtle: #dab0ff;
     --bg-color-main: #ffffff;
     --bg-color-secondary: #f9fafc;
     --text-main: #111828;
@@ -15,7 +15,7 @@
 
 [data-bs-theme="dark"] {
     --base-color: #8540f5;
-    --base-color-bg-subtle: #140330;
+    --base-color-subtle: #140330;
     --bg-color-main: #111828;
     --bg-color-secondary: #202938;
     --text-main: #ffffff;
@@ -27,7 +27,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-color-main);
+    background-color: var(--bg-color-secondary);
     transition: all 0.3s ease;
 }
 
@@ -52,29 +52,9 @@ main {
 }
 
 .category-badge {
-    background-color: var(--base-color-bg-subtle);
+    background-color: var(--base-color-subtle);
     color: var(--base-color);
     border-radius: var(--base-border-radius);
-}
-
-
-.base-button,
-.details-button {
-    width: 100%;
-    padding: 0.5rem;
-    border: none;
-    background-color: var(--base-color);
-    color: var(--bg-color-secondary);
-    border-radius: 10px;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-    margin-top: auto;
-}
-
-.base-button:hover,
-.details-button:hover {
-    background-color: var(--base-color);
-    opacity: 0.9;
 }
 
 .nav-underline .nav-item.dropdown .nav-link.dropdown-toggle {
@@ -94,7 +74,7 @@ main {
 
 .dropdown-menu {
     --bs-dropdown-link-active-bg: var(--base-color);
-    --bs-dropdown-link-hover-bg: var(--base-color-bg-subtle);
+    --bs-dropdown-link-hover-bg: var(--base-color-subtle);
     --bs-dropdown-link-hover-color: var(--base-color);
     border-radius: var(--base-border-radius);
     padding: 0.5rem;
@@ -112,82 +92,130 @@ main {
 }
 
 .dropdown-item:hover {
-    background-color: var(--base-color-bg-subtle);
+    background-color: var(--base-color-subtle);
     color: var(--base-color);
 }
 
+
+/* ----- BUTTONS ----- */
+
+.btn {
+    font-weight: 500 !important;
+    border-width: 1.5px !important;
+    border-radius: var(--base-btn-border-radius) !important;
+    transition: all 0.2s ease !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+    cursor: pointer !important;
+}
+
+
+/* --- Types --- */
+
+
+/* outline */
+
 .btn-outline {
-    --bs-btn-color: var(--base-color);
-    --bs-btn-border-color: var(--base-color);
-    --bs-btn-hover-color: var(--bg-color-secondary);
-    --bs-btn-hover-bg: var(--base-color);
-    --bs-btn-hover-border-color: var(--base-color);
-    --bs-btn-focus-shadow-rgb: var(--base-color);
-    --bs-btn-active-color: var(--base-color);
-    --bs-btn-active-bg: var(--base-color-bg-subtle);
-    --bs-btn-active-border-color: var(--base-color-bg-subtle);
+    color: var(--base-color);
+    border-color: var(--base-color);
+    background-color: rgba(0, 0, 0, 0);
 }
 
-.btn-base-bg-subtle {
-    --bs-btn-color: var(--base-color);
-    --bs-btn-border-color: var(--base-color-bg-subtle);
-    --bs-btn-bg: var(--base-color-bg-subtle);
-    --bs-btn-hover-color: var(--base-color);
-    --bs-btn-hover-bg: var(--base-color-bg-subtle);
-    --bs-btn-hover-border-color: var(--base-color);
-    --bs-btn-focus-shadow-rgb: var(--base-color);
-    --bs-btn-active-color: var(--base-color);
-    --bs-btn-active-bg: rgba(0, 0, 0, 0);
-    --bs-btn-active-border-color: var(--base-color);
+.btn-outline:hover {
+    color: white;
+    background-color: var(--base-color);
+    border-color: var(--base-color);
 }
 
-.btn-base {
-    --bs-btn-color: white;
-    --bs-btn-bg: var(--base-color);
-    --bs-btn-border-color: var(--base-color);
-    --bs-btn-hover-color: var(--base-color);
-    --bs-btn-hover-bg: rgba(0, 0, 0, 0);
-    --bs-btn-hover-border-color: var(--base-color);
-    --bs-btn-active-color: var(--base-color);
-    --bs-btn-active-bg: var(--base-color-bg-subtle);
-    --bs-btn-active-border-color: var(--base-color);
+.btn-outline:active {
+    color: var(--base-color) !important;
+    background-color: var(--base-color-subtle) !important;
+    border-color: var(--base-color) !important;
 }
+
+
+/* bg-subtle */
+
+.btn-bg-subtle {
+    color: var(--base-color);
+    border-color: var(--base-color-subtle);
+    background-color: var(--base-color-subtle);
+}
+
+.btn-bg-subtle:hover {
+    color: var(--base-color);
+    background-color: var(--base-color-subtle);
+    border-color: var(--base-color);
+}
+
+.btn-bg-subtle:active {
+    color: var(--base-color) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color: var(--base-color) !important;
+}
+
+
+/* bg-subtle-outline */
+
+.btn-bg-subtle-outline {
+    color: var(--base-color);
+    border-color: var(--base-color);
+    background-color: var(--base-color-subtle);
+}
+
+.btn-bg-subtle-outline:hover {
+    color: var(--base-color);
+    background-color: var(--base-color-subtle);
+    border-color: var(--base-color-subtle);
+}
+
+.btn-bg-subtle-outline:active {
+    color: var(--base-color) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color: rgba(0, 0, 0, 0) !important;
+}
+
+
+/* solid */
+
+.btn-solid {
+    color: white;
+    background-color: var(--base-color);
+    border-color: var(--base-color);
+}
+
+.btn-solid:hover {
+    color: var(--base-color);
+    background-color: var(--base-color-subtle);
+    border-color: var(--base-color);
+}
+
+.btn-solid:active {
+    color: var(--base-color) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color: var(--base-color) !important;
+}
+
+
+/* --- Colors --- */
+
+
+/* danger */
 
 .btn-danger {
-    --bs-btn-color: white;
-    --bs-btn-bg: var(--bs-danger);
-    --bs-btn-border-color: var(--bs-danger);
-    --bs-btn-hover-color: var(--bs-danger);
-    --bs-btn-hover-bg: rgba(0, 0, 0, 0);
-    --bs-btn-hover-border-color: var(--bs-danger);
-    --bs-btn-active-color: var(--bs-danger);
-    --bs-btn-active-bg: var(--bs-danger-bg-subtle);
-    --bs-btn-active-border-color: var(--bs-danger);
+    --base-color: var(--bs-danger);
+    --base-color-subtle: var(--bs-danger-bg-subtle)
 }
 
-.btn-danger-bg-subtle {
-    --bs-btn-color: var(--bs-danger);
-    --bs-btn-border-color: var(--bs-danger-bg-subtle);
-    --bs-btn-bg: var(--bs-danger-bg-subtle);
-    --bs-btn-hover-color: var(--bs-danger);
-    --bs-btn-hover-bg: var(--bs-danger-bg-subtle);
-    --bs-btn-hover-border-color: var(--bs-danger);
-    --bs-btn-focus-shadow-rgb: var(--bs-danger);
-    --bs-btn-active-color: var(--bs-danger);
-    --bs-btn-active-bg: rgba(0, 0, 0, 0);
-    --bs-btn-active-border-color: var(--bs-danger);
+
+/* success */
+
+.btn-success {
+    --base-color: var(--bs-success);
+    --base-color-subtle: var(--bs-success-bg-subtle)
 }
 
-.btn-outline,
-.btn-base-bg-subtle,
-.btn-base,
-.btn-danger,
-.btn-danger-bg-subtle {
-    font-weight: 500;
-    --bs-btn-border-width: 1.5px;
-    border-radius: var(--base-btn-border-radius);
-    transition: all 0.3s ease;
-}
+
 
 .page-header {
     background-color: var(--bg-color-secondary);

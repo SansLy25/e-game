@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function changeColorTheme(baseColor, baseBgSubtle) {
     document.documentElement.style.setProperty('--base-color', baseColor);
-    document.documentElement.style.setProperty('--base-color-bg-subtle', baseBgSubtle);
+    document.documentElement.style.setProperty('--base-color-subtle', baseBgSubtle);
 
     localStorage.setItem('baseColor', baseColor);
     localStorage.setItem('baseBgSubtle', baseBgSubtle);

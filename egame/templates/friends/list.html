@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base-bs.html' %}
 {% load static %}
 
 {% block content %}
@@ -19,7 +19,7 @@
               {{ search_form }}
             </div>
           </div>
-          <button type="submit" class="btn btn-base">
+          <button type="submit" class="btn btn-solid">
             <i class="bi bi-search me-1"></i>
             Найти
           </button>
@@ -46,7 +46,7 @@
               </div>
               <form method="post" action="{% url 'users:friends:remove' friend.id %}">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-danger-bg-subtle">
+                <button type="submit" class="btn btn-bg-subtle-outline btn-danger">
                   <i class="bi bi-person-dash me-1"></i>
                   Удалить
                 </button>
@@ -64,7 +64,7 @@
           <p class="invite-text">Поделитесь этой ссылкой с друзьями:</p>
           <div class="invite-link">
             <input type="text" value="{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}" class="form-control invite-link-input" readonly />
-            <button onclick="navigator.clipboard.writeText('{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}')" class="btn btn-base-bg-subtle copy-button">
+            <button onclick="navigator.clipboard.writeText('{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}')" class="btn btn-bg-subtle copy-button">
               <i class="bi bi-clipboard me-1"></i>
               Копировать
             </button>
@@ -77,21 +77,9 @@
       <div class="messages">
         {% for message in messages %}
           <div class="message {% if message.tags == 'success' %}
-              
-              
-              
               message-success
-
-
-
             {% else %}
-              
-              
-              
               message-error
-
-
-
             {% endif %}">{{ message }}</div>
         {% endfor %}
       </div>

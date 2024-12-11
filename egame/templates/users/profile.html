@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base-bs.html' %}
 {% load static %}
 
 {% block content %}
@@ -66,10 +66,10 @@
       </div>
 
       <div class="profile-actions">
-        <a href="{% url 'users:friends:list' %}" class="btn btn-base btn-profile-action">Управление друзьями</a>
+        <a href="{% url 'users:friends:list' %}" class="btn btn-solid btn-profile-action">Управление друзьями</a>
         <form method="post" action="{% url 'users:logout' %}">
           {% csrf_token %}
-          <button type="submit" class="btn btn-danger-bg-subtle btn-profile-action">Выйти</button>
+          <button type="submit" class="btn btn-bg-subtle btn-danger btn-profile-action">Выйти</button>
         </form>
       </div>
     </div>
