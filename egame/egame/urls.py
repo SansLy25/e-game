@@ -7,6 +7,7 @@ from django.urls import include, path
 
 import homepage.urls
 import practice.urls
+import preparation.urls
 import users.urls
 
 urlpatterns = [
@@ -14,6 +15,7 @@ urlpatterns = [
     path("", include(homepage.urls)),
     path("", include(users.urls, namespace="users")),
     path("", include(django.contrib.auth.urls)),
+    path("", include(preparation.urls)),
     path("api/practice/", include(practice.urls)),
     path("<slug:exam_slug>/practice/", include(practice.urls)),
 ]

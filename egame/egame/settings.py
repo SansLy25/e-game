@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "homepage.apps.HomepageConfig",
     "practice.apps.PracticeConfig",
+    "preparation.apps.PreparationConfig",
     "users.apps.UsersConfig",
     "django.contrib.admin",
     "django.contrib.auth",
