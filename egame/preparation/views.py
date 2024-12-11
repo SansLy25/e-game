@@ -24,7 +24,7 @@ class PreparationListView(BaseLoginRequired, django.views.generic.ListView):
         )
 
         return preparation.models.Task.objects.filter(
-            exam=exam
+            exam=exam,
         ).select_related("exam")
 
 
