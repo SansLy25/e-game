@@ -1,0 +1,1377 @@
+{% extends 'base-tw.html' %}
+{% load static %}
+
+{% block head_meta %}
+<script type="module" crossorigin="" src="{% static 'js/getting_started.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <section class="pt-32 pb-20 hero-gradient relative">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"
+                 style="opacity: 0.5; transform: none;"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+                 style="opacity: 0.5; transform: none;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/30 rounded-full blur-3xl"
+                 style="opacity: 0.5; transform: none;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center relative">
+                <div class="flex justify-center mb-6" style="opacity: 1; transform: none;">
+                    <div class="p-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round"
+                             class="lucide lucide-graduation-cap w-16 h-16 text-blue-600 dark:text-blue-400">
+                            <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path>
+                            <path d="M22 10v6"></path>
+                            <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-white/50 dark:bg-gray-900/50 backdrop-blur-lg rounded-3xl -z-10"></div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight px-4 py-6"
+                        style="opacity: 1; transform: none;">Подготовка к ЕГЭ теперь как <span
+                            class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">увлекательная игра</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed px-4 py-2"
+                       style="opacity: 1; transform: none;">Интерактивная система обучения с персональным треком
+                        развития, игровыми механиками и умным планированием</p></div>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4"
+                     style="opacity: 1; transform: none;">
+                    <button class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl text-lg font-semibold hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-2">
+                        <span>Создать аккаунт</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide lucide-chevron-right w-5 h-5">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+                    <button class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-lg font-semibold hover:shadow-lg transition-all duration-200 border-2 border-gray-200 dark:border-gray-700 hover:scale-105">
+                        Попробовать демо
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="team" class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h2
+                class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+                style="opacity: 1; transform: none;">Наша команда</h2>
+            <div class="text-center mb-16" style="opacity: 1; transform: none;"><h3
+                    class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Коротков Арсений</h3>
+                <p class="text-gray-600 dark:text-gray-400">Ментор проекта</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center"
+                     style="opacity: 1; transform: none;">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-2xl font-bold">
+                        ГИ
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Газарян Иван</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Разработчик</p><a href="https://t.me/IvanGz7"
+                                                                                       target="_blank"
+                                                                                       rel="noopener noreferrer"
+                                                                                       class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-message-circle w-5 h-5 mr-2">
+                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                    </svg>
+                    @IvanGz7</a></div>
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center"
+                     style="opacity: 1; transform: none;">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-2xl font-bold">
+                        СР
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Степанов Роберт</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Тимлид</p><a href="https://t.me/sansly25"
+                                                                                  target="_blank"
+                                                                                  rel="noopener noreferrer"
+                                                                                  class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-message-circle w-5 h-5 mr-2">
+                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                    </svg>
+                    @sansly25</a></div>
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center"
+                     style="opacity: 1; transform: none;">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white text-2xl font-bold">
+                        ОМ
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Охонько Максим</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Разработчик</p><a
+                        href="https://t.me/TheRandomCat" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-message-circle w-5 h-5 mr-2">
+                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                    </svg>
+                    @TheRandomCat</a></div>
+            </div>
+        </div>
+    </section>
+    <section id="problem-solution" class="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl"
+                     style="opacity: 0; transform: translateX(-20px);">
+                    <div class="flex items-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide lucide-alert-triangle w-8 h-8 text-red-500 mr-3">
+                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                            <path d="M12 9v4"></path>
+                            <path d="M12 17h.01"></path>
+                        </svg>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Проблема</h2></div>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <p>Подготовка к экзаменам многим дается не легко, это скучный и утомительный процесс</p>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <p>Школа предлагает неинтересный формат подготовки (бесконечное нарешивание идентичных
+                                заданий)</p></li>
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <p>Мотивация теряется, властвует прокрастинация и лень</p></li>
+                    </ul>
+                </div>
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl"
+                     style="opacity: 0; transform: translateX(20px);">
+                    <div class="flex items-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide lucide-lightbulb w-8 h-8 text-green-500 mr-3">
+                            <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
+                            <path d="M9 18h6"></path>
+                            <path d="M10 22h4"></path>
+                        </svg>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Решение</h2></div>
+                    <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <p>Геймифицированный сервис с системой уровней и достижений</p></li>
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <p>Прозрачная система прогресса и четкий путь к достижению цели</p></li>
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <p>Рейтинги среди друзей для повышения мотивации</p></li>
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <p>Интерактивный формат тестов и умное планирование занятий</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="practice" class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h2
+                class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+                style="opacity: 0; transform: translateY(20px);">Практикуйся эффективно</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="opacity: 0;">
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 relative group"
+                     style="opacity: 0; transform: translateY(20px);">
+                    <div class="h-48 bg-gradient-to-br from-rose-500 to-orange-500 rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round"
+                             class="lucide lucide-check-circle2 w-20 h-20 text-white relative z-10">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <div class="absolute inset-0" style="opacity: 0;"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Интерактивные тесты</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Решайте задания в увлекательном формате с мгновенной
+                        обратной связью и пояснениями к каждому ответу</p>
+                    <div class="absolute inset-0 rounded-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none">
+                        <div class="absolute inset-0 bg-gradient-to-br from-rose-500 to-orange-500 opacity-10 blur-xl"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 relative group"
+                     style="opacity: 0; transform: translateY(20px);">
+                    <div class="h-48 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round"
+                             class="lucide lucide-layout-grid w-20 h-20 text-white relative z-10">
+                            <rect width="7" height="7" x="3" y="3" rx="1"></rect>
+                            <rect width="7" height="7" x="14" y="3" rx="1"></rect>
+                            <rect width="7" height="7" x="14" y="14" rx="1"></rect>
+                            <rect width="7" height="7" x="3" y="14" rx="1"></rect>
+                        </svg>
+                        <div class="absolute inset-0" style="opacity: 0;"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Умные карточки</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Запоминайте материал с помощью интервальных
+                        повторений и системы интеллектуальных карточек</p>
+                    <div class="absolute inset-0 rounded-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-teal-500 opacity-10 blur-xl"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 relative group"
+                     style="opacity: 0; transform: translateY(20px);">
+                    <div class="h-48 bg-gradient-to-br from-violet-500 to-purple-500 rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round"
+                             class="lucide lucide-settings2 w-20 h-20 text-white relative z-10">
+                            <path d="M20 7h-9"></path>
+                            <path d="M14 17H5"></path>
+                            <circle cx="17" cy="17" r="3"></circle>
+                            <circle cx="7" cy="7" r="3"></circle>
+                        </svg>
+                        <div class="absolute inset-0" style="opacity: 0;"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Конструктор вариантов</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Создавайте персонализированные варианты тестов на
+                        основе ваших слабых мест и целей</p>
+                    <div class="absolute inset-0 rounded-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none">
+                        <div class="absolute inset-0 bg-gradient-to-br from-violet-500 to-purple-500 opacity-10 blur-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="statistics" class="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h2
+                class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+                style="opacity: 0; transform: translateY(20px);">Подробная аналитика прогресса</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl"
+                     style="opacity: 0; transform: translateX(-20px);"><h3
+                        class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Динамика результатов</h3>
+                    <div class="relative h-[300px]" style="opacity: 0;">
+                        <div class="recharts-responsive-container"
+                             style="width: 100%; height: 100%; min-width: 0px;">
+                            <div class="recharts-wrapper"
+                                 style="position: relative; cursor: default; width: 100%; height: 100%; max-height: 300px; max-width: 421px;">
+                                <svg class="recharts-surface" width="421" height="300" viewBox="0 0 421 300"
+                                     style="width: 100%; height: 100%;"><title></title>
+                                    <desc></desc>
+                                    <defs>
+                                        <clipPath id="recharts1-clip">
+                                            <rect x="60" y="10" height="260" width="331"></rect>
+                                        </clipPath>
+                                    </defs>
+                                    <defs>
+                                        <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="5%" stop-color="#3B82F6" stop-opacity="0.8"></stop>
+                                            <stop offset="95%" stop-color="#3B82F6" stop-opacity="0"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <g class="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis">
+                                        <line orientation="bottom" width="331" height="30" stroke="#6B7280" x="60"
+                                              y="270" class="recharts-cartesian-axis-line" fill="none" x1="60"
+                                              y1="270" x2="391" y2="270"></line>
+                                        <g class="recharts-cartesian-axis-ticks">
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="bottom" width="331" height="30" stroke="#6B7280"
+                                                      x="60" y="270" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="60" y1="276" x2="60" y2="270"></line>
+                                                <text orientation="bottom" width="331" height="30" stroke="none"
+                                                      x="60" y="278"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="middle" fill="#6B7280">
+                                                    <tspan x="60" dy="0.71em">Пн</tspan>
+                                                </text>
+                                            </g>
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="bottom" width="331" height="30" stroke="#6B7280"
+                                                      x="60" y="270" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="115.16666666666666" y1="276"
+                                                      x2="115.16666666666666" y2="270"></line>
+                                                <text orientation="bottom" width="331" height="30" stroke="none"
+                                                      x="115.16666666666666" y="278"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="middle" fill="#6B7280">
+                                                    <tspan x="115.16666666666666" dy="0.71em">Вт</tspan>
+                                                </text>
+                                            </g>
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="bottom" width="331" height="30" stroke="#6B7280"
+                                                      x="60" y="270" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="170.33333333333331" y1="276"
+                                                      x2="170.33333333333331" y2="270"></line>
+                                                <text orientation="bottom" width="331" height="30" stroke="none"
+                                                      x="170.33333333333331" y="278"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="middle" fill="#6B7280">
+                                                    <tspan x="170.33333333333331" dy="0.71em">Ср</tspan>
+                                                </text>
+                                            </g>
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="bottom" width="331" height="30" stroke="#6B7280"
+                                                      x="60" y="270" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="225.5" y1="276" x2="225.5" y2="270"></line>
+                                                <text orientation="bottom" width="331" height="30" stroke="none"
+                                                      x="225.5" y="278"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="middle" fill="#6B7280">
+                                                    <tspan x="225.5" dy="0.71em">Чт</tspan>
+                                                </text>
+                                            </g>
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="bottom" width="331" height="30" stroke="#6B7280"
+                                                      x="60" y="270" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="280.66666666666663" y1="276"
+                                                      x2="280.66666666666663" y2="270"></line>
+                                                <text orientation="bottom" width="331" height="30" stroke="none"
+                                                      x="280.66666666666663" y="278"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="middle" fill="#6B7280">
+                                                    <tspan x="280.66666666666663" dy="0.71em">Пт</tspan>
+                                                </text>
+                                            </g>
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="bottom" width="331" height="30" stroke="#6B7280"
+                                                      x="60" y="270" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="335.8333333333333" y1="276"
+                                                      x2="335.8333333333333" y2="270"></line>
+                                                <text orientation="bottom" width="331" height="30" stroke="none"
+                                                      x="335.8333333333333" y="278"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="middle" fill="#6B7280">
+                                                    <tspan x="335.8333333333333" dy="0.71em">Сб</tspan>
+                                                </text>
+                                            </g>
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="bottom" width="331" height="30" stroke="#6B7280"
+                                                      x="60" y="270" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="391" y1="276" x2="391" y2="270"></line>
+                                                <text orientation="bottom" width="331" height="30" stroke="none"
+                                                      x="391" y="278"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="middle" fill="#6B7280">
+                                                    <tspan x="391" dy="0.71em">Вс</tspan>
+                                                </text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g class="recharts-layer recharts-cartesian-axis recharts-yAxis yAxis">
+                                        <line orientation="left" width="60" height="260" stroke="#6B7280" x="0"
+                                              y="10" class="recharts-cartesian-axis-line" fill="none" x1="60"
+                                              y1="10" x2="60" y2="270"></line>
+                                        <g class="recharts-cartesian-axis-ticks">
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="left" width="60" height="260" stroke="#6B7280"
+                                                      x="0" y="10" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="54" y1="270" x2="60" y2="270"></line>
+                                                <text orientation="left" width="60" height="260" stroke="none"
+                                                      x="52" y="270"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="end" fill="#6B7280">
+                                                    <tspan x="52" dy="0.355em">0</tspan>
+                                                </text>
+                                            </g>
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="left" width="60" height="260" stroke="#6B7280"
+                                                      x="0" y="10" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="54" y1="205" x2="60" y2="205"></line>
+                                                <text orientation="left" width="60" height="260" stroke="none"
+                                                      x="52" y="205"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="end" fill="#6B7280">
+                                                    <tspan x="52" dy="0.355em">25</tspan>
+                                                </text>
+                                            </g>
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="left" width="60" height="260" stroke="#6B7280"
+                                                      x="0" y="10" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="54" y1="140" x2="60" y2="140"></line>
+                                                <text orientation="left" width="60" height="260" stroke="none"
+                                                      x="52" y="140"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="end" fill="#6B7280">
+                                                    <tspan x="52" dy="0.355em">50</tspan>
+                                                </text>
+                                            </g>
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="left" width="60" height="260" stroke="#6B7280"
+                                                      x="0" y="10" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="54" y1="75" x2="60" y2="75"></line>
+                                                <text orientation="left" width="60" height="260" stroke="none"
+                                                      x="52" y="75"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="end" fill="#6B7280">
+                                                    <tspan x="52" dy="0.355em">75</tspan>
+                                                </text>
+                                            </g>
+                                            <g class="recharts-layer recharts-cartesian-axis-tick">
+                                                <line orientation="left" width="60" height="260" stroke="#6B7280"
+                                                      x="0" y="10" class="recharts-cartesian-axis-tick-line"
+                                                      fill="none" x1="54" y1="10" x2="60" y2="10"></line>
+                                                <text orientation="left" width="60" height="260" stroke="none"
+                                                      x="52" y="12"
+                                                      class="recharts-text recharts-cartesian-axis-tick-value"
+                                                      text-anchor="end" fill="#6B7280">
+                                                    <tspan x="52" dy="0.355em">100</tspan>
+                                                </text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g class="recharts-cartesian-grid">
+                                        <g class="recharts-cartesian-grid-horizontal">
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="60" y1="270" x2="391"
+                                                  y2="270"></line>
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="60" y1="205" x2="391"
+                                                  y2="205"></line>
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="60" y1="140" x2="391"
+                                                  y2="140"></line>
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="60" y1="75" x2="391" y2="75"></line>
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="60" y1="10" x2="391" y2="10"></line>
+                                        </g>
+                                        <g class="recharts-cartesian-grid-vertical">
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="60" y1="10" x2="60" y2="270"></line>
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="115.16666666666666" y1="10"
+                                                  x2="115.16666666666666" y2="270"></line>
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="170.33333333333331" y1="10"
+                                                  x2="170.33333333333331" y2="270"></line>
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="225.5" y1="10" x2="225.5"
+                                                  y2="270"></line>
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="280.66666666666663" y1="10"
+                                                  x2="280.66666666666663" y2="270"></line>
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="335.8333333333333" y1="10"
+                                                  x2="335.8333333333333" y2="270"></line>
+                                            <line stroke-dasharray="3 3" stroke="#374151" fill="none" x="60" y="10"
+                                                  width="331" height="260" x1="391" y1="10" x2="391"
+                                                  y2="270"></line>
+                                        </g>
+                                    </g>
+                                    <g class="recharts-layer recharts-area">
+                                        <g class="recharts-layer">
+                                            <path fill-opacity="1" fill="url(#colorScore)" width="331" height="260"
+                                                  stroke="none" class="recharts-curve recharts-area-area"
+                                                  d="M60,153C78.389,130.9,96.778,108.8,115.167,108.8C133.556,108.8,151.944,127,170.333,127C188.722,127,207.111,79.333,225.5,67.2C243.889,55.067,262.278,49,280.667,49C299.056,49,317.444,56.8,335.833,56.8C354.222,56.8,372.611,45.1,391,33.4L391,270C372.611,270,354.222,270,335.833,270C317.444,270,299.056,270,280.667,270C262.278,270,243.889,270,225.5,270C207.111,270,188.722,270,170.333,270C151.944,270,133.556,270,115.167,270C96.778,270,78.389,270,60,270Z"></path>
+                                            <path stroke="#3B82F6" fill-opacity="1" fill="none" width="331"
+                                                  height="260" class="recharts-curve recharts-area-curve"
+                                                  d="M60,153C78.389,130.9,96.778,108.8,115.167,108.8C133.556,108.8,151.944,127,170.333,127C188.722,127,207.111,79.333,225.5,67.2C243.889,55.067,262.278,49,280.667,49C299.056,49,317.444,56.8,335.833,56.8C354.222,56.8,372.611,45.1,391,33.4"></path>
+                                        </g>
+                                        <g class="recharts-layer recharts-area-dots">
+                                            <circle cx="60" cy="153" r="4" fill="#3B82F6" opacity="0"
+                                                    style="transform: scale(0); transform-origin: 60px 153px;"></circle>
+                                            <circle cx="115.16666666666666" cy="108.8" r="4" fill="#3B82F6"
+                                                    opacity="0"
+                                                    style="transform: scale(0); transform-origin: 115.167px 108.8px;"></circle>
+                                            <circle cx="170.33333333333331" cy="126.99999999999999" r="4"
+                                                    fill="#3B82F6" opacity="0"
+                                                    style="transform: scale(0); transform-origin: 170.333px 127px;"></circle>
+                                            <circle cx="225.5" cy="67.19999999999999" r="4" fill="#3B82F6"
+                                                    opacity="0"
+                                                    style="transform: scale(0); transform-origin: 225.5px 67.2px;"></circle>
+                                            <circle cx="280.66666666666663" cy="49.00000000000001" r="4"
+                                                    fill="#3B82F6" opacity="0"
+                                                    style="transform: scale(0); transform-origin: 280.667px 49px;"></circle>
+                                            <circle cx="335.8333333333333" cy="56.80000000000001" r="4"
+                                                    fill="#3B82F6" opacity="0"
+                                                    style="transform: scale(0); transform-origin: 335.833px 56.8px;"></circle>
+                                            <circle cx="391" cy="33.39999999999999" r="4" fill="#3B82F6" opacity="0"
+                                                    style="transform: scale(0); transform-origin: 391px 33.4px;"></circle>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <div tabindex="-1" class="recharts-tooltip-wrapper"
+                                     style="visibility: hidden; pointer-events: none; position: absolute; top: 0px; left: 0px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" style="opacity: 0;">
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-200 group"
+                         style="opacity: 0; transform: translateY(20px);">
+                        <div class="flex items-center justify-between mb-4"><h4
+                                class="text-lg font-semibold text-gray-900 dark:text-white">Сильные темы</h4><span
+                                class="bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent text-xl font-bold">+15%</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                                <div class="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full"
+                                     style="width: 0px;"></div>
+                            </div>
+                            <div class="text-sm text-gray-800 dark:text-gray-200 font-medium"><span><span
+                                    class="bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent font-bold text-base">8 из 10</span> тем освоены на высоком уровне</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-200 group"
+                         style="opacity: 0; transform: translateY(20px);">
+                        <div class="flex items-center justify-between mb-4"><h4
+                                class="text-lg font-semibold text-gray-900 dark:text-white">Время подготовки</h4>
+                            <span class="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent text-xl font-bold">12ч</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                                <div class="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full"
+                                     style="width: 0px;"></div>
+                            </div>
+                            <div class="text-sm text-gray-800 dark:text-gray-200 font-medium"><span>На <span
+                                    class="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent font-bold text-base">30% больше</span> чем на прошлой неделе</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-200 group"
+                         style="opacity: 0; transform: translateY(20px);">
+                        <div class="flex items-center justify-between mb-4"><h4
+                                class="text-lg font-semibold text-gray-900 dark:text-white">Достижения</h4><span
+                                class="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent text-xl font-bold">15</span>
+                        </div>
+                        <div class="flex gap-3 mt-4">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shadow-lg group-hover:shadow-xl relative group/badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-trophy w-6 h-6 text-white">
+                                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                                    <path d="M4 22h16"></path>
+                                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                                </svg>
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs rounded opacity-0 group-hover/badge:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none shadow-lg">
+                                    Чемпион недели
+                                    <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-white"></div>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg group-hover:shadow-xl relative group/badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-star w-6 h-6 text-white">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs rounded opacity-0 group-hover/badge:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none shadow-lg">
+                                    Звезда рейтинга
+                                    <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-white"></div>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:shadow-xl relative group/badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-crown w-6 h-6 text-white">
+                                    <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+                                </svg>
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs rounded opacity-0 group-hover/badge:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none shadow-lg">
+                                    Король практики
+                                    <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-white"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-200 group"
+                         style="opacity: 0; transform: translateY(20px);">
+                        <div class="flex items-center justify-between mb-4"><h4
+                                class="text-lg font-semibold text-gray-900 dark:text-white">Рейтинг</h4><span
+                                class="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent text-xl font-bold">#125</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-500 to-orange-500 h-2 rounded-full"
+                                     style="width: 0px;"></div>
+                            </div>
+                            <div class="text-sm text-gray-800 dark:text-gray-200 font-medium"><span><span
+                                    class="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent font-bold text-base">Топ 10%</span> среди всех учеников</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="achievements" class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h2
+                class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+                style="opacity: 0; transform: translateY(20px);">Система достижений</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6" style="opacity: 0;">
+                <div class="achievement-badge bg-gradient-to-br from-purple-500 to-pink-500 p-6 rounded-2xl text-center relative group"
+                     style="opacity: 0; transform: scale(0.5);">
+                    <div class="w-20 h-20 mx-auto bg-white/20 rounded-xl flex items-center justify-center mb-4 relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide lucide-rocket w-10 h-10 text-white">
+                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                        </svg>
+                        <div class="absolute inset-0 rounded-xl glow-effect"
+                             style="background: radial-gradient(circle at 50% 50%, var(--glow-color), transparent 70%); --glow-color: rgba(var(--gradient-color-start), 0.5); opacity: 0; transition: opacity 0.2s ease-in-out;"></div>
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">Первые шаги</h4>
+                    <p class="text-white/95 text-sm font-medium tracking-wide">Начните свой путь</p>
+                    <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full">
+                        <div class="relative mt-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+                            К новым высотам!
+                            <div class="absolute left-1/2 top-full -translate-x-1/2 border-8 border-transparent border-t-gray-900 dark:border-t-white"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-badge bg-gradient-to-br from-blue-500 to-cyan-500 p-6 rounded-2xl text-center relative group"
+                     style="opacity: 0; transform: scale(0.5);">
+                    <div class="w-20 h-20 mx-auto bg-white/20 rounded-xl flex items-center justify-center mb-4 relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide lucide-zap w-10 h-10 text-white">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        <div class="absolute inset-0 rounded-xl glow-effect"
+                             style="background: radial-gradient(circle at 50% 50%, var(--glow-color), transparent 70%); --glow-color: rgba(var(--gradient-color-start), 0.5); opacity: 0; transition: opacity 0.2s ease-in-out;"></div>
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">Быстрый старт</h4>
+                    <p class="text-white/95 text-sm font-medium tracking-wide">7 дней подряд занятий</p>
+                    <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full">
+                        <div class="relative mt-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+                            Заряжен на успех!
+                            <div class="absolute left-1/2 top-full -translate-x-1/2 border-8 border-transparent border-t-gray-900 dark:border-t-white"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-badge bg-gradient-to-br from-green-500 to-emerald-500 p-6 rounded-2xl text-center relative group"
+                     style="opacity: 0; transform: scale(0.5);">
+                    <div class="w-20 h-20 mx-auto bg-white/20 rounded-xl flex items-center justify-center mb-4 relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide lucide-target w-10 h-10 text-white">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                        <div class="absolute inset-0 rounded-xl glow-effect"
+                             style="background: radial-gradient(circle at 50% 50%, var(--glow-color), transparent 70%); --glow-color: rgba(var(--gradient-color-start), 0.5); opacity: 0; transition: opacity 0.2s ease-in-out;"></div>
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">Мастер темы</h4>
+                    <p class="text-white/95 text-sm font-medium tracking-wide">100% в одной теме</p>
+                    <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full">
+                        <div class="relative mt-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+                            Достигайте своих целей!
+                            <div class="absolute left-1/2 top-full -translate-x-1/2 border-8 border-transparent border-t-gray-900 dark:border-t-white"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-badge bg-gradient-to-br from-amber-500 to-orange-500 p-6 rounded-2xl text-center relative group"
+                     style="opacity: 0; transform: scale(0.5);">
+                    <div class="w-20 h-20 mx-auto bg-white/20 rounded-xl flex items-center justify-center mb-4 relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide lucide-trophy w-10 h-10 text-white">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                            <path d="M4 22h16"></path>
+                            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                        </svg>
+                        <div class="absolute inset-0 rounded-xl glow-effect"
+                             style="background: radial-gradient(circle at 50% 50%, var(--glow-color), transparent 70%); --glow-color: rgba(var(--gradient-color-start), 0.5); opacity: 0; transition: opacity 0.2s ease-in-out;"></div>
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">Чемпион</h4>
+                    <p class="text-white/95 text-sm font-medium tracking-wide">Решите первые 10 заданий</p>
+                    <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full">
+                        <div class="relative mt-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+                            Покорите вершину рейтинга!
+                            <div class="absolute left-1/2 top-full -translate-x-1/2 border-8 border-transparent border-t-gray-900 dark:border-t-white"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-badge bg-gradient-to-br from-rose-500 to-red-500 p-6 rounded-2xl text-center relative group"
+                     style="opacity: 0; transform: scale(0.5);">
+                    <div class="w-20 h-20 mx-auto bg-white/20 rounded-xl flex items-center justify-center mb-4 relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide lucide-star w-10 h-10 text-white">
+                            <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <div class="absolute inset-0 rounded-xl glow-effect"
+                             style="background: radial-gradient(circle at 50% 50%, var(--glow-color), transparent 70%); --glow-color: rgba(var(--gradient-color-start), 0.5); opacity: 0; transition: opacity 0.2s ease-in-out;"></div>
+                    </div>
+                    <h4 class="text-white font-semibold mb-2">Мега-серия</h4>
+                    <p class="text-white/95 text-sm font-medium tracking-wide">30 дней без пропуска</p>
+                    <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full">
+                        <div class="relative mt-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+                            Сияйте ярче всех!
+                            <div class="absolute left-1/2 top-full -translate-x-1/2 border-8 border-transparent border-t-gray-900 dark:border-t-white"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="schedule" class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h2
+                class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+                style="opacity: 0; transform: translateY(20px);">Умное планирование времени</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" style="opacity: 0; transform: translateX(-20px);">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="lucide lucide-calendar w-6 h-6 text-blue-600 dark:text-blue-400">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </div>
+                        <div><h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Гибкое
+                            расписание</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Создавайте персональное расписание занятий с
+                                учетом вашего графика и целей</p></div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="lucide lucide-clock w-6 h-6 text-purple-600 dark:text-purple-400">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div><h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Отслеживание
+                            прогресса</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Следите за выполнением плана и получайте
+                                мотивирующие уведомления</p></div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="lucide lucide-trophy w-6 h-6 text-green-600 dark:text-green-400">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                                <path d="M4 22h16"></path>
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                            </svg>
+                        </div>
+                        <div><h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Система
+                            поощрений</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Получайте бонусные баллы и достижения за
+                                соблюдение расписания</p></div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl"
+                     style="opacity: 0; transform: translateX(20px);">
+                    <div class="grid grid-cols-7 gap-2">
+                        <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Пн</div>
+                        <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Вт</div>
+                        <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Ср</div>
+                        <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Чт</div>
+                        <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Пт</div>
+                        <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Сб</div>
+                        <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Вс</div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-red-500 text-white"
+                             style="transform: scale(0);"><span class="text-sm font-medium">1</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-red-500 text-white"
+                             style="transform: scale(0);"><span class="text-sm font-medium">2</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">3</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gradient-to-br from-green-500 to-emerald-500 text-white"
+                             style="transform: scale(0);"><span class="text-sm font-medium">4</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-blue-500 text-white"
+                             style="transform: scale(0);"><span class="text-sm font-medium">5</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">6</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">7</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">8</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">9</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">10</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">11</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">12</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">13</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">14</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">15</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">16</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">17</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">18</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">19</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">20</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">21</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">22</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">23</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">24</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">25</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">26</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">27</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">28</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">29</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">30</span></div>
+                        <div class="aspect-square rounded-lg p-2 flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500"
+                             style="transform: scale(0);"><span class="text-sm font-medium">31</span></div>
+                    </div>
+                    <div class="mt-6 flex flex-wrap items-center justify-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 rounded bg-gradient-to-br from-green-500 to-emerald-500"></div>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Пройдены</span></div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 rounded bg-red-500"></div>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Пропущены</span></div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 rounded bg-blue-500"></div>
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Сегодня</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="ranking" class="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h2
+                class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+                style="opacity: 0; transform: translateY(20px);">Рейтинг и достижения</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-6" style="opacity: 0; transform: translateX(-20px);"><h3
+                        class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Соревнуйтесь и
+                    побеждайте</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="lucide lucide-trophy w-6 h-6 text-yellow-600 dark:text-yellow-400">
+                                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                                    <path d="M4 22h16"></path>
+                                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                                </svg>
+                            </div>
+                            <div><h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Рейтинг среди
+                                друзей</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Соревнуйтесь с друзьями и поддерживайте
+                                    мотивацию друг друга</p></div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="lucide lucide-crown w-6 h-6 text-purple-600 dark:text-purple-400">
+                                    <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+                                </svg>
+                            </div>
+                            <div><h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Глобальный
+                                рейтинг</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Станьте лучшим среди всех учеников
+                                    платформы</p></div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="lucide lucide-star w-6 h-6 text-blue-600 dark:text-blue-400">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <div><h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Система
+                                уровней</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Повышайте свой уровень и открывайте
+                                    новые возможности</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl" style="opacity: 0;"><h3
+                        class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Топ учеников недели</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800"
+                             style="opacity: 0; transform: translateY(20px);">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-500 to-amber-500 flex items-center justify-center text-2xl font-bold text-white">
+                                1
+                            </div>
+                            <div class="flex-1"><h4 class="text-lg font-semibold text-gray-900 dark:text-white">Анна
+                                С.</h4>
+                                <p class="text-gray-600 dark:text-gray-400">2840 баллов</p></div>
+                            <div class="flex items-center text-green-500">+2</div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800"
+                             style="opacity: 0; transform: translateY(20px);">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-slate-400 to-gray-500 flex items-center justify-center text-2xl font-bold text-white">
+                                2
+                            </div>
+                            <div class="flex-1"><h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                Максим К.</h4>
+                                <p class="text-gray-600 dark:text-gray-400">2720 баллов</p></div>
+                            <div class="flex items-center text-green-500">+1</div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 rounded-xl bg-gray-50 dark:bg-gray-800"
+                             style="opacity: 0; transform: translateY(20px);">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-600 to-amber-700 flex items-center justify-center text-2xl font-bold text-white">
+                                3
+                            </div>
+                            <div class="flex-1"><h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                Елена В.</h4>
+                                <p class="text-gray-600 dark:text-gray-400">2690 баллов</p></div>
+                            <div class="flex items-center text-red-500">-1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="methodology" class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/30 rounded-full blur-3xl"
+                 style="opacity: 0; transform: scale(0);"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h2
+                class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+                style="opacity: 0; transform: translateY(20px);">Методика подготовки</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" style="opacity: 0;">
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 relative group"
+                     style="opacity: 0; transform: translateY(20px);">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round"
+                             class="lucide lucide-book-open w-20 h-20 text-white relative z-10">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        <div class="absolute inset-0" style="opacity: 0;"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Подготовка</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Тесты для тренировки конкретных областей
+                        знаний</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-600 dark:text-gray-300"
+                            style="opacity: 0; transform: translateX(-20px);">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Тесты на запоминание формул
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300"
+                            style="opacity: 0; transform: translateX(-20px);">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Упражнения на лексику
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300"
+                            style="opacity: 0; transform: translateX(-20px);">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Практика базовых концепций
+                        </li>
+                    </ul>
+                    <div class="absolute inset-0 rounded-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-10 blur-xl"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 relative group"
+                     style="opacity: 0; transform: translateY(20px);">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round"
+                             class="lucide lucide-panels-top-left w-20 h-20 text-white relative z-10">
+                            <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                            <path d="M3 9h18"></path>
+                            <path d="M9 21V9"></path>
+                        </svg>
+                        <div class="absolute inset-0" style="opacity: 0;"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Практика</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Конструктор вариантов экзамена с системой
+                        оценивания</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-600 dark:text-gray-300"
+                            style="opacity: 0; transform: translateX(-20px);">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Полные варианты ЕГЭ
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300"
+                            style="opacity: 0; transform: translateX(-20px);">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Тематические блоки
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300"
+                            style="opacity: 0; transform: translateX(-20px);">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Работа над ошибками
+                        </li>
+                    </ul>
+                    <div class="absolute inset-0 rounded-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 opacity-10 blur-xl"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 relative group"
+                     style="opacity: 0; transform: translateY(20px);">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6 relative overflow-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round"
+                             class="lucide lucide-bar-chart3 w-20 h-20 text-white relative z-10">
+                            <path d="M3 3v18h18"></path>
+                            <path d="M18 17V9"></path>
+                            <path d="M13 17V5"></path>
+                            <path d="M8 17v-3"></path>
+                        </svg>
+                        <div class="absolute inset-0" style="opacity: 0;"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Статистика</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Детальный анализ вашего прогресса</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-600 dark:text-gray-300"
+                            style="opacity: 0; transform: translateX(-20px);">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            График изменения баллов
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300"
+                            style="opacity: 0; transform: translateX(-20px);">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Статистика по заданиям
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300"
+                            style="opacity: 0; transform: translateX(-20px);">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Сравнение с друзьями
+                        </li>
+                    </ul>
+                    <div class="absolute inset-0 rounded-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-500 opacity-10 blur-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="competitors" class="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h2
+                class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+                style="opacity: 0; transform: translateY(20px);">Сравнение с конкурентами</h2>
+            <div class="overflow-x-auto">
+                <div class="inline-block min-w-full" style="opacity: 0; transform: translateY(20px);">
+                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                        <thead>
+                        <tr>
+                            <th class="px-6 py-3 bg-gray-50 dark:bg-gray-800 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                                Функции
+                            </th>
+                            <th class="px-6 py-3 bg-gray-50 dark:bg-gray-800 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                                Решу ЕГЭ
+                            </th>
+                            <th class="px-6 py-3 bg-gray-50 dark:bg-gray-800 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                                MAXIMUM Education
+                            </th>
+                            <th class="px-6 py-3 bg-gray-50 dark:bg-gray-800 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                                E-Game
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                Бесплатный доступ
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-green-500">
+                                    <path d="M20 6 9 17l-5-5"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-x w-5 h-5 text-red-500">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-green-500">
+                                    <path d="M20 6 9 17l-5-5"></path>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                Геймификация
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-x w-5 h-5 text-red-500">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-x w-5 h-5 text-red-500">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-green-500">
+                                    <path d="M20 6 9 17l-5-5"></path>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                Адаптивное обучение
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-x w-5 h-5 text-red-500">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-x w-5 h-5 text-red-500">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-green-500">
+                                    <path d="M20 6 9 17l-5-5"></path>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                Социальные механики
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-x w-5 h-5 text-red-500">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-green-500">
+                                    <path d="M20 6 9 17l-5-5"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-green-500">
+                                    <path d="M20 6 9 17l-5-5"></path>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                Интерактивные тесты
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-x w-5 h-5 text-red-500">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-green-500">
+                                    <path d="M20 6 9 17l-5-5"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-green-500">
+                                    <path d="M20 6 9 17l-5-5"></path>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                Статистика прогресса
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-x w-5 h-5 text-red-500">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-x w-5 h-5 text-red-500">
+                                    <path d="M18 6 6 18"></path>
+                                    <path d="m6 6 12 12"></path>
+                                </svg>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-check w-5 h-5 text-green-500">
+                                    <path d="M20 6 9 17l-5-5"></path>
+                                </svg>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-gradient-to-br from-blue-600 to-purple-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"><h2
+                class="text-3xl md:text-4xl font-bold text-white mb-8">Готовы начать подготовку к ЕГЭ?</h2>
+            <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto">Присоединяйтесь к тысячам студентов, которые
+                уже улучшили свои результаты с помощью E-Game</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <button class="w-full sm:w-auto px-8 py-4 bg-white text-blue-600 rounded-xl text-lg font-semibold hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                    Создать аккаунт
+                </button>
+                <button class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl text-lg font-semibold hover:bg-white/10 transition-all duration-300">
+                    Узнать больше
+                </button>
+            </div>
+        </div>
+    </section>
+{% endblock %}

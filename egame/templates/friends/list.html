@@ -1,0 +1,88 @@
+{% extends 'base-bs.html' %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/friends.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+
+  <div class="container py-5">
+    <div class="friends-container">
+      <section>
+        <h2 class="section-title">Поиск друзей</h2>
+        <form method="get" action="{% url 'users:friends:search' %}" class="search-form">
+          <div class="flex-grow-1">
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
+              {{ search_form }}
+            </div>
+          </div>
+          <button type="submit" class="btn btn-solid">
+            <i class="bi bi-search me-1"></i>
+            Найти
+          </button>
+        </form>
+      </section>
+
+      <section>
+        <h2 class="section-title">Мои друзья</h2>
+        <div class="friends-list">
+          {% for friend in friends %}
+            <div class="friend-card">
+              <div class="friend-info">
+                <div class="profile-avatar">
+                  <span>{{ friend.username|make_list|first|upper }}</span>
+                </div>
+                <div class="friend-details">
+                  <h3 class="friend-username" title="{{ friend.username }}">{{ friend.username }}</h3>
+                  <p class="friend-exams">
+                    Экзамены:{% for exam in friend.exams.all %}
+                      <span title="{{ exam.name }}">{{ exam.name }}</span>
+                    {% endfor %}
+                  </p>
+                </div>
+              </div>
+              <form method="post" action="{% url 'users:friends:remove' friend.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-bg-subtle-outline btn-danger">
+                  <i class="bi bi-person-dash me-1"></i>
+                  Удалить
+                </button>
+              </form>
+            </div>
+          {% empty %}
+            <div class="no-friends-message">У вас пока нет друзей</div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="invite-section">
+        <h3 class="invite-title">Пригласить друга</h3>
+        <div class="invite-content">
+          <p class="invite-text">Поделитесь этой ссылкой с друзьями:</p>
+          <div class="invite-link">
+            <input type="text" value="{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}" class="form-control invite-link-input" readonly />
+            <button onclick="navigator.clipboard.writeText('{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}')" class="btn btn-bg-subtle copy-button">
+              <i class="bi bi-clipboard me-1"></i>
+              Копировать
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    {% if messages %}
+      <div class="messages">
+        {% for message in messages %}
+          <div class="message {% if message.tags == 'success' %}
+              message-success
+            {% else %}
+              message-error
+            {% endif %}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

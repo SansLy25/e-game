@@ -1,0 +1,203 @@
+{% extends 'base-tw.html' %}
+{% load static %}
+{% load form_task_parameter %}
+
+{% block head_meta %}
+    <script type="module" crossorigin="" src="{% static 'js/variant_creation.js' %}"></script>
+    <link rel="stylesheet" crossorigin="" href="{% static 'css/solution.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 id="expiration_date" style="display: none">{{ expiration_date }}</h1>
+    <h1 id="start_date" style="display: none">{{ date_created }}</h1>
+    <form action="{{ request.path }}" method="post">
+        {% csrf_token %}
+        <div class="flex-1 mx-auto" style="margin-left: 0px;">
+            <div class="max-w-3xl mx-auto">
+                <div class="sticky top-0 pt-1 space-y-1 z-10">
+                    <div class="flex items-center gap-2">
+                        <div class="flex-1 bg-gray-700 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                                 style="width: 94.9167%;"></div>
+                        </div>
+                        <span class="text-sm text-gray-300 min-w-[3rem] text-right">56:57</span></div>
+                </div>
+                <div class="mt-4">
+                    {% for task in variant.tasks.all %}
+                        {% with task.get_form_key as form_key %}
+                            <div class="bg-gray-800 rounded-lg border border-gray-700 p-4 mb-4">
+                                <div class="flex justify-between items-center mb-3"><h3
+                                        class="text-lg font-semibold text-white">{{ task.subtopic.theme.name }}</h3>
+                                    <button class="text-gray-400 hover:text-white transition-colors">
+                                        № {{ task.id }}
+                                    </button>
+                                </div>
+                                <div class="mb-4 bg-white-800">{{ task.task_text_html|safe }}</div>
+
+                                <div class="mb-3">
+                                    {% if task.subtopic.theme.is_answered %}
+                                        {% get_form_field forms form_key "answer" %}
+                                    {% endif %} </div>
+                                <div>
+
+                                    <button class="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24"
+                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                             stroke-linejoin="round" class="lucide lucide-eye w-4 h-4 mr-2">
+                                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                        Показать решение{% if not task.subtopic.theme.is_answered %}, задание с
+                                        развернутым
+                                        ответом, оно не учитывается в общем подсчете{% endif %}
+                                    </button>
+                                </div>
+                            </div>
+                        {% endwith %}
+                    {% endfor %}
+                    <button class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-medium shadow-lg hover:shadow-xl transition-shadow"
+                            type="submit">
+                        Отправить решение
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Получаем скрытые элементы с датами
+            const expirationDateStr = document.getElementById("expiration_date").innerText;
+            const startDateStr = document.getElementById("start_date").innerText;
+
+            // Преобразуем строки в объекты Date (в формате UTC)
+            const expirationDate = new Date(expirationDateStr + " UTC");
+            const startDate = new Date(startDateStr + " UTC");
+
+            // Элементы для прогресс-бара и таймера
+            const progressBar = document.querySelector(".bg-blue-500");
+            const timerDisplay = document.querySelector("span.text-sm.text-gray-300");
+
+            // Функция для обновления прогресс-бара и таймера
+            function updateProgressBar() {
+                // Текущее время
+                const currentTime = new Date();
+
+                // Разница во времени
+                const totalDuration = startDate - expirationDate;  // Полная продолжительность (начало - конец)
+                const elapsedTime = startDate - currentTime;       // Прошедшее время с момента start_date
+                const remainingTime = currentTime - expirationDate; // Оставшееся время
+
+                // Если время вышло, останавливаем таймер и прогресс-бар
+                if (remainingTime <= 0) {
+                    clearInterval(progressInterval);
+                }
+
+                // Вычисление прогресса (процент прошедшего времени)
+                const progress = Math.min((elapsedTime / totalDuration) * 100, 100); // Процесс не может быть более 100%
+
+                // Обновление прогресс-бара
+                progressBar.style.width = `${progress}%`;
+
+                // Обновление таймера (часы:минуты:секунды)
+                const remainingSeconds = Math.max(remainingTime / 1000, 0); // Чтобы не было отрицательных значений
+                const hours = Math.floor(remainingSeconds / 3600);
+                const minutes = Math.floor((remainingSeconds % 3600) / 60);
+                const seconds = Math.floor(remainingSeconds % 60);
+
+                // Форматируем таймер в HH:MM:SS
+                timerDisplay.innerText = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+            }
+
+            // Обновляем прогресс-бар каждую секунду
+            const progressInterval = setInterval(updateProgressBar, 1000);
+
+            // Инициальный вызов для установки начальных значений
+            updateProgressBar();
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            // Получаем variant_id из URL
+            const url = window.location.pathname;
+            const variantIdMatch = url.match(/\/practice\/(\d+)/);
+            const variantId = variantIdMatch ? variantIdMatch[1] : null;
+
+            if (!variantId) {
+                console.error("Не удалось извлечь variant_id из URL.");
+                return;
+            }
+
+            // Обрабатываем каждую кнопку "Показать решение"
+            const buttons = document.querySelectorAll("button.flex.items-center.text-blue-400");
+
+            buttons.forEach((button) => {
+                button.addEventListener("click", async (event) => {
+                    event.preventDefault();
+
+                    // Найти task_id в соседней кнопке с номером
+                    const taskIdButton = button.closest("div.bg-gray-800").querySelector("button.text-gray-400");
+                    const taskIdRaw = taskIdButton?.textContent?.trim();
+                    const taskId = taskIdRaw ? taskIdRaw.replace("№", "").trim() : null;
+
+                    if (!taskId) {
+                        console.error("Не удалось извлечь task_id.");
+                        return;
+                    }
+
+                    // Формируем URL для API-запроса
+                    const apiUrl = `/api/practice/get_solution/${variantId}/${taskId}`;
+
+                    try {
+                        // Отправляем запрос к API
+                        const response = await fetch(apiUrl);
+                        if (!response.ok) {
+                            throw new Error(`Ошибка запроса: ${response.status}`);
+                        }
+
+                        const data = await response.json();
+                        const {answers, solution} = data;
+
+                        // Найти div.mb-4.bg-white-800 для текущего задания
+                        const solutionContainer = button.closest("div.bg-gray-800").querySelector("div.mb-4.bg-white-800");
+
+                        if (solutionContainer) {
+                            // Создать блок для решения и ответов
+                            const solutionWrapper = document.createElement("div");
+                            solutionWrapper.className = "bg-gray-700 rounded-lg p-4 mt-4 text-white";
+
+                            // Форматируем ответы
+                            let answersText = "Ответ: ";
+                            if (answers.length > 1) {
+                                answersText = "Варианты ответа: " + answers.join(", ");
+                            } else if (answers.length === 1) {
+                                answersText += answers[0];
+                            }
+
+                            // Заполняем содержимое блока
+                            solutionWrapper.innerHTML = `
+                        <h4 class="font-semibold mb-2">Решение:</h4>
+                        <div class="mb-2">${solution}</div>
+                        <div class="font-semibold text-green-400">${answersText}</div>
+                    `;
+
+                            // Вставляем после текущего контейнера
+                            solutionContainer.after(solutionWrapper);
+                        }
+
+                        // Удалить input для текущего задания
+                        const input = button.closest("div.bg-gray-800").querySelector("input");
+                        if (input) {
+                            input.remove();
+                        }
+
+                        // Отключить кнопку "Показать решение" после загрузки
+                        button.disabled = true;
+                        button.textContent = "Решение показано";
+                    } catch (error) {
+                        console.error("Ошибка загрузки решения:", error);
+                        alert("Не удалось загрузить решение. Попробуйте снова.");
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

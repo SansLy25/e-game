@@ -1,93 +1,144 @@
-# team-13
+# E-Game
+<p>
+    <a
+    href="https://gitlab.crja72.ru/django/2024/autumn/course/projects/team-13/-/jobs">
+        <img
+            src="https://gitlab.crja72.ru/django/2024/autumn/course/projects/team-13/badges/main/pipeline.svg"
+            alt="pipeline status"
+            height="30"
+            width="150">
+    </a>
+    <a
+    href="https://lms.yandex.ru/courses/1187/groups/34382">
+        <img
+            src="https://img.shields.io/badge/Яндекс - LMS-dc2600?&logo=answer&logoColor=fc401d&logoSize=auto"
+            alt="Яндекс Лицей"
+            height="30"
+            width="150">
+    </a>
+    <a
+    href="https://docs.djangoproject.com/en/4.2/">
+        <img
+            src="https://img.shields.io/badge/Django_4.2 - LTS-103f2d?&logo=django&labelColor=186748&logoSize=auto"
+            alt="Путь джангиста"
+            height="30"
+            width="150">
+    </a>
+</p>
 
+## Оглавление
 
+- [📋 Описание](#-описание)
+- [💻 Требования](#-требования)
+- [🚀 Установка и запуск проекта](#-установка-и-запуск-проекта)
+	- [📂 Шаг 1: Клонирование репозитория](#-шаг-1-клонирование-репозитория)
+	- [⚙ Шаг 2:  Создание файла окружения (.env)](#-шаг-2-создание-файла-окружения-env)
+	- [🖥 Шаг 3:  Создание и активация виртуальной среды](#-шаг-3-создание-и-активация-виртуальной-среды)
+	- [🔃 Шаг 4: Установка зависимостей](#-шаг-4-установка-зависимостей)
+		- [💼 Основные зависимости (prod)](#-основные-зависимости-prod)
+		- [🧪 Зависимости для тестов (test)](#-зависимости-для-тестов-test)
+			- [🧩 Запуск тестов](#-запуск-тестов)
+		- [🛠️ Зависимости для разработки (dev)](#%EF%B8%8F-зависимости-для-разработки-dev)
+	- [📤 Шаг 5: Применение миграций и запуск в dev-режиме](#-шаг-5-применение-миграций-и-запуск-в-dev-режиме)
 
-## Getting started
+## 📋 Описание
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+В данном руководстве описаны шаги для установки и запуска проекта в dev-режиме на Linux.
+## 💻 Требования
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Перед началом убедитесь, что на вашей системе установлены следующие компоненты:
 
-## Add your files
+- **Python 3.10+** (проверьте с помощью `python3 --version`)
+- **pip** (проверьте с помощью `pip --version`)
+- **Git** (проверьте с помощью `git --version`)
+- **Виртуальная среда Python** (venv)
+- **Linux Shell** (например, Bash)
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## 🚀 Установка и запуск проекта
 
+### 📂 Шаг 1: Клонирование репозитория
+
+Клонируйте репозиторий проекта с помощью Git:
+
+```bash
+git clone https://gitlab.crja72.ru/django/2024/autumn/course/projects/team-13
+cd team-13
 ```
-cd existing_repo
-git remote add origin https://gitlab.crja72.ru/django/2024/autumn/course/projects/team-13.git
-git branch -M main
-git push -uf origin main
+
+### ⚙ Шаг 2:  Создание файла окружения (.env)
+
+В проекте имеется файл `.env.example`, который содержит пример конфигурационных переменных окружения. Вы можете использовать его в качестве шаблона для создания собственного `.env` файла:
+
+```bash
+cp .env.example .env
 ```
 
-## Integrate with your tools
+После этого отредактируйте `.env`, добавив свои значения переменных.
 
-- [ ] [Set up project integrations](https://gitlab.crja72.ru/django/2024/autumn/course/projects/team-13/-/settings/integrations)
+### 🖥 Шаг 3:  Создание и активация виртуальной среды
 
-## Collaborate with your team
+Создайте виртуальную среду с помощью команды `venv`, которая позволяет изолировать зависимости проекта:
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+```bash
+python3 -m venv venv
+```
 
-## Test and Deploy
+Активируйте виртуальную среду:
 
-Use the built-in continuous integration in GitLab.
+```bash
+source venv/bin/activate
+```
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### 🔃 Шаг 4: Установка зависимостей
 
-***
+Зависимости разделены на четыре группы:
 
-# Editing this README
+- **Основные (prod)** – необходимые для продакшена.
+- **Для тестов (test)** – зависимости для тестирования.
+- **Для разработки (dev)** – дополнительные зависимости для разработки.
+- **Для анализа кода (flake8)** – дополнительные зависимости для анализа кода.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+#### 💼 Основные зависимости (prod)
 
-## Suggestions for a good README
+Для продакшена установите только основные зависимости:
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+```bash
+pip install -r requirements/prod.txt
+```
 
-## Name
-Choose a self-explaining name for your project.
+#### 🧪 Зависимости для тестов (test)
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Если вы запускаете тесты, установите основные зависимости для тестов (они включают все **prod** зависимости)
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+```bash
+pip install -r requirements/test.txt
+```
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+##### 🧩 Запуск тестов
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Для проверки целостности проекта и корректности работы всех компонентов, используйте команду:
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+```bash
+python3 manage.py test
+```
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+#### 🛠️ Зависимости для разработки (dev)
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Для локальной разработки используйте зависимости для разработки (они включают все **test** зависимости)
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+```bash
+pip install -r  requirements/dev.txt
+```
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+### 📤 Шаг 5: Применение миграций и запуск в dev-режиме
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+Примените миграции, чтобы создать начальные таблицы в базе данных, и запустите сервер:
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+```bash
+cd egame
+python3 manage.py migrate
+python3 manage.py runserver
+```
 
-## License
-For open source projects, say how it is licensed.
+Проект будет доступен по адресу: http://127.0.0.1:8000/.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.

@@ -1,0 +1,38 @@
+stages:
+  - linting
+  - test
+
+variables:
+  PYTHON_VERSION: "3.11"
+
+black:
+  stage: linting
+  image: registry.gitlab.com/pipeline-components/black:latest
+  script:
+    - apk add --no-cache make
+    - make black-check
+
+isort:
+  stage: linting
+  image: python:${PYTHON_VERSION}
+  needs:
+    - black
+  script:
+    - make isort-check
+
+flake8:
+  stage: linting
+  image: registry.gitlab.com/pipeline-components/flake8:latest
+  needs:
+    - isort
+  script:
+    - apk add --no-cache make
+    - make check-flake8-requirements
+    - make flake8-check
+
+test:
+  stage: test
+  image: python:${PYTHON_VERSION}
+  script:
+    - make check-test-requirements
+    - make test
