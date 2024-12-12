@@ -11,11 +11,14 @@ import users.urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include(homepage.urls)),
+    path("", include(homepage.urls, namespace="homepage")),
     path("", include(users.urls, namespace="users")),
     path("", include(django.contrib.auth.urls)),
-    path("api/practice/", include(practice.urls)),
-    path("<slug:exam_slug>/practice/", include(practice.urls)),
+    path("api/practice/", include(practice.urls, namespace="api")),
+    path(
+        "<slug:exam_slug>/practice/",
+        include(practice.urls, namespace="practice"),
+    ),
 ]
 
 if settings.DEBUG:

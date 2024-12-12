@@ -55,7 +55,6 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "egame.context_processors.navigation",
             ],
         },
     },
@@ -110,53 +109,6 @@ AUTH_USER_MODEL = "users.User"
 
 LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = "users:profile"
-
-NAVIGATION_ITEMS = [
-    {
-        "forward_urls": [
-            {
-                "url": "homepage:home",
-                "name": "Главная",
-                "is_authenticated": False,
-            },
-            {
-                "url": "rating:rating",
-                "name": "Рейтинг",
-                "is_authenticated": False,
-            },
-            {
-                "url": "users:profile",
-                "name": "Профиль",
-                "is_authenticated": True,
-            },
-            {
-                "url": "statistic:user",
-                "name": "Статистика",
-                "is_authenticated": True,
-            },
-        ],
-        "down_lists": [
-            {
-                "title": "О нас",
-                "urls": [
-                    {
-                        "url": "about:about_project",
-                        "name": "Проект",
-                    },
-                    {
-                        "url": "about:about_team",
-                        "name": "Команда",
-                    },
-                    {
-                        "url": "about:thanks",
-                        "name": "Благодарности",
-                    },
-                ],
-                "is_authenticated": True,
-            },
-        ],
-    },
-]
 
 if DEBUG is True:
     MIDDLEWARE += ("debug_toolbar.middleware.DebugToolbarMiddleware",)

@@ -12371,12 +12371,14 @@ function dB() {
                                 }, s.to))]
                             })
                         })]
-                    }, a.name)), P.jsx(Q.button, {
+                    }, a.name)), P.jsx(Q.a, {
                         className: "px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:shadow-xl",
                         whileHover: {scale: 1.05},
                         whileTap: {scale: .95},
                         transition: {duration: .2},
-                        children: "Войти в аккаунт"
+                        children: "Войти в аккаунт",
+                        href: "login/",
+
                     })]
                 }), P.jsx("div", {
                     className: "flex md:hidden items-center",
@@ -12455,12 +12457,14 @@ function hB() {
                     initial: {opacity: 0, y: 20},
                     animate: {opacity: 1, y: 0},
                     transition: {duration: .3, delay: .3},
-                    children: [P.jsxs("button", {
+                    children: [P.jsxs("a", {
                         className: "w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl text-lg font-semibold hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-2",
-                        children: [P.jsx("span", {children: "Создать аккаунт"}), P.jsx(MM, {className: "w-5 h-5"})]
-                    }), P.jsx("button", {
+                        children: [P.jsx("span", {children: "Создать аккаунт"}), P.jsx(MM, {className: "w-5 h-5"})],
+                        href: "signup/",
+                    }), P.jsx("a", {
                         className: "w-full sm:w-auto px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-lg font-semibold hover:shadow-lg transition-all duration-200 border-2 border-gray-200 dark:border-gray-700 hover:scale-105",
-                        children: "Попробовать демо"
+                        children: "Попробовать демо",
+                        href: "/",
                     })]
                 })]
             })
@@ -28981,9 +28985,10 @@ function tse() {
                     children: "Присоединяйтесь к тысячам студентов, которые уже улучшили свои результаты с помощью E-Game"
                 }), P.jsxs("div", {
                     className: "flex flex-col sm:flex-row justify-center items-center gap-4",
-                    children: [P.jsx("button", {
+                    children: [P.jsx("a", {
                         className: "w-full sm:w-auto px-8 py-4 bg-white text-blue-600 rounded-xl text-lg font-semibold hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1",
-                        children: "Создать аккаунт"
+                        children: "Создать аккаунт",
+                        href: "signup/"
                     }), P.jsx("button", {
                         className: "w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl text-lg font-semibold hover:bg-white/10 transition-all duration-300",
                         children: "Узнать больше"
