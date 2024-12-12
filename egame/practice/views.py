@@ -126,7 +126,7 @@ class VariantCreationView(TemplateView):
 
             variant.save()
             return redirect(
-                "variant_solution",
+                "practice:variant_solution",
                 exam_slug=exam.slug,
                 variant_id=variant.id,
             )

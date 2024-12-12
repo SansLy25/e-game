@@ -7,10 +7,11 @@
             <div class="hidden md:flex items-center space-x-8">
                 <a href="/"
                    class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Главная</a><a
-                    href="/rating"
-                    class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Рейтинг</a><a
-                    href="/profile"
+                    href="{% url 'users:profile' %}"
                     class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Профиль</a><a
+                    href="{% url 'users:friends:list' %}"
+                    class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Друзья</a>
+                <a
                     href="/stats"
                     class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Статистика</a>
                 <div class="relative group">
@@ -23,10 +24,11 @@
                         </svg>
                     </button>
                 </div>
-
-                <button class="px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:shadow-xl transition-shadow">
-                    Войти в аккаунт
-                </button>
+                {% if not request.user.is_authenticated %}
+                    <button class="px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:shadow-xl transition-shadow">
+                        Войти в аккаунт
+                    </button>
+                {% endif %}
             </div>
             <div class="flex md:hidden items-center">
                 <button class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">

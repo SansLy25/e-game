@@ -1,5 +1,5 @@
 :root {
-    --base-border-radius: 20px;
+    --base-border-radius: 15px;
     --base-btn-border-radius: 10px;
 }
 
@@ -243,4 +243,8 @@ main {
     font-weight: 600;
     margin: 0;
     position: relative;
+}
+
+a {
+  text-decoration: none;
 }
