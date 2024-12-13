@@ -12,11 +12,9 @@
     <div class="friends-container container-main container-rounded-x2">
       <section>
         <form method="get" class="search-form" id="search-form">
-          <div class="flex-grow-1">
-            <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-search"></i></span>
-              {{ search_form.username }}
-            </div>
+          <div class="input-group input-group-bg-subtle-outline">
+            <span class="input-group-icon"><i class="bi bi-search"></i></span>
+            {{ search_form.username }}
           </div>
         </form>
       </section>
@@ -45,14 +43,14 @@
                 <form method="post" action="{% url 'users:friends:accept' friend_request.pk %}">
                   {% csrf_token %}
                   <button type="submit" class="btn btn-bg-subtle btn-success">
-                    <i class="bi bi-person-check me-1"></i>
+                    <i class="bi bi-person-check"></i>
                     Принять
                   </button>
                 </form>
                 <form method="post" action="{% url 'users:friends:reject' friend_request.pk %}">
                   {% csrf_token %}
                   <button type="submit" class="btn btn-bg-subtle btn-danger">
-                    <i class="bi bi-person-x me-1"></i>
+                    <i class="bi bi-person-x"></i>
                     Отклонить
                   </button>
                 </form>
@@ -85,7 +83,7 @@
               <form method="post" action="{% url 'users:friends:remove' friend.id %}">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-bg-subtle btn-danger">
-                  <i class="bi bi-person-dash me-1"></i>
+                  <i class="bi bi-person-dash"></i>
                   Удалить
                 </button>
               </form>
@@ -101,16 +99,15 @@
         <div class="invite-content">
           <p class="invite-text">Поделитесь этой ссылкой с друзьями:</p>
           <div class="invite-link">
-            <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-link-45deg"></i></span>
+            <div class="input-group input-group-bg-subtle-outline">
+              <span class="input-group-icon"><i class="bi bi-link-45deg"></i></span>
               <input type="text" value="{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}" class="form-control invite-link-input" readonly />
             </div>
-            <button onclick="navigator.clipboard.writeText('{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}')" class="btn btn-bg-subtle-outline copy-button">
-              <i class="bi bi-clipboard-fill me-1"></i>
+            <button onclick="navigator.clipboard.writeText('{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}')" class="btn btn-bg-subtle-outline">
+              <i class="bi bi-clipboard-fill"></i>
               Копировать
             </button>
           </div>
-          {% comment %} # TODO: make share button {% endcomment %}
         </div>
       </section>
     </div>

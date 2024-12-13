@@ -35,7 +35,9 @@
     <div class="form-alert form-alert-{% if message.tags %}
         {{ message.tags }}
       {% else %}
+        
         info
+
       {% endif %}"
       role="alert">
       <div class="form-alert-content">
@@ -109,22 +111,19 @@
     <div class="form-buttons">
       {% if cancel %}
         <button onclick="{% if cancel.url %}
-            window.location.href=
-            '{% url cancel.url %}'
+            window.location.href='{% url cancel.url %}'
           {% else %}
             window.history.back()
           {% endif %}"
-          class="btn btn-bg-subtle btn-danger btn-md">
-          <i class="bi {{ cancel.icon }} me-2"></i>
-          {% trans cancel.text %}
+          class="btn btn-bg-subtle btn-danger">
+          <i class="bi {{ cancel.icon }}"></i>
+          <span>{% trans cancel.text %}</span>
         </button>
       {% endif %}
       {% if submit %}
-        <button type="submit" class="btn btn-solid btn-md">
-          <span>
-            <i class="bi {{ submit.icon }} me-2"></i>
-            {% trans submit.text %}
-          </span>
+        <button type="submit" class="btn btn-solid">
+          <i class="bi {{ submit.icon }}"></i>
+          <span>{% trans submit.text %}</span>
         </button>
       {% endif %}
     </div>

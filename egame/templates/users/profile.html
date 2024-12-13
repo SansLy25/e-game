@@ -10,6 +10,7 @@
   <div class="container-lg">
     <div class="profile-container container-main container-rounded-x3">
       <div class="profile-header">
+        <div class="profile-header-bg"></div>
         <div class="profile-avatar">
           <span>{{ user.username|make_list|first|upper }}</span>
         </div>
@@ -71,13 +72,13 @@
           </div>
         {% endif %} {% endcomment %}
         <a href="{% url 'users:friends:list' %}" class="btn btn-solid btn-profile-action">
-          <i class="bi bi-people-fill me-1"></i>
+          <i class="bi bi-people-fill"></i>
           Управление друзьями
         </a>
         <form method="post" action="{% url 'users:logout' %}">
           {% csrf_token %}
-          <button type="submit" class="btn btn-bg-subtle btn-danger btn-profile-action">
-              <i class="bi bi-box-arrow-right me-1"></i>
+          <button type="submit" class="btn btn-bg-subtle-outline btn-danger btn-profile-action">
+              <i class="bi bi-box-arrow-right"></i>
               Выйти
           </button>
         </form>
