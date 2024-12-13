@@ -147,6 +147,3 @@ class Fine(models.Model):
         on_delete=models.CASCADE,
         verbose_name="задание",
     )
-
-
-__all__ = ()

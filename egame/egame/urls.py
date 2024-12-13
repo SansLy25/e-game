@@ -33,5 +33,3 @@ if settings.DEBUG:
     urlpatterns += (
         django.urls.path("__debug/", django.urls.include(debug_toolbar.urls)),
     )
-
-__all__ = ()

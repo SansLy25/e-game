@@ -18,6 +18,7 @@ ul {
 
 .input-group {
     flex-wrap: nowrap;
+    overflow: hidden;
 }
 
 .input-group .input-group-text {
@@ -26,7 +27,7 @@ ul {
     background: var(--bg-color-secondary);
     border: 2px solid var(--text-border);
     border-right: none;
-    border-radius: 16px 0 0 16px;
+    border-radius: var(--base-border-radius) 0 0 var(--base-border-radius);
     color: var(--text-secondary);
     white-space: nowrap;
 }
@@ -34,16 +35,24 @@ ul {
 .form-control {
     border: 2px solid var(--text-border) !important;
     border-left: none !important;
-    border-radius: 0 16px 16px 0 !important;
+    border-radius: 0 var(--base-border-radius) var(--base-border-radius) 0 !important;
     color: var(--text-main) !important;
+    position: relative;
 }
 
 .input-group .input-group-text,
 .form-control {
     color: var(--text-main);
-    padding: 0.5rem 1rem;
     transition: all 0.3s ease;
     background-color: var(--bg-color-secondary);
+}
+
+.input-group .input-group-text {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+.form-control {
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
 }
 
 .form-control:focus {
@@ -84,7 +93,6 @@ ul {
 
 
 .form-check {
-    position: relative;
     padding: 0.75rem 1rem;
     margin-bottom: 0.5rem;
     background-color: var(--bg-color-secondary);
@@ -131,9 +139,9 @@ ul {
 }
 
 .checkbox-group {
+    padding: 0.5rem;
     border: 2px solid var(--text-border);
     border-radius: var(--base-border-radius);
-    padding: 0.5rem;
     background-color: var(--bg-color-main);
 }
 
@@ -162,24 +170,12 @@ ul {
 
 
 .info-box {
+    padding: 1.5rem;
     color: var(--text-main);
     position: relative;
     overflow: hidden;
-    padding: 1.5rem;
-    background-color: var(--bg-color-main);
-    border-radius: var(--base-border-radius);
     box-shadow: 0 4px 15px 3px rgba(0, 0, 0, 0.05);
-}
-
-.info-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 6px;
-    height: 100%;
-    background: var(--base-color);
-    border-radius: 3px 0 0 3px;
+    width: 100%;
 }
 
 .info-icon {
@@ -209,7 +205,6 @@ ul {
 }
 
 .form-alert {
-    position: relative;
     padding: 1rem 1.25rem;
     margin-bottom: 1.5rem;
     border: none;
@@ -330,16 +325,14 @@ ul {
 }
 
 .form-container {
-    background-color: var(--bg-color-main);
-    border-radius: var(--base-border-radius);
-    box-shadow: 0 4px 15px 3px rgba(0, 0, 0, 0.05);
     padding: 2rem;
+    box-shadow: 0 4px 15px 3px rgba(0, 0, 0, 0.05);
 }
 
 .form-error {
+    padding: 1rem;
     background-color: var(--base-color-subtle);
     border-radius: var(--base-border-radius);
-    padding: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -396,7 +389,7 @@ ul {
     background-color: var(--bg-color-secondary);
     color: var(--text-secondary);
     font-size: 0.9rem;
-    border-radius: var(--base-btn-border-radius);
+    border-radius: var(--base-border-radius);
 }
 
 .form-footer-links {
@@ -408,14 +401,14 @@ ul {
 
 
 .form-footer-item {
+    padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     column-gap: 1rem;
-    padding: 1rem 1.5rem;
     background-color: var(--bg-color-main);
-    border-radius: var(--base-border-radius);
+    border-radius: var(--base-border-radius-x1_5);
     box-shadow: 0 4px 15px 3px rgba(0, 0, 0, 0.05);
     transition: all 0.2s ease;
 }
@@ -469,4 +462,22 @@ ul {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+}
+
+.form-control::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), var(--bg-color-main) 80%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.form-control:not(:placeholder-shown)::after,
+.form-control[readonly]::after {
+    opacity: 1;
 }

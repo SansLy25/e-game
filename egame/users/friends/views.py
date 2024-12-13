@@ -4,72 +4,119 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, RedirectView, TemplateView
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from users.forms import UserSearchForm
-from users.models import User
+from users.message import Message
+from users.models import FriendRequest, User
+from users.serializers import UserSerializer
 
-__all__ = ()
 
-
-class FriendListView(LoginRequiredMixin, ListView):
+class FriendsListView(LoginRequiredMixin, ListView):
     template_name = "friends/list.html"
     context_object_name = "friends"
+    paginate_by = 10
 
     def get_queryset(self):
-        return self.request.user.friends.all()
+        user = self.request.user
+        queryset = (
+            user.friends.all().prefetch_related("exams").order_by("username")
+        )
+
+        form = UserSearchForm(self.request.GET)
+        if form.is_valid():
+            username = form.cleaned_data["username"]
+            if username:
+                return queryset.filter(username__icontains=username)
+
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["search_form"] = UserSearchForm()
-        context["friend_link"] = self.request.build_absolute_uri(
-            self.request.user.get_friend_link(),
+        user = self.request.user
+        context["search_form"] = UserSearchForm(self.request.GET)
+        context["pending_requests"] = user.received_friend_requests.filter(
+            accepted=False,
+            rejected=False,
         )
         return context
 
 
-class UserSearchView(LoginRequiredMixin, TemplateView):
+class UserSearchView(LoginRequiredMixin, ListView):
     template_name = "friends/search_results.html"
+    context_object_name = "users"
+    paginate_by = 10
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+    def get_queryset(self):
         form = UserSearchForm(self.request.GET)
-        users = []
-
         if form.is_valid() and form.cleaned_data.get("username"):
             username = form.cleaned_data["username"]
-            users = User.objects.filter(
+            return User.objects.filter(
                 username__icontains=username,
             ).exclude(
                 Q(id=self.request.user.id) | Q(friends=self.request.user),
             )
 
-        context["users"] = users
-        context["form"] = form
+        return User.objects.none()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = UserSearchForm(self.request.GET)
         return context
+
+
+class SearchResultsView(LoginRequiredMixin, APIView):
+    def get(self, request, *args, **kwargs):
+        form = UserSearchForm(request.GET)
+        if form.is_valid():
+            username = form.cleaned_data["username"]
+            if username and username.strip():
+                users = User.objects.search_by_username(
+                    username,
+                    exclude_user=request.user,
+                ).prefetch_related("exams")[:5]
+                serializer = UserSerializer(users, many=True)
+                return Response({"users": serializer.data})
+
+            return Response({"users": []})
+
+        return Response(
+            {"error": "Invalid request"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
 
 
 class AddFriendView(LoginRequiredMixin, RedirectView):
     url = reverse_lazy("users:friends:list")
 
     def get_redirect_url(self, *args, **kwargs):
+        message = Message(self.request)
         try:
-            username = kwargs.get("username")
-            friend = get_object_or_404(
-                User,
-                **(
-                    {"username": username}
-                    if username
-                    else {"pk": kwargs.get("pk")}
-                ),
-            )
-            if friend != self.request.user:
-                self.request.user.friends.add(friend)
-                messages.success(
-                    self.request,
-                    f"Пользователь {friend.username} добавлен в друзья!",
-                )
+            to_user = User.objects.get_by_username_or_pk(**kwargs)
+            if to_user != self.request.user:
+                if not FriendRequest.objects.filter(
+                    from_user=self.request.user,
+                    to_user=to_user,
+                ).exists():
+                    FriendRequest.objects.create(
+                        from_user=self.request.user,
+                        to_user=to_user,
+                    )
+                    message.success(
+                        "Заявка в друзья пользователю"
+                        f" {to_user.username} отправлена!",
+                    )
+                else:
+                    message.warning(
+                        "Заявка в друзья пользователю"
+                        f" {to_user.username} уже отправлена.",
+                    )
+            else:
+                message.error("Нельзя добавить себя в друзья.")
         except User.DoesNotExist:
-            messages.error(self.request, "Пользователь не найден")
+            message.error("Пользователь не найден")
 
         return super().get_redirect_url(*args, **kwargs)
 
@@ -85,3 +132,56 @@ class RemoveFriendView(LoginRequiredMixin, RedirectView):
             f"Пользователь {friend.username} удален из друзей",
         )
         return super().get_redirect_url(*args, **kwargs)
+
+
+class AcceptFriendRequestView(LoginRequiredMixin, RedirectView):
+    url = reverse_lazy("users:friends:list")
+
+    def get_redirect_url(self, *args, **kwargs):
+        friend_request = get_object_or_404(
+            FriendRequest,
+            pk=kwargs["pk"],
+            to_user=self.request.user,
+            accepted=False,
+            rejected=False,
+        )
+        friend_request.accept()
+        message = (
+            "Вы подружились с пользователем"
+            f" {friend_request.from_user.username}"
+        )
+        messages.success(self.request, message)
+        return super().get_redirect_url(*args, **kwargs)
+
+
+class RejectFriendRequestView(LoginRequiredMixin, RedirectView):
+    url = reverse_lazy("users:friends:list")
+
+    def get_redirect_url(self, *args, **kwargs):
+        friend_request = get_object_or_404(
+            FriendRequest,
+            pk=kwargs["pk"],
+            to_user=self.request.user,
+            accepted=False,
+            rejected=False,
+        )
+        friend_request.reject()
+        message = (
+            "Вы отклонили заявку пользователя"
+            f" {friend_request.from_user.username}"
+        )
+        messages.info(self.request, message)
+        return super().get_redirect_url(*args, **kwargs)
+
+
+class UserCardView(TemplateView):
+    template_name = "friends/user_card.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user_id = self.request.GET.get("user_id")
+        context["user"] = get_object_or_404(
+            User.objects.prefetch_related("exams"),
+            pk=user_id,
+        )
+        return context

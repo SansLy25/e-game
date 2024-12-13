@@ -1,13 +1,13 @@
+:root {
+    --profile-container-br: var(--base-border-radius-x3);
+}
+
 body {
   background-color: var(--bg-color-secondary);
 }
 
 .profile-container {
-  background-color: var(--bg-color-main);
-  border-radius: var(--base-border-radius);
-  box-shadow: 0 4px 15px 3px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  position: relative;
 }
 
 .profile-header {
@@ -93,6 +93,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1.5rem;
 }
 
 .profile-stat-value {
@@ -113,8 +114,6 @@ body {
 }
 
 .profile-section {
-  background-color: var(--bg-color-secondary);
-  border-radius: var(--base-border-radius);
   padding: 1.5rem;
 }
 
@@ -133,19 +132,10 @@ body {
 }
 
 .exam-item {
-  background-color: var(--bg-color-main);
-  border: 1px solid var(--text-border);
-  border-radius: calc(var(--base-border-radius) / 2);
   padding: 0.75rem;
-  transition: all 0.2s ease;
   text-align: center;
   overflow: hidden;
   position: relative;
-}
-
-.exam-item:hover {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
 }
 
 .exam-item:hover .exam-name::after {
@@ -174,12 +164,12 @@ body {
 }
 
 .friend-item {
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   background-color: var(--bg-color-main);
   border: 1px solid var(--text-border);
-  border-radius: calc(var(--base-border-radius) / 2);
-  padding: 0.5rem;
+  border-radius: var(--base-border-radius-x0_5);
   transition: all 0.2s ease;
   overflow: hidden;
   position: relative;
@@ -258,7 +248,6 @@ body {
   width: 100%;
   height: 130px;
   background: linear-gradient(45deg, var(--base-color), var(--base-color-subtle));
-  border-radius: var(--base-border-radius) var(--base-border-radius) 0 0;
   z-index: 0;
 }
 

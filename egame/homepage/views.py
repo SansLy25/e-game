@@ -61,6 +61,3 @@ class ExamHomePageView(TemplateView):
         context["verbose_exam"] = verbose
         context["phrase"] = random.choice(PHRASES[context["exam_slug"]])
         return context
-
-
-__all__ = ()
