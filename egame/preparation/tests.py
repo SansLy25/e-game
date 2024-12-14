@@ -26,12 +26,14 @@ class PreparationTests(django.test.TestCase):
             question="Какова степень произведения \\(2^3 \\cdot 2^4\\?",
             correct_answer="\\(2^7\\)",
             options=["\\(2^5\\)", "\\(2^6\\)", "\\(2^7\\)", "\\(2^8\\)"],
+            order=1,
         )
         self.task2 = preparation.models.Task.objects.create(
             test=self.test,
             question="Каково значение \\((3^2)^3\\)?",
             correct_answer="\\(3^6\\)",
             options=["\\(3^5\\)", "\\(3^6\\)", "\\(3^7\\)", "\\(3^8\\"],
+            order=2,
         )
 
         self.user = users.models.User.objects.create_user(
@@ -165,7 +167,7 @@ class PreparationTests(django.test.TestCase):
         )
         detail_url = django.urls.reverse(
             "preparation:test",
-            kwargs={"exam_slug": "math", "pk": self.task1.pk},
+            kwargs={"exam_slug": "math", "order": self.task1.order},
         )
 
         response = self.client.get(list_url)

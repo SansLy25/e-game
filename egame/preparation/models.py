@@ -33,11 +33,17 @@ class Task(django.db.models.Model):
         max_length=255,
     )
     options = django.db.models.JSONField("варианты ответа")
+    order = django.db.models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return self.question
+        return f"{self.test.title} - {self.question}"
 
     class Meta:
+        unique_together = (
+            "test",
+            "order",
+        )  # Уникальность порядка внутри одного теста
+        ordering = ["order"]  # Задания автоматически сортируются по порядку
         verbose_name = "задание"
         verbose_name_plural = "задания"
 

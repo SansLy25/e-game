@@ -30,10 +30,10 @@ class TestListView(BaseLoginRequired, django.views.View):
 
 
 class TaskView(BaseLoginRequired, django.views.View):
-    def get(self, request, exam_slug, pk):
+    def get(self, request, exam_slug, order):
         test = django.shortcuts.get_object_or_404(
             preparation.models.Test,
-            pk=pk,
+            pk=order,
             exam__slug=exam_slug,
         )
         task = test.tasks.first()
@@ -42,7 +42,7 @@ class TaskView(BaseLoginRequired, django.views.View):
             return django.http.HttpResponseRedirect(
                 django.urls.reverse(
                     "preparation:task_detail",
-                    args=[exam_slug, test.id, task.id],
+                    args=[exam_slug, test.id, task.order],
                 ),
             )
 
@@ -54,7 +54,7 @@ class TaskView(BaseLoginRequired, django.views.View):
 
 
 class TaskDetailView(BaseLoginRequired, django.views.View):
-    def get(self, request, exam_slug, test_id, pk):
+    def get(self, request, exam_slug, test_id, order):
         test = django.shortcuts.get_object_or_404(
             preparation.models.Test,
             pk=test_id,
@@ -62,7 +62,7 @@ class TaskDetailView(BaseLoginRequired, django.views.View):
         )
         task = django.shortcuts.get_object_or_404(
             preparation.models.Task,
-            pk=pk,
+            order=order,
             test=test,
         )
 
@@ -76,7 +76,7 @@ class TaskDetailView(BaseLoginRequired, django.views.View):
             },
         )
 
-    def post(self, request, exam_slug, test_id, pk):
+    def post(self, request, exam_slug, test_id, order):
         test = django.shortcuts.get_object_or_404(
             preparation.models.Test,
             pk=test_id,
@@ -84,26 +84,26 @@ class TaskDetailView(BaseLoginRequired, django.views.View):
         )
         task = django.shortcuts.get_object_or_404(
             preparation.models.Task,
-            pk=pk,
             test=test,
+            order=order,
         )
         user_answer = request.POST.get("answer")
 
         session_key = f"test_{test.id}_answers"
         answers = request.session.get(session_key, {})
-        answers[str(task.id)] = {
+        answers[str(task.order)] = {
             "question": task.question,
             "user_answer": user_answer,
             "correct_answer": task.correct_answer,
         }
         request.session[session_key] = answers
 
-        next_task = test.tasks.filter(id__gt=task.id).first()
+        next_task = test.tasks.filter(order__gt=task.order).first()
         if next_task:
             return django.http.HttpResponseRedirect(
                 django.urls.reverse(
                     "preparation:task_detail",
-                    args=[exam_slug, test_id, next_task.id],
+                    args=[exam_slug, test_id, next_task.order],
                 ),
             )
 

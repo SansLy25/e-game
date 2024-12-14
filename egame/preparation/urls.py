@@ -12,12 +12,12 @@ urlpatterns = [
         name="test_list",
     ),
     django.urls.path(
-        "test/<int:pk>/",
+        "test/<int:order>/",
         preparation.views.TaskView.as_view(),
         name="test",
     ),
     django.urls.path(
-        "test/<int:test_id>/<int:pk>/",
+        "test/<int:test_id>/<int:order>/",
         preparation.views.TaskDetailView.as_view(),
         name="task_detail",
     ),
