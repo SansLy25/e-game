@@ -16,6 +16,22 @@
       }
   },
   {
+    "model": "preparation.test",
+    "pk": 3,
+    "fields": {
+        "exam": 3,
+        "title": "Сила тяжести"
+    }
+  },
+  {
+    "model": "preparation.test",
+    "pk": 4,
+    "fields": {
+      "exam": 2,
+      "title": "Формулы сокращенного умножения"
+    }
+  },
+  {
     "model": "preparation.task",
     "pk": 1,
     "fields": {
@@ -179,6 +195,214 @@
         "От ударения",
         "От согласной(-ых) на конце корня",
         "От смысла"
+      ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 12,
+    "fields": {
+        "test": 3,
+        "order": 1,
+        "question": "Какова формула силы тяжести?",
+        "correct_answer": "\\(F = mg\\)",
+        "options": [
+          "\\(F = ma\\)", 
+          "\\(F = mg\\)", 
+          "\\(F = \\frac{m}{g}\\)", 
+          "\\(F = m^2g\\)"
+        ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 13,
+    "fields": {
+        "test": 3,
+        "order": 2,
+        "question": "Какая физическая величина измеряется в Н (Ньютонах)?",
+        "correct_answer": "Сила",
+        "options": [
+          "Сила", 
+          "Масса", 
+          "Энергия", 
+          "Ускорение"
+        ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 14,
+    "fields": {
+        "test": 3,
+        "order": 3,
+        "question": "Чему равна сила тяжести на теле массой 10 кг, если ускорение свободного падения равно \\(9.8 \\frac{м}{с^2}\\)?",
+        "correct_answer": "98 Н",
+        "options": [
+          "9.8 Н", 
+          "98 Н", 
+          "980 Н", 
+          "10 Н"
+        ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 15,
+    "fields": {
+        "test": 3,
+        "order": 4,
+        "question": "Если масса тела увеличивается в 2 раза, то сила тяжести:",
+        "correct_answer": "увеличивается в 2 раза",
+        "options": [
+          "уменьшается в 2 раза", 
+          "увеличивается в 2 раза", 
+          "остаётся неизменной", 
+          "увеличивается в 4 раза"
+        ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 16,
+    "fields": {
+        "test": 3,
+        "order": 5,
+        "question": "Какое значение ускорения свободного падения чаще всего используют в расчетах?",
+        "correct_answer": "9.8 \\(\\frac{м}{с^2}\\)",
+        "options": [
+          "9.8 \\(\\frac{м}{с^2}\\)", 
+          "10 \\(\\frac{м}{с^2}\\)", 
+          "9.81 \\(\\frac{м}{с^2}\\)", 
+          "10.1 \\(\\frac{м}{с^2}\\)"
+        ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 17,
+    "fields": {
+      "test": 4,
+      "order": 1,
+      "question": "Преобразуйте выражение: \\(a^2 - b^2\\)",
+      "correct_answer": "\\((a - b)(a + b)\\)",
+      "options": [
+        "\\((a - b)(a + b)\\)",
+        "\\((a + b)^2\\)",
+        "\\((a - b)^2\\)",
+        "\\(a^2 + b^2\\)"
+      ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 18,
+    "fields": {
+      "test": 4,
+      "order": 2,
+      "question": "Преобразуйте выражение: \\((a + b)^2\\)",
+      "correct_answer": "\\(a^2 + 2ab + b^2\\)",
+      "options": [
+        "\\(a^2 + 2ab + b^2\\)",
+        "\\(a^2 - 2ab + b^2\\)",
+        "\\((a - b)^2\\)",
+        "\\((a + b)(a - b)\\)"
+      ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 19,
+    "fields": {
+      "test": 4,
+      "order": 3,
+      "question": "Преобразуйте выражение: \\((a - b)^2\\)",
+      "correct_answer": "\\(a^2 - 2ab + b^2\\)",
+      "options": [
+        "\\(a^2 - 2ab + b^2\\)",
+        "\\(a^2 + 2ab + b^2\\)",
+        "\\((a + b)^2\\)",
+        "\\((a - b)(a + b)\\)"
+      ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 20,
+    "fields": {
+      "test": 4,
+      "order": 4,
+      "question": "Преобразуйте выражение: \\((a^3 + b^3)\\)",
+      "correct_answer": "\\((a + b)(a^2 - ab + b^2)\\)",
+      "options": [
+        "\\((a + b)(a^2 - ab + b^2)\\)",
+        "\\((a - b)(a^2 + ab + b^2)\\)",
+        "\\((a + b)^3\\)",
+        "\\((a - b)^3\\)"
+      ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 21,
+    "fields": {
+      "test": 4,
+      "order": 5,
+      "question": "Преобразуйте выражение: \\((a^3 - b^3)\\)",
+      "correct_answer": "\\((a - b)(a^2 + ab + b^2)\\)",
+      "options": [
+        "\\((a - b)(a^2 + ab + b^2)\\)",
+        "\\((a + b)(a^2 - ab + b^2)\\)",
+        "\\((a + b)^3\\)",
+        "\\((a - b)^3\\)"
+      ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 22,
+    "fields": {
+      "test": 4,
+      "order": 6,
+      "question": "Преобразуйте выражение: \\((a + b)^3\\)",
+      "correct_answer": "\\(a^3 + 3a^2b + 3ab^2 + b^3\\)",
+      "options": [
+        "\\(a^3 + 3a^2b + 3ab^2 + b^3\\)",
+        "\\(a^3 - 3a^2b + 3ab^2 - b^3\\)",
+        "\\((a + b)(a^2 - ab + b^2)\\)",
+        "\\((a - b)(a^2 + ab + b^2)\\)"
+      ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 23,
+    "fields": {
+      "test": 4,
+      "order": 7,
+      "question": "Преобразуйте выражение: \\((a - b)^3\\)",
+      "correct_answer": "\\(a^3 - 3a^2b + 3ab^2 - b^3\\)",
+      "options": [
+        "\\(a^3 - 3a^2b + 3ab^2 - b^3\\)",
+        "\\(a^3 + 3a^2b + 3ab^2 + b^3\\)",
+        "\\((a + b)(a^2 - ab + b^2)\\)",
+        "\\((a - b)(a^2 + ab + b^2)\\)"
+      ]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 24,
+    "fields": {
+      "test": 4,
+      "order": 8,
+      "question": "Преобразуйте выражение: \\((a + b + c)^2\\)",
+      "correct_answer": "\\(a^2 + b^2 + c^2 + 2ab + 2bc + 2ac\\)",
+      "options": [
+        "\\(a^2 + b^2 + c^2 + 2ab + 2bc + 2ac\\)",
+        "\\(a^2 + b^2 + c^2 - 2ab - 2bc - 2ac\\)",
+        "\\((a + b)^2 + c^2\\)",
+        "\\((a - b - c)^2\\)"
       ]
     }
   }
