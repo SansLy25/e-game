@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base-tw.html' %}
 {% load static %}
 
 {% block head_meta %}
@@ -114,7 +114,7 @@
                 </table>
             </div>
             <div class="mt-8 flex justify-center">
-                <a class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+                <a class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors" href="{% url 'homepage:exam_home' exam_slug=exam_slug %}">
                     На страницу экзамена
                 </a>
             </div>

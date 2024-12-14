@@ -1,0 +1,250 @@
+:root {
+    --base-border-radius: 15px;
+    --base-btn-border-radius: 10px;
+}
+
+[data-bs-theme="light"] {
+    --base-color: #660ff1;
+    --base-color-subtle: #dab0ff;
+    --bg-color-main: #ffffff;
+    --bg-color-secondary: #f9fafc;
+    --text-main: #111828;
+    --text-secondary: #525b68;
+    --text-border: #e5e6e9;
+}
+
+[data-bs-theme="dark"] {
+    --base-color: #8540f5;
+    --base-color-subtle: #140330;
+    --bg-color-main: #111828;
+    --bg-color-secondary: #202938;
+    --text-main: #ffffff;
+    --text-secondary: #b2b6be;
+    --text-border: #394253;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color-secondary);
+    transition: all 0.3s ease;
+}
+
+main {
+    flex: 1;
+}
+
+.base-card,
+.product-card,
+.project-card {
+    background-color: var(--bg-color-secondary);
+    border-radius: var(--base-border-radius);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.base-card:hover,
+.product-card:hover,
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.category-badge {
+    background-color: var(--base-color-subtle);
+    color: var(--base-color);
+    border-radius: var(--base-border-radius);
+}
+
+.nav-underline .nav-item.dropdown .nav-link.dropdown-toggle {
+    cursor: pointer;
+}
+
+.nav-underline {
+    --bs-nav-link-color: var(--bs-body);
+    --bs-nav-link-hover-color: var(--base-color);
+    --bs-nav-underline-link-active-color: var(--base-color);
+    --bs-nav-underline-link-active-bg: var(--base-color);
+}
+
+.nav-link {
+    padding: 0;
+}
+
+.dropdown-menu {
+    --bs-dropdown-link-active-bg: var(--base-color);
+    --bs-dropdown-link-hover-bg: var(--base-color-subtle);
+    --bs-dropdown-link-hover-color: var(--base-color);
+    border-radius: var(--base-border-radius);
+    padding: 0.5rem;
+}
+
+.dropdown-menu .dropdown-item {
+    border-radius: calc(var(--base-border-radius) / 2);
+    padding: 0.3rem 0.7rem;
+    margin-block: 0.3rem;
+}
+
+.dropdown-item.active {
+    background-color: var(--base-color) !important;
+    color: var(--bg-color-secondary);
+}
+
+.dropdown-item:hover {
+    background-color: var(--base-color-subtle);
+    color: var(--base-color);
+}
+
+
+/* ----- BUTTONS ----- */
+
+.btn {
+    font-weight: 500 !important;
+    border-width: 1.5px !important;
+    border-radius: var(--base-btn-border-radius) !important;
+    transition: all 0.2s ease !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+    cursor: pointer !important;
+}
+
+
+/* --- Types --- */
+
+
+/* outline */
+
+.btn-outline {
+    color: var(--base-color);
+    border-color: var(--base-color);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.btn-outline:hover {
+    color: white;
+    background-color: var(--base-color);
+    border-color: var(--base-color);
+}
+
+.btn-outline:active {
+    color: var(--base-color) !important;
+    background-color: var(--base-color-subtle) !important;
+    border-color: var(--base-color) !important;
+}
+
+
+/* bg-subtle */
+
+.btn-bg-subtle {
+    color: var(--base-color);
+    border-color: var(--base-color-subtle);
+    background-color: var(--base-color-subtle);
+}
+
+.btn-bg-subtle:hover {
+    color: var(--base-color);
+    background-color: var(--base-color-subtle);
+    border-color: var(--base-color);
+}
+
+.btn-bg-subtle:active {
+    color: var(--base-color) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color: var(--base-color) !important;
+}
+
+
+/* bg-subtle-outline */
+
+.btn-bg-subtle-outline {
+    color: var(--base-color);
+    border-color: var(--base-color);
+    background-color: var(--base-color-subtle);
+}
+
+.btn-bg-subtle-outline:hover {
+    color: var(--base-color);
+    background-color: var(--base-color-subtle);
+    border-color: var(--base-color-subtle);
+}
+
+.btn-bg-subtle-outline:active {
+    color: var(--base-color) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color: rgba(0, 0, 0, 0) !important;
+}
+
+
+/* solid */
+
+.btn-solid {
+    color: white;
+    background-color: var(--base-color);
+    border-color: var(--base-color);
+}
+
+.btn-solid:hover {
+    color: var(--base-color);
+    background-color: var(--base-color-subtle);
+    border-color: var(--base-color);
+}
+
+.btn-solid:active {
+    color: var(--base-color) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color: var(--base-color) !important;
+}
+
+
+/* --- Colors --- */
+
+
+/* danger */
+
+.btn-danger {
+    --base-color: var(--bs-danger);
+    --base-color-subtle: var(--bs-danger-bg-subtle)
+}
+
+
+/* success */
+
+.btn-success {
+    --base-color: var(--bs-success);
+    --base-color-subtle: var(--bs-success-bg-subtle)
+}
+
+
+
+.page-header {
+    background-color: var(--bg-color-secondary);
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--base-border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 45%, var(--base-color) 45%, var(--base-color) 55%, transparent 55%);
+    opacity: 0.1;
+}
+
+.page-header h1 {
+    color: var(--text-main);
+    font-weight: 600;
+    margin: 0;
+    position: relative;
+}
+
+a {
+  text-decoration: none;
+}

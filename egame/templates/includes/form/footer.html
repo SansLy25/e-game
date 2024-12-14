@@ -1,0 +1,20 @@
+{% load i18n %}
+
+<div class="form-footer">
+    {% trans 'или' as divider_text %}
+    <div class="form-footer-divider" data-divider-text={{ divider_text }}></div>
+    
+    <div class="form-footer-links">
+        {% for item in footer_items %}
+        <div class="form-footer-item">
+            <span class="form-footer-text">
+                {% trans item.text %}
+            </span>
+            <a href="{{ item.url }}" class="form-footer-link">
+                <i class="bi {{ item.icon }} form-footer-icon"></i>
+                {% trans item.link_text %}
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
