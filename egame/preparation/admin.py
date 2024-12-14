@@ -1,51 +1,57 @@
 import django.contrib
 
+import practice.models
 import preparation.models
 
 
-@django.contrib.admin.register(preparation.models.Exam)
-class ExamAdmin(django.contrib.admin.ModelAdmin):
-    list_display = (preparation.models.Exam.name.field.name,)
-    ordering = (preparation.models.Exam.name.field.name,)
+class TaskInline(django.contrib.admin.TabularInline):
+    model = preparation.models.Task
+    extra = 1
+
+
+@django.contrib.admin.register(preparation.models.Test)
+class TestAdmin(django.contrib.admin.ModelAdmin):
+    exam_field = preparation.models.Test.exam.field.name
+    name_field = practice.models.Exam.name.field.name
+
+    list_display = (
+        preparation.models.Test.title.field.name,
+        preparation.models.Test.exam.field.name,
+    )
+
+    search_fields = (
+        preparation.models.Test.title.field.name,
+        f"{exam_field}__{name_field}",
+    )
+    list_filter = (preparation.models.Test.exam.field.name,)
+    inlines = [TaskInline]
 
 
 @django.contrib.admin.register(preparation.models.Task)
 class TaskAdmin(django.contrib.admin.ModelAdmin):
+    test_field = preparation.models.Task.test.field.name
+    exam_field = preparation.models.Test.exam.field.name
+    name_field = practice.models.Exam.name.field.name
+    title_field = preparation.models.Test.title.field.name
+
     list_display = (
-        preparation.models.Task.question.field.name,
-        preparation.models.Task.exam.field.name,
-        preparation.models.Task.correct_answer.field.name,
-    )
-    list_filter = (preparation.models.Task.exam.field.name,)
-
-    task_question_field = preparation.models.Task.question.field.name
-
-    task_field_name = preparation.models.Task.exam.field.name
-    exam_name_field_name = preparation.models.Exam.name.field.name
-    exam_name_field = f"{task_field_name}__{exam_name_field_name}"
-
-    search_fields = (task_question_field, exam_name_field)
-    ordering = (
-        preparation.models.Task.exam.field.name,
-        preparation.models.Task.id.field.name,
-    )
-
-    task_fields = (
-        preparation.models.Task.exam.field.name,
+        "get_exam",
+        preparation.models.Task.test.field.name,
         preparation.models.Task.question.field.name,
         preparation.models.Task.correct_answer.field.name,
-        preparation.models.Task.options.field.name,
     )
+    search_fields = (
+        preparation.models.Task.question.field.name,
+        f"{test_field}__{title_field}",
+        f"{test_field}__{exam_field}__{name_field}",
+    )  # Поля для поиска
+    list_filter = (f"{test_field}__{exam_field}",)
 
-    fieldsets = ((None, {"fields": task_fields}),)
+    def get_exam(self, obj):
+        return obj.test.exam
 
-    def formfield_for_dbfield(self, db_field, **kwargs):
-        if db_field.name == "options":
-            kwargs["widget"] = (
-                django.contrib.admin.widgets.AdminTextareaWidget()
-            )
-
-        return super().formfield_for_dbfield(db_field, **kwargs)
+    get_exam.short_description = "Exam"
+    get_exam.admin_order_field = f"{test_field}__{exam_field}"
 
 
 __all__ = ()

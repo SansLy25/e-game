@@ -1,9 +1,11 @@
 import django.contrib.auth.mixins
+import django.http
 import django.shortcuts
 import django.urls
+import django.views
 import django.views.generic
 
-import preparation.forms
+import practice.models
 import preparation.models
 
 
@@ -12,89 +14,121 @@ class BaseLoginRequired(django.contrib.auth.mixins.LoginRequiredMixin):
     redirect_field_name = None
 
 
-class PreparationListView(BaseLoginRequired, django.views.generic.ListView):
-    template_name = "preparation/exam_tasks.html"
-    context_object_name = "tasks"
-    title = "Задания на запоминания"
-
-    def get_queryset(self):
+class TestListView(BaseLoginRequired, django.views.View):
+    def get(self, request, exam_slug):
         exam = django.shortcuts.get_object_or_404(
-            preparation.models.Exam,
-            name=self.kwargs["exam"],
+            practice.models.Exam,
+            slug=exam_slug,
+        )
+        tests = exam.tests.all()
+
+        return django.shortcuts.render(
+            request,
+            "preparation/test_list.html",
+            {"exam": exam, "tests": tests},
         )
 
-        return preparation.models.Task.objects.filter(
-            exam=exam,
-        ).select_related("exam")
 
+class TaskView(BaseLoginRequired, django.views.View):
+    def get(self, request, exam_slug, pk):
+        test = django.shortcuts.get_object_or_404(
+            preparation.models.Test,
+            pk=pk,
+            exam__slug=exam_slug,
+        )
+        task = test.tasks.first()
 
-class TaskDetailView(
-    BaseLoginRequired,
-    django.views.generic.FormView,
-    django.views.generic.DetailView,
-):
-    model = preparation.models.Task
-    template_name = "preparation/task_detail.html"
-    context_object_name = "task"
-    form_class = preparation.forms.AnswerForm
-
-    def get_object(self):
-        if not hasattr(self, "_object"):
-            self._object = django.shortcuts.get_object_or_404(
-                preparation.models.Task,
-                pk=self.kwargs["pk"],
+        if task:
+            return django.http.HttpResponseRedirect(
+                django.urls.reverse(
+                    "preparation:task_detail",
+                    args=[exam_slug, test.id, task.id],
+                ),
             )
 
-        return self._object
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs["task"] = self.get_object()
-
-        return kwargs
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["task"] = self.get_object()
-
-        task = self.get_object()
-        user_answers_queryset = task.user_answers.filter(
-            user=self.request.user,
-        )
-        latest_user_answers = user_answers_queryset.order_by("-created_at")[:1]
-        context["user_answers"] = latest_user_answers
-
-        return context
-
-    def form_valid(self, form):
-        task = self.get_object()
-        selected_answer = form.cleaned_data["selected_answer"]
-        is_correct = selected_answer == task.correct_answer
-        preparation.models.UserAnswer.objects.filter(
-            task=task,
-            user=self.request.user,
-        ).delete()
-        preparation.models.UserAnswer.objects.create(
-            task=task,
-            user=self.request.user,
-            selected_answer=selected_answer,
-            is_correct=is_correct,
+        return django.shortcuts.render(
+            request,
+            "preparation/no_tasks.html",
+            {"test": test},
         )
 
-        return super().form_valid(form)
 
-    def get_success_url(self):
-        return django.urls.reverse(
-            "preparation:task_detail",
-            kwargs={
-                "exam": self.get_object().exam.name,
-                "pk": self.get_object().pk,
+class TaskDetailView(BaseLoginRequired, django.views.View):
+    def get(self, request, exam_slug, test_id, pk):
+        test = django.shortcuts.get_object_or_404(
+            preparation.models.Test,
+            pk=test_id,
+            exam__slug=exam_slug,
+        )
+        task = django.shortcuts.get_object_or_404(
+            preparation.models.Task,
+            pk=pk,
+            test=test,
+        )
+
+        return django.shortcuts.render(
+            request,
+            "preparation/task_detail.html",
+            {
+                "test": test,
+                "task": task,
+                "options": task.get_shuffled_options(),
             },
         )
 
+    def post(self, request, exam_slug, test_id, pk):
+        test = django.shortcuts.get_object_or_404(
+            preparation.models.Test,
+            pk=test_id,
+            exam__slug=exam_slug,
+        )
+        task = django.shortcuts.get_object_or_404(
+            preparation.models.Task,
+            pk=pk,
+            test=test,
+        )
+        user_answer = request.POST.get("answer")
 
-__all__ = (
-    BaseLoginRequired,
-    PreparationListView,
-    TaskDetailView,
-)
+        session_key = f"test_{test.id}_answers"
+        answers = request.session.get(session_key, {})
+        answers[str(task.id)] = {
+            "question": task.question,
+            "user_answer": user_answer,
+            "correct_answer": task.correct_answer,
+        }
+        request.session[session_key] = answers
+
+        next_task = test.tasks.filter(id__gt=task.id).first()
+        if next_task:
+            return django.http.HttpResponseRedirect(
+                django.urls.reverse(
+                    "preparation:task_detail",
+                    args=[exam_slug, test_id, next_task.id],
+                ),
+            )
+
+        return django.http.HttpResponseRedirect(
+            django.urls.reverse(
+                "preparation:test_result",
+                args=[exam_slug, test_id],
+            ),
+        )
+
+
+class TestResultView(BaseLoginRequired, django.views.View):
+    def get(self, request, exam_slug, test_id):
+        test = django.shortcuts.get_object_or_404(
+            preparation.models.Test,
+            pk=test_id,
+            exam__slug=exam_slug,
+        )
+        answers = request.session.get(f"test_{test.id}_answers", {})
+
+        return django.shortcuts.render(
+            request,
+            "preparation/test_result.html",
+            {"test": test, "answers": answers},
+        )
+
+
+__all__ = ()

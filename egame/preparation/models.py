@@ -1,48 +1,52 @@
 import django.db.models
 
+import practice.models
 
-class Exam(django.db.models.Model):
-    name = django.db.models.CharField(max_length=255)
+
+class Test(django.db.models.Model):
+    exam = django.db.models.ForeignKey(
+        practice.models.Exam,
+        on_delete=django.db.models.CASCADE,
+        related_name="tests",
+        verbose_name="экзамен",
+    )
+    title = django.db.models.CharField("заголовок", max_length=255)
 
     def __str__(self):
-        return self.name
+        return self.title
+
+    class Meta:
+        verbose_name = "тест"
+        verbose_name_plural = "тесты"
 
 
 class Task(django.db.models.Model):
-    exam = django.db.models.ForeignKey(
-        Exam,
-        related_name="tasks",
+    test = django.db.models.ForeignKey(
+        Test,
         on_delete=django.db.models.CASCADE,
+        related_name="tasks",
+        verbose_name="тест",
     )
-    question = django.db.models.TextField()
-    correct_answer = django.db.models.CharField(max_length=255)
-    options = django.db.models.JSONField(
-        help_text="Список вариантов ответа (JSON формат)",
+    question = django.db.models.TextField("вопрос")
+    correct_answer = django.db.models.CharField(
+        "правильный ответ",
+        max_length=255,
     )
+    options = django.db.models.JSONField("варианты ответа")
 
     def __str__(self):
         return self.question
 
+    class Meta:
+        verbose_name = "задание"
+        verbose_name_plural = "задания"
 
-class UserAnswer(django.db.models.Model):
-    task = django.db.models.ForeignKey(
-        Task,
-        related_name="user_answers",
-        on_delete=django.db.models.CASCADE,
-    )
-    user = django.db.models.ForeignKey(
-        "users.User",
-        on_delete=django.db.models.CASCADE,
-    )
-    selected_answer = django.db.models.CharField(max_length=255)
-    is_correct = django.db.models.BooleanField(default=False)
-    created_at = django.db.models.DateTimeField(auto_now_add=True, null=True)
+    def get_shuffled_options(self):
+        import random
 
-    def __str__(self):
-        return (
-            f"{self.user} - {self.task} - {self.selected_answer}"
-            f" - {self.is_correct}"
-        )
+        options = self.options.copy()
+        random.shuffle(options)
+        return options
 
 
-__all__ = (Exam, Task, UserAnswer)
+__all__ = (Test, Task)

@@ -1,226 +1,105 @@
 [
-    {
-      "model": "preparation.exam",
+  {
+      "model": "preparation.test",
       "pk": 1,
       "fields": {
-        "name": "mathematics"
+          "exam": 2,
+          "title": "Свойства степеней"
       }
-    },
-    {
-      "model": "preparation.exam",
-      "pk": 2,
-      "fields": {
-        "name": "physics"
-      }
-    },
-    {
-      "model": "preparation.exam",
-      "pk": 3,
-      "fields": {
-        "name": "russian"
-      }
-    },
-    {
-        "model": "preparation.task",
-        "pk": 1,
-        "fields": {
-          "exam": 1,
-          "question": "Выберите правильную формулу дискриминанта",
-          "correct_answer": "b^2 - 4ac",
-          "options": ["b^2 - 4ac", "2b - 4a", "abc"]
-        }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 2,
-      "fields": {
-        "exam": 1,
-        "question": "Выберите правильную формулу для корней квадратного уравнения при D > 0",
-        "correct_answer": "x = (-b ± √(D)) / 2a",
+  },
+  {
+    "model": "preparation.task",
+    "pk": 1,
+    "fields": {
+        "test": 1,
+        "question": "Каково значение выражения \\(10^0\\)?",
+        "correct_answer": "1",
+        "options": ["10", "1", "0", "100"]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 2,
+    "fields": {
+        "test": 1,
+        "question": "Каково значение выражения \\(2^{-1}\\)?",
+        "correct_answer": "0.5",
+        "options": ["0.5", "2", "-2", "-1"]
+    }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 3,
+    "fields": {
+        "test": 1,
+        "question": "Какова степень произведения \\(2^3 \\cdot 2^4\\)?",
+        "correct_answer": "\\(2^7\\)",
         "options": [
-          "x = (-b ± √(D)) / a",
-          "x = (-b ± √(D)) / 2a",
-          "x = -b / 2a"
+          "\\(2^5\\)", 
+          "\\(2^6\\)", 
+          "\\(2^7\\)", 
+          "\\(2^8\\)"
         ]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 3,
-      "fields": {
-        "exam": 1,
-        "question": "Выберите правильную формулу для корней квадратного уравнения при D = 0",
-        "correct_answer": "x = -b / 2a",
-        "options": [
-          "x = (-b ± √(D)) / a",
-          "x = (-b ± √(D)) / 2a",
-          "x = -b / 2a"
-        ]
-      }
-    },
-    {
+    }
+  },
+  {
       "model": "preparation.task",
       "pk": 4,
       "fields": {
-        "exam": 1,
-        "question": "Выберите правильную формулу для корней квадратного уравнения при D < 0",
-        "correct_answer": "Нет корней",
+        "test": 1,
+        "question": "Какова степень произведения \\((3^2)^3\\)?",
+        "correct_answer": "\\(3^6\\)",
         "options": [
-          "x = (-b ± √(D)) / a",
-          "x = (-b ± √(D)) / 2a",
-          "x = -b / 2a",
-          "Нет корней"
+          "\\(3^5\\)",
+          "\\(3^6\\)",
+          "\\(3^7\\)",
+          "\\(3^8\\)"
         ]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 5,
-      "fields": {
-        "exam": 1,
-        "question": "Выберите правильную формулу Теоремы Виета для квадратного уравнения",
-        "correct_answer": "x1 + x2 = -b/a, x1 * x2 = c/a",
-        "options": [
-          "x1 + x2 = -c/a, x1 * x2 = b/a",
-          "x1 + x2 = b/a, x1 * x2 = -c/a",
-          "x1 + x2 = -b/a, x1 * x2 = c/a"
-        ]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 6,
-      "fields": {
-        "exam": 1,
-        "question": "Выберите правильную формулу для сокращенного умножения: (a + b)^2",
-        "correct_answer": "a^2 + 2ab + b^2",
-        "options": [
-          "a^2 + 2ab + b^2",
-          "a^2 - 2ab + b^2",
-          "a^2 + b^2"
-        ]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 7,
-      "fields": {
-        "exam": 1,
-        "question": "Выберите правильную формулу для сокращенного умножения: (a - b)^2",
-        "correct_answer": "a^2 - 2ab + b^2",
-        "options": [
-          "a^2 + 2ab + b^2",
-          "a^2 - 2ab + b^2",
-          "a^2 - b^2"
-        ]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 8,
-      "fields": {
-        "exam": 2,
-        "question": "Выберите правильную формулу для закона Ома",
-        "correct_answer": "U = I * R",
-        "options": ["P = I * R", "U = I * R", "F = m * a"]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 9,
-      "fields": {
-        "exam": 2,
-        "question": "Выберите правильную формулу для расчета силы тяжести",
-        "correct_answer": "F = m * g",
-        "options": ["F = m * a", "P = m * g", "F = m * g"]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 10,
-      "fields": {
-        "exam": 2,
-        "question": "Выберите правильную формулу для расчета работы",
-        "correct_answer": "A = F * d * cos(θ)",
-        "options": [
-          "A = F * d * cos(θ)",
-          "A = F * d",
-          "A = m * a * d"
-        ]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 11,
-      "fields": {
-        "exam": 2,
-        "question": "Выберите правильную формулу для мощности",
-        "correct_answer": "P = W / t",
-        "options": [
-          "P = W / t",
-          "P = F * v",
-          "P = m * g * h / t"
-        ]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 12,
-      "fields": {
-        "exam": 3,
-        "question": "От чего зависит правописание корня -гар-/-гор-?",
-        "correct_answer": "Правописание зависит от ударения",
-        "options": [
-          "Правописание зависит от следубщего за корнем суффикса -А-",
-          "Правописание зависит от ударения",
-          "Правописание зависит от согласной(-ых) на конце корня",
-          "Правописание зависит от смысла"
-        ]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 13,
-      "fields": {
-        "exam": 3,
-        "question": "От чего зависит правописание корня -лаг-/-лож-, -кас-/-кос-?",
-        "correct_answer": "Правописание зависит от следубщего за корнем суффикса -А-",
-        "options": [
-          "Правописание зависит от следубщего за корнем суффикса -А-",
-          "Правописание зависит от ударения",
-          "Правописание зависит от согласной(-ых) на конце корня",
-          "Правописание зависит от смысла"
-        ]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 14,
-      "fields": {
-        "exam": 3,
-        "question": "От чего зависит правописание корня -раст-/-рос-?",
-        "correct_answer": "Правописание зависит от согласной(-ых) на конце корня",
-        "options": [
-          "Правописание зависит от следубщего за корнем суффикса -А-",
-          "Правописание зависит от ударения",
-          "Правописание зависит от согласной(-ых) на конце корня",
-          "Правописание зависит от смысла"
-        ]
-      }
-    },
-    {
-      "model": "preparation.task",
-      "pk": 15,
-      "fields": {
-        "exam": 3,
-        "question": "От чего зависит правописание корня -мак-/-мок-?",
-        "correct_answer": "Правописание зависит от смысла",
-        "options": [
-          "Правописание зависит от следубщего за корнем суффикса -А-",
-          "Правописание зависит от ударения",
-          "Правописание зависит от согласной(-ых) на конце корня",
-          "Правописание зависит от смысла"
-        ]
-      }
     }
-  ]
+  },
+  {
+    "model": "preparation.task",
+    "pk": 5,
+    "fields": {
+      "test": 1,
+      "question": "Какова степень произведения \\(\\frac{2^4}{2^2}\\)?",
+      "correct_answer": "\\(2^2\\)",
+      "options": [
+        "\\(2^6\\)",
+        "\\(2^2\\)",
+        "\\(2^1\\)",
+        "\\(2^2\\)"
+      ]
+  }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 6,
+    "fields": {
+      "test": 1,
+      "question": "Преобразуйте выражение: \\(2^2 \\cdot 2^2\\)",
+      "correct_answer": "\\((2 \\cdot 2)^2\\)",
+      "options": [
+        "\\((2 \\cdot 2)^2\\)", 
+        "\\(2 \\cdot 2\\)", 
+        "\\((2^2 \\cdot 2^2)^2\\)", 
+        "\\(2^2\\)"
+      ]
+  }
+  },
+  {
+    "model": "preparation.task",
+    "pk": 7,
+    "fields": {
+      "test": 1,
+      "question": "Преобразуйте выражение: \\(\\left(\\frac{7}{5}\\right)^{-3}\\)",
+      "correct_answer": "\\(\\left(\\frac{5}{7}\\right)^3\\)",
+      "options": [
+        "\\(\\left(\\frac{5}{7}\\right)^3\\)",
+        "\\(\\left(\\frac{7}{5}\\right)^3\\)",
+        "\\(\\frac{7}{5}\\)",
+        "\\(\\frac{5}{7}\\)"
+      ]
+  }
+  }
+]

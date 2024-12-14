@@ -1,83 +1,171 @@
-from django.test import TestCase
-from django.urls import resolve, reverse
+import http
 
-from preparation.models import Exam, Task, UserAnswer
-from preparation.views import PreparationListView, TaskDetailView
-from users.models import User
+import django.shortcuts
+import django.test
+import django.urls
+
+import practice.models
+import preparation.models
+import users.models
 
 
-class TestPreparationUrls(TestCase):
-    def test_exam_tasks_url(self):
-        url = reverse("preparation:exam_tasks", kwargs={"exam": "math"})
-        self.assertEqual(resolve(url).func.view_class, PreparationListView)
-
-    def test_task_detail_url(self):
-        url = reverse(
-            "preparation:task_detail",
-            kwargs={"exam": "math", "pk": 1},
+class PreparationTests(django.test.TestCase):
+    def setUp(self):
+        self.exam = practice.models.Exam.objects.create(
+            name="Математика",
+            slug="math",
         )
-        self.assertEqual(resolve(url).func.view_class, TaskDetailView)
 
+        self.test = preparation.models.Test.objects.create(
+            exam=self.exam,
+            title="Свойства степеней",
+        )
 
-class TestPreparationViews(TestCase):
-    @classmethod
-    def setUpTestData(cls):
-        cls.user = User.objects.create_user(
+        self.task1 = preparation.models.Task.objects.create(
+            test=self.test,
+            question="Какова степень произведения \\(2^3 \\cdot 2^4\\?",
+            correct_answer="\\(2^7\\)",
+            options=["\\(2^5\\)", "\\(2^6\\)", "\\(2^7\\)", "\\(2^8\\)"],
+        )
+        self.task2 = preparation.models.Task.objects.create(
+            test=self.test,
+            question="Каково значение \\((3^2)^3\\)?",
+            correct_answer="\\(3^6\\)",
+            options=["\\(3^5\\)", "\\(3^6\\)", "\\(3^7\\)", "\\(3^8\\"],
+        )
+
+        self.user = users.models.User.objects.create_user(
             username="testuser",
             password="password",
         )
-        cls.exam = Exam.objects.create(name="math")
-        cls.task = Task.objects.create(
-            exam=cls.exam,
-            question="Выберите правильную формулу дискриминанта",
-            correct_answer="b^2 - 4ac",
-            options=["b^2 - 4ac", "2b - 4a", "abc"],
-        )
 
-    def setUp(self):
         self.client.login(username="testuser", password="password")
 
-    def test_preparation_list_view(self):
-        url = reverse("preparation:exam_tasks", kwargs={"exam": "math"})
-        response = self.client.get(url)
+        super(PreparationTests, self).setUp()
 
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "preparation/exam_tasks.html")
-        self.assertIn(self.task, response.context["tasks"])
+    def tearDown(self):
+        practice.models.Exam.objects.all().delete()
+        preparation.models.Test.objects.all().delete()
+        preparation.models.Task.objects.all().delete()
+        users.models.User.objects.all().delete()
 
-    def test_task_detail_view_get(self):
-        url = reverse(
-            "preparation:task_detail",
-            kwargs={"exam": "math", "pk": self.task.pk},
+        super(PreparationTests, self).tearDown()
+
+    def test_test_list_view(self):
+        url = django.urls.reverse(
+            "preparation:test_list",
+            args=[self.exam.slug],
         )
         response = self.client.get(url)
 
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "preparation/task_detail.html")
-        self.assertEqual(response.context["task"], self.task)
+        self.assertEqual(response.status_code, http.HTTPStatus.OK)
+        self.assertContains(response, self.test.title)
 
-    def test_task_detail_view_post(self):
-        url = reverse(
-            "preparation:task_detail",
-            kwargs={"exam": "math", "pk": self.task.pk},
+    def test_task_view_redirects_to_first_task(self):
+        url = django.urls.reverse(
+            "preparation:test",
+            args=[self.exam.slug, self.test.id],
         )
-        data = {"selected_answer": "b^2 - 4ac"}
-        response = self.client.post(url, data)
+        response = self.client.get(url)
 
-        self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, url)
+        self.assertEqual(response.status_code, http.HTTPStatus.FOUND)
+        self.assertRedirects(
+            response,
+            django.urls.reverse(
+                "preparation:task_detail",
+                args=[self.exam.slug, self.test.id, self.task1.id],
+            ),
+        )
 
-        user_answer = UserAnswer.objects.get(user=self.user, task=self.task)
-        self.assertEqual(user_answer.selected_answer, "b^2 - 4ac")
-        self.assertTrue(user_answer.is_correct)
+    def test_task_detail_view(self):
+        url = django.urls.reverse(
+            "preparation:task_detail",
+            args=[self.exam.slug, self.test.id, self.task1.id],
+        )
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, http.HTTPStatus.OK)
+        self.assertContains(response, self.task1.question)
+
+    def test_task_detail_post_next_task(self):
+        url = django.urls.reverse(
+            "preparation:task_detail",
+            args=[self.exam.slug, self.test.id, self.task1.id],
+        )
+        response = self.client.post(url, {"answer": "\\(2^7\\)"})
+
+        self.assertEqual(response.status_code, http.HTTPStatus.FOUND)
+        self.assertRedirects(
+            response,
+            django.urls.reverse(
+                "preparation:task_detail",
+                args=[self.exam.slug, self.test.id, self.task2.id],
+            ),
+        )
+
+    def test_task_detail_post_result_redirect(self):
+        self.client.post(
+            django.urls.reverse(
+                "preparation:task_detail",
+                args=[self.exam.slug, self.test.id, self.task1.id],
+            ),
+            {"answer": "\\(2^7\\)"},
+        )
+
+        response = self.client.post(
+            django.urls.reverse(
+                "preparation:task_detail",
+                args=[self.exam.slug, self.test.id, self.task2.id],
+            ),
+            {"answer": "\\(3^6\\)"},
+        )
+
+        result_url = django.urls.reverse(
+            "preparation:test_result",
+            args=[self.exam.slug, self.test.id],
+        )
+
+        self.assertEqual(response.status_code, http.HTTPStatus.FOUND)
+        self.assertRedirects(response, result_url)
+
+    def test_test_result_view(self):
+        """Тест отображения результатов"""
+        # Заполняем ответы в сессии
+        session = self.client.session
+        session[f"test_{self.test.id}_answers"] = {
+            str(self.task1.id): {
+                "question": self.task1.question,
+                "user_answer": "\\(2^7\\)",
+                "correct_answer": self.task1.correct_answer,
+            },
+            str(self.task2.id): {
+                "question": self.task2.question,
+                "user_answer": "\\(3^6\\)",
+                "correct_answer": self.task2.correct_answer,
+            },
+        }
+        session.save()
+
+        url = django.urls.reverse(
+            "preparation:test_result",
+            args=[self.exam.slug, self.test.id],
+        )
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, http.HTTPStatus.OK)
+        self.assertContains(response, self.task1.question)
+        self.assertContains(response, "\\(2^7\\)")
+        self.assertContains(response, self.task1.correct_answer)
 
     def test_redirect_if_not_authenticated(self):
         self.client.logout()
 
-        list_url = reverse("preparation:exam_tasks", kwargs={"exam": "math"})
-        detail_url = reverse(
-            "preparation:task_detail",
-            kwargs={"exam": "math", "pk": self.task.pk},
+        list_url = django.urls.reverse(
+            "preparation:test_list",
+            kwargs={"exam_slug": "math"},
+        )
+        detail_url = django.urls.reverse(
+            "preparation:test",
+            kwargs={"exam_slug": "math", "pk": self.task1.pk},
         )
 
         response = self.client.get(list_url)
