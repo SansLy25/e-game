@@ -42,8 +42,8 @@ class Task(django.db.models.Model):
         unique_together = (
             "test",
             "order",
-        )  # Уникальность порядка внутри одного теста
-        ordering = ["order"]  # Задания автоматически сортируются по порядку
+        )
+        ordering = ["order"]
         verbose_name = "задание"
         verbose_name_plural = "задания"
 
