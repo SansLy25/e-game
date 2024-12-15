@@ -7,9 +7,8 @@ from django.urls import include, path
 
 import homepage.urls
 import practice.urls
-import statistic.urls
 import preparation.urls
-
+import statistic.urls
 import users.urls
 
 urlpatterns = [

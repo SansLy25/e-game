@@ -21,7 +21,10 @@ class GetExamStatisticAPIView(APIView):
             "average_duration": user.get_exam_average_duration(exam_slug),
             "max_duration": 19_200,
             "average_variant_size": user.get_average_variant_size(exam_slug),
-            "variant_count": user.get_solutions(exam_slug).count(),
+            "variant_count": user.get_solutions(
+                exam_slug,
+                full_variant=False,
+            ).count(),
             "max_variant_size": exam.themes.all().count(),
             "all_users_average_score": user.get_all_users_average_score(
                 exam_slug,
