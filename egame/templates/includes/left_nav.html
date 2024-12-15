@@ -2,7 +2,7 @@
     <!-- Экзамены -->
     <h2 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Экзамены</h2>
     <nav class="space-y-2 mb-6">
-        <a class="{% if exam_slug == 'russian'%}dark:bg-blue-900/30  dark:text-blue-400 {% else %} dark:text-gray-300 {% endif %}flex items-center space-x-3 w-full p-2 rounded-lg transition-colors text-gray-600  hover:bg-gray-100 dark:hover:bg-gray-700" href="{% url 'homepage:exam_home' 'russian'%}">
+        <a class="{% if exam_slug == 'russian'%}dark:bg-blue-900/30  dark:text-blue-400 {% else %} dark:text-gray-300 {% endif %}flex items-center space-x-3 w-full p-2 rounded-lg transition-colors  hover:bg-gray-100 dark:hover:bg-gray-700" href="{% url 'homepage:exam_home' 'russian'%}">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="lucide lucide-book-open w-5 h-5">
@@ -11,7 +11,7 @@
             </svg>
             <span>Русский язык</span>
         </a>
-        <a class="{% if exam_slug == 'math'%}dark:bg-blue-900/30  dark:text-blue-400 {% else %} dark:text-gray-300 {% endif %}flex items-center space-x-3 w-full p-2 rounded-lg transition-colors text-gray-600  hover:bg-gray-100 dark:hover:bg-gray-700" href="{% url 'homepage:exam_home' 'math'%}">
+        <a class="{% if exam_slug == 'math'%}dark:bg-blue-900/30  dark:text-blue-400 {% else %} dark:text-gray-300 {% endif %}flex items-center space-x-3 w-full p-2 rounded-lg transition-colors  hover:bg-gray-100 dark:hover:bg-gray-700" href="{% url 'homepage:exam_home' 'math'%}">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="lucide lucide-pen-tool w-5 h-5">
@@ -22,7 +22,7 @@
             </svg>
             <span>Математика</span>
         </a>
-        <a class="{% if exam_slug == 'physics'%}dark:bg-blue-900/30  dark:text-blue-400 {% else %} dark:text-gray-300 {% endif %}flex items-center space-x-3 w-full p-2 rounded-lg transition-colors text-gray-600  hover:bg-gray-100 dark:hover:bg-gray-700" href="{% url 'homepage:exam_home' 'physics'%}">
+        <a class="{% if exam_slug == 'physics'%}dark:bg-blue-900/30  dark:text-blue-400 {% else %} dark:text-gray-300 {% endif %}flex items-center space-x-3 w-full p-2 rounded-lg transition-colors  hover:bg-gray-100 dark:hover:bg-gray-700" href="{% url 'homepage:exam_home' 'physics'%}">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="lucide lucide-atom w-5 h-5">

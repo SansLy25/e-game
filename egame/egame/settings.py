@@ -21,6 +21,7 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
 
 INSTALLED_APPS = [
     "rest_framework",
+    "statistic.apps.StatisticConfig",
     "homepage.apps.HomepageConfig",
     "practice.apps.PracticeConfig",
     "users.apps.UsersConfig",

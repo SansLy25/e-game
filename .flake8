@@ -1,6 +1,6 @@
 [flake8]
 max-line-length = 79
-application_import_names = egame, homepage, practice, users
+application_import_names = egame, homepage, practice, users, statistic
 import-order-style = google
 exclude = */migrations/, venv/, verdict.py, .venv/,  env/, venv, .git, __pycache__, parse_tasks.py,  async-parser.py
 max-complexity = 10

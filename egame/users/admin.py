@@ -9,7 +9,7 @@ __all__ = ()
 class CustomUserAdmin(admin.ModelAdmin):
     list_display = ("username", "email", "is_staff")
     list_filter = ("is_staff", "is_superuser")
-    filter_horizontal = ("exams",)
+    filter_horizontal = ("exams", "friends")
     fieldsets = (
         (None, {"fields": ("username", "email", "password")}),
         (
@@ -23,5 +23,5 @@ class CustomUserAdmin(admin.ModelAdmin):
                 ),
             },
         ),
-        ("Дополнительно", {"fields": ("exams",)}),
+        ("Дополнительно", {"fields": ("exams", "friends")}),
     )

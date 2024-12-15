@@ -1,0 +1,192 @@
+{% extends 'base-tw.html' %}
+{% load static %}
+
+{% block head_meta %}
+    <link rel="stylesheet" crossorigin="" href="{% static 'css/statistic.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" crossorigin="" src="{% static 'js/statistic.js' %}"></script>
+    
+{% endblock %}
+
+{% block content %}
+    <section class="min-h-screen bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"
+                 style="opacity: 0.5;"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+                 style="opacity: 0.5;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/30 rounded-full blur-3xl"
+                 style="opacity: 0.5;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"><h2
+                class="text-2xl font-bold text-center text-gray-900 dark:text-white mb-6">Подробная аналитика
+            прогресса</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                <div class="lg:col-span-8 space-y-4">
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-lg"><h3
+                            class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Динамика результатов</h3>
+                        <div style="height: 240px" class="flex items-center">
+                            <canvas id="scoreChart"></canvas>
+
+                            <i id="score_circle" style="font-size: 100px; margin-left: 30px; color: #373950"
+                               class="fas fa-circle-notch fa-spin"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-lg"><h3
+                            class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Динамика времени
+                        выполнения</h3>
+                        <div style="height: 240px" class="flex items-center">
+                            <canvas id="durationChart"></canvas>
+                            <i id="duration_circle" style="font-size: 100px; margin-left: 30px; color: #373950"
+                               class="fas fa-circle-notch fa-spin"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-lg sm:col-span-1">
+                        <div class="flex items-center justify-between mb-2"><h4
+                                class="text-sm font-semibold text-gray-900 dark:text-white">Средний балл</h4><span
+                                id="average_score_parameter"
+                                class="bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent text-lg font-bold">0%</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                                <div id="score_bar"
+                                     class="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full"
+                                     style="width: 0; transition: 0.3s"></div>
+                            </div>
+                            <div class="text-sm text-gray-800 dark:text-gray-200"><span id="score_message"
+                                                                                        class="bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent font-bold">Загрузка</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-lg sm:col-span-1">
+                        <div class="flex items-center justify-between mb-2"><h4
+                                class="text-sm font-semibold text-gray-900 dark:text-white">Среднее время
+                            выполнения</h4><span
+                                id="average_duration_parameter"
+                                class="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent text-lg font-bold">0ч</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                                <div id="duration_bar"
+                                     class="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full"
+                                     style="width: 0; transition: 0.3s"></div>
+                            </div>
+                            <div class="text-sm text-gray-800 dark:text-gray-200"><span id="duration_message"
+                                                                                        class="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent font-bold">Загрузка</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-lg sm:col-span-1">
+                        <div class="flex items-center justify-between mb-2"><h4
+                                class="text-sm font-semibold text-gray-900 dark:text-white">Средний размер варианта</h4>
+                            <span class="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent font-bold"
+                                  id="variant_parameter">0з</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                                <div id="variant_bar"
+                                     class="bg-gradient-to-r from-amber-500 to-orange-500 h-2 rounded-full"
+                                     style="width: 0%; transition: 0.3s"></div>
+                            </div>
+                            <div class="text-sm text-gray-800 dark:text-gray-200"><span id="variant_message"
+                                                                                        class="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent font-bold">Загрузка</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-lg sm:col-span-2 lg:col-span-1"><h4
+                            class="text-sm font-semibold text-gray-900 dark:text-white mb-3">Средний балл у друзей</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-trophy w-5 h-5 text-amber-400">
+                                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                                        <path d="M4 22h16"></path>
+                                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                                    </svg>
+                                    <span id="name1"
+                                          class="text-gray-900 dark:text-white text-sm font-medium">Загрузка</span>
+                                </div>
+                                <span id="score1"
+                                      class="text-gray-600 dark:text-gray-300 text-sm font-semibold"><i
+                                        style="font-size: 15px; margin-left: 30px; color: #696a85"
+                                        class="fas fa-circle-notch fa-spin"></i></span></div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-medal w-5 h-5 text-gray-400">
+                                        <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path>
+                                        <path d="M11 12 5.12 2.2"></path>
+                                        <path d="m13 12 5.88-9.8"></path>
+                                        <path d="M8 7h8"></path>
+                                        <circle cx="12" cy="17" r="5"></circle>
+                                        <path d="M12 18v-2h-.5"></path>
+                                    </svg>
+                                    <span id="name2"
+                                          class="text-gray-900 dark:text-white text-sm font-medium">Загрузка</span>
+                                </div>
+                                <span id="score2"
+                                      class="text-gray-600 dark:text-gray-300 text-sm font-semibold"><i
+                                        style="font-size: 15px; margin-left: 30px; color: #696a85"
+                                        class="fas fa-circle-notch fa-spin"></i></span></div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="lucide lucide-medal w-5 h-5 text-amber-700">
+                                        <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path>
+                                        <path d="M11 12 5.12 2.2"></path>
+                                        <path d="m13 12 5.88-9.8"></path>
+                                        <path d="M8 7h8"></path>
+                                        <circle cx="12" cy="17" r="5"></circle>
+                                        <path d="M12 18v-2h-.5"></path>
+                                    </svg>
+                                    <span id="name3"
+                                          class="text-gray-900 dark:text-white text-sm font-medium">Загрузка</span>
+                                </div>
+                                <span id="score3"
+                                      class="text-gray-600 dark:text-gray-300 text-sm font-semibold"><i
+                                        style="font-size: 15px; margin-left: 30px; color: #696a85"
+                                        class="fas fa-circle-notch fa-spin"></i></span></div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-5 h-5 flex items-center justify-center bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white text-xs font-semibold">
+                                        4
+                                    </div>
+                                    <span id="name4"
+                                          class="text-gray-900 dark:text-white text-sm font-medium">Загрузка</span>
+                                </div>
+                                <span id="score4"
+                                      class="text-gray-600 dark:text-gray-300 text-sm font-semibold"><i
+                                        style="font-size: 15px; margin-left: 30px; color: #696a85"
+                                        class="fas fa-circle-notch fa-spin"></i></span></div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-5 h-5 flex items-center justify-center bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white text-xs font-semibold">
+                                        5
+                                    </div>
+                                    <span id="name5"
+                                          class="text-gray-900 dark:text-white text-sm font-medium">Загрузка</span>
+                                </div>
+                                <span id="score5"
+                                      class="text-gray-600 dark:text-gray-300 text-sm font-semibold"><i
+                                        style="font-size: 15px; margin-left: 30px; color: #696a85"
+                                        class="fas fa-circle-notch fa-spin"></i></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="text-center" style="color: #9da5bc">🛈 Большинство параметров учитывается только для стандартных
+            вариантов</h2>
+    </section>
+
+{% endblock %}
