@@ -65,7 +65,9 @@ class User(AbstractUser):
         return int(round(division(sum(durations), len(durations)), 0))
 
     def get_score_dynamic(self, exam_slug) -> list:
-        solutions = self.get_solutions(exam_slug).order_by("date")[:8]
+        solutions = self.get_solutions(exam_slug).order_by("-date", "-id")[
+            :8:-1
+        ]
 
         dynamic = []
         for solution in solutions:
@@ -81,7 +83,9 @@ class User(AbstractUser):
         return round(division(sum(task_counts), len(task_counts)), 1)
 
     def get_time_dynamic(self, exam_slug) -> list:
-        solutions = self.get_solutions(exam_slug).order_by("date")[:8]
+        solutions = self.get_solutions(exam_slug).order_by("-date", "-id")[
+            :8:-1
+        ]
 
         dynamic = []
         for solution in solutions:
@@ -102,21 +106,18 @@ class User(AbstractUser):
 
     @classmethod
     def get_all_users_average_score(cls, exam_slug) -> float:
-        average_scores = []
+        exam = Exam.objects.get(slug=exam_slug)
 
-        users = cls.objects.filter(solutions__isnull=False)
-        for user in users:
-            average_scores.append(user.get_exam_average_score(exam_slug))
+        solutions = Solution.objects.filter(exam=exam, full_variant=True)
+        scores = [solution.get_score_percent() for solution in solutions]
 
-        return round(division(sum(average_scores), len(average_scores)), 0)
+        return round(division(sum(scores), solutions.count()), 0)
 
     @classmethod
     def get_all_users_average_duration(cls, exam_slug) -> int:
-        average_durations = []
-        users = cls.objects.filter(solutions__isnull=False)
-        for user in users:
-            average_durations.append(user.get_exam_average_duration(exam_slug))
+        exam = Exam.objects.get(slug=exam_slug)
 
-        return int(
-            round(division(sum(average_durations), len(average_durations)), 0),
-        )
+        solutions = Solution.objects.filter(exam=exam, full_variant=True)
+        durations = [solution.duration.seconds for solution in solutions]
+
+        return round(division(sum(durations), solutions.count()), 0)
