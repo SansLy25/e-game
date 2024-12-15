@@ -7,7 +7,9 @@ from django.urls import include, path
 
 import homepage.urls
 import practice.urls
+import statistic.urls
 import preparation.urls
+
 import users.urls
 
 urlpatterns = [
@@ -16,9 +18,14 @@ urlpatterns = [
     path("", include(users.urls, namespace="users")),
     path("", include(django.contrib.auth.urls)),
     path("api/practice/", include(practice.urls, namespace="api")),
+    path("api/statistic/", include(statistic.urls, namespace="api")),
     path(
         "<slug:exam_slug>/practice/",
         include(practice.urls, namespace="practice"),
+    ),
+    path(
+        "<slug:exam_slug>/statistic/",
+        include(statistic.urls, namespace="statistic"),
     ),
     path("<slug:exam_slug>/preparation/", include(preparation.urls)),
 ]

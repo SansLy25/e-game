@@ -127,7 +127,11 @@ class Solution(models.Model):
         blank=True,
         null=True,
         verbose_name="пользователь",
+        related_name="solutions",
     )
+
+    def get_score_percent(self):
+        return round((self.score / self.max_score) * 100, 0)
 
     class Meta:
         verbose_name = "решение"
