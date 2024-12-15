@@ -8,9 +8,6 @@ import aiohttp
 import selectolax.parser
 from tqdm.asyncio import tqdm
 
-__all__ = ()
-
-
 EXAMS = {
     "Русский язык": {"id": 2, "slug": "russian"},
     "Математика": {"id": 1, "slug": "math"},

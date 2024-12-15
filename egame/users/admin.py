@@ -2,8 +2,6 @@ from django.contrib import admin
 
 from users.models import User
 
-__all__ = ()
-
 
 @admin.register(User)
 class CustomUserAdmin(admin.ModelAdmin):

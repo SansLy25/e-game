@@ -60,14 +60,15 @@ for exam_name, exam_item in EXAMS.items():
     pk_counter["exam"] += 1
 
     response = requests.get(
-        f"{ROOT_URL}/catalog?SubjectId={exam_item['id']}"
+        f"{ROOT_URL}/catalog?SubjectId={exam_item['id']}",
     ).text
     soup = bs4.BeautifulSoup(response, "lxml")
     themes_divs = soup.find_all("div", class_="jsx-1658459108 accordion__item")
 
     for theme_index, theme_div in enumerate(themes_divs, start=1):
         theme_name = theme_div.find(
-            "div", class_="jsx-1658459108 accordion__title-wrap"
+            "div",
+            class_="jsx-1658459108 accordion__title-wrap",
         ).text
 
         match exam_name:
@@ -122,18 +123,21 @@ for exam_name, exam_item in EXAMS.items():
                 try:
                     try:
                         task_html = task_div.find(
-                            "div", class_="exercise__text"
+                            "div",
+                            class_="exercise__text",
                         )
                         try:
                             task_html = task_html.find(
-                                "div", class_="tex-render"
+                                "div",
+                                class_="tex-render",
                             ).decode_contents()
                         except AttributeError:
                             pass
 
                     except AttributeError:
                         task_html = task_div.find(
-                            "div", class_="questionContent public-catalog"
+                            "div",
+                            class_="questionContent public-catalog",
                         ).decode_contents()
 
                     task_html = add_host_to_links(task_html)
@@ -141,7 +145,7 @@ for exam_name, exam_item in EXAMS.items():
                     task_solution_html = add_host_to_links(
                         task_div.find("div", class_="exercise__solution-text")
                         .find("div", class_="tex-render")
-                        .decode_contents()
+                        .decode_contents(),
                     )
 
                     fixture.append(
@@ -159,7 +163,8 @@ for exam_name, exam_item in EXAMS.items():
                     current_task_id = pk_counter["task"]
                     pk_counter["task"] += 1
                     answers = task_div.find_all(
-                        ["span", "li"], class_="answer"
+                        ["span", "li"],
+                        class_="answer",
                     )
 
                     for answer in answers:
