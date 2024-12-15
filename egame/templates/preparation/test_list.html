@@ -1,0 +1,25 @@
+{% extends "base-tw.html" %}
+
+{% block title %}Список тестов{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto mt-8 px-4 bg-gray-900" style="color: #FFFFFF;">
+    <h2 class="text-3xl font-bold mb-6 text-center">
+        {{ exam.name }}
+    </h2>
+
+    <ul class="space-y-4">
+        {% for test in tests %}
+            <li class="py-3">
+                <a href="{% url 'preparation:test' exam.slug test.pk %}"
+                   class="block p-4 border rounded-lg shadow-sm hover:shadow-lg transition"
+                   style="border-color: #4a148c; color: #FFFFFF; background-color: transparent; hover:background-color: #4a148c;">
+                    <h3 class="text-xl font-semibold">
+                        {{ test.title }}
+                    </h3>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

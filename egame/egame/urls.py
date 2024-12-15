@@ -8,6 +8,8 @@ from django.urls import include, path
 import homepage.urls
 import practice.urls
 import statistic.urls
+import preparation.urls
+
 import users.urls
 
 urlpatterns = [
@@ -25,6 +27,7 @@ urlpatterns = [
         "<slug:exam_slug>/statistic/",
         include(statistic.urls, namespace="statistic"),
     ),
+    path("<slug:exam_slug>/preparation/", include(preparation.urls)),
 ]
 
 if settings.DEBUG:

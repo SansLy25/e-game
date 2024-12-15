@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     "statistic.apps.StatisticConfig",
     "homepage.apps.HomepageConfig",
     "practice.apps.PracticeConfig",
+    "preparation.apps.PreparationConfig",
     "users.apps.UsersConfig",
     "django.contrib.admin",
     "django.contrib.auth",
