@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
   <link rel="stylesheet" href="{% static 'css/base.css' %}" />
   <link rel="stylesheet" href="{% static 'css/form.css' %}" />
   <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
@@ -50,7 +49,7 @@
           {% if friends %}
             <div class="friend-list">
               {% for friend in friends %}
-                <div class="friend-item container-main container-bordered container-rounded-x0_5" title="{{ friend.username }}">
+                <div class="friend-item container-main container-bordered container-rounded" title="{{ friend.username }}">
                   <div class="friend-avatar">
                     <span>{{ friend.username|make_list|first|upper }}</span>
                   </div>
@@ -65,21 +64,15 @@
       </div>
 
       <div class="profile-actions">
-        {% comment %} {% if user.received_friend_requests.exists %}
-          <div class="alert alert-info" role="alert">
-            <i class="bi bi-info-circle-fill me-2"></i>
-            У вас есть новые заявки в друзья!
-          </div>
-        {% endif %} {% endcomment %}
         <a href="{% url 'users:friends:list' %}" class="btn btn-solid btn-profile-action">
           <i class="bi bi-people-fill"></i>
-          Управление друзьями
+          <span>Управление друзьями</span>
         </a>
         <form method="post" action="{% url 'users:logout' %}">
           {% csrf_token %}
           <button type="submit" class="btn btn-bg-subtle-outline btn-danger btn-profile-action">
               <i class="bi bi-box-arrow-right"></i>
-              Выйти
+              <span>Выйти</span>
           </button>
         </form>
       </div>

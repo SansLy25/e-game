@@ -101,14 +101,19 @@
 }
 
 .invite-link {
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: 0.75rem;
+    align-items: center;
 }
 
 .invite-link .btn {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    border-width: 2px !important;
+}
+
+.invite-link .btn,
+.invite-link .invite-link-input {
+    height: auto !important;
 }
 
 .messages {
@@ -178,10 +183,6 @@
         width: 100%;
     }
 
-    .invite-link {
-        flex-direction: column;
-        align-items: center;
-    }
 
     .search-form button,
     .friend-card form button,
@@ -190,5 +191,13 @@
         margin-left: auto;
         margin-right: auto;
         display: block;
+    }
+
+    .invite-link {
+        grid-template-columns: 1fr;
+    }
+
+    .invite-link .btn {
+        width: 100%;
     }
 }

@@ -9,6 +9,7 @@ body {
 .profile-container {
     padding: 2rem;
     position: relative;
+    box-shadow: var(--container-lg-shadow) !important;
 }
 
 .profile-header {
@@ -67,27 +68,12 @@ body {
 .profile-username {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
     color: var(--text-main);
     max-width: 100%;
     overflow: hidden;
     position: relative;
-}
-
-.profile-username:hover::after {
-    opacity: 0;
-}
-
-.profile-username::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 30%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), var(--bg-color-main));
-    opacity: 1;
-    transition: opacity 0.3s ease;
+    word-break: break-word;
 }
 
 .profile-email {
@@ -153,7 +139,8 @@ body {
     justify-content: center;
 }
 
-.exam-item:hover .exam-name::after {
+.exam-item:hover .exam-name::after,
+.friend-item:hover .friend-username::after {
     opacity: 0;
 }
 
@@ -167,15 +154,23 @@ body {
     white-space: nowrap;
 }
 
-.exam-name::after {
+.exam-name::after,
+.friend-username::after {
     content: '';
     position: absolute;
     right: 0;
     top: 0;
-    width: 30%;
+    width: 10%;
+    max-width: 3rem;
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0), var(--bg-color-main));
     opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.exam-item:hover .exam-name::after,
+.friend-item:hover .friend-username::after {
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
@@ -183,21 +178,8 @@ body {
     padding: 0.5rem;
     display: flex;
     align-items: center;
-    background-color: var(--bg-color-main);
-    border: 1px solid var(--text-border);
-    border-radius: var(--base-border-radius-x0_5);
-    transition: all 0.2s ease;
     overflow: hidden;
     position: relative;
-}
-
-.friend-item:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
-
-.friend-item:hover .friend-username::after {
-    opacity: 0;
 }
 
 .friend-avatar {
@@ -227,18 +209,6 @@ body {
     width: 100%;
 }
 
-.friend-username::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 30%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), var(--bg-color-main));
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
 .profile-no-data {
     color: var(--text-secondary);
 }
@@ -256,6 +226,20 @@ body {
     max-width: 250px;
 }
 
+.profile-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.profile-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--base-border-radius);
+    background-color: var(--bg-color-secondary);
+    box-shadow: var(--container-sm-shadow);
+}
 
 @media (max-width: 768px) {
     .profile-avatar {

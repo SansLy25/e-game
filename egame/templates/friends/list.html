@@ -2,17 +2,16 @@
 {% load static %}
 
 {% block content %}
-  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
   <link rel="stylesheet" href="{% static 'css/base.css' %}" />
   <link rel="stylesheet" href="{% static 'css/form.css' %}" />
   <link rel="stylesheet" href="{% static 'css/friends.css' %}" />
   <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
 
   <div class="container-lg">
-    <div class="friends-container container-main container-rounded-x2">
+    <div class="friends-container container-main container-lg-shadow container-rounded-x2">
       <section>
         <form method="get" class="search-form" id="search-form">
-          <div class="input-group input-group-bg-subtle-outline">
+          <div class="input-group input-group-base">
             <span class="input-group-icon"><i class="bi bi-search"></i></span>
             {{ search_form.username }}
           </div>
@@ -44,14 +43,14 @@
                   {% csrf_token %}
                   <button type="submit" class="btn btn-bg-subtle btn-success">
                     <i class="bi bi-person-check"></i>
-                    Принять
+                    <span>Принять</spa>
                   </button>
                 </form>
                 <form method="post" action="{% url 'users:friends:reject' friend_request.pk %}">
                   {% csrf_token %}
                   <button type="submit" class="btn btn-bg-subtle btn-danger">
                     <i class="bi bi-person-x"></i>
-                    Отклонить
+                    <span>Отклонить</spa>
                   </button>
                 </form>
               </div>
@@ -96,18 +95,16 @@
 
       <section class="invite-section container-secondary container-rounded-x1_5">
         <h3 class="invite-title">Пригласить друга</h3>
-        <div class="invite-content">
-          <p class="invite-text">Поделитесь этой ссылкой с друзьями:</p>
-          <div class="invite-link">
-            <div class="input-group input-group-bg-subtle-outline">
-              <span class="input-group-icon"><i class="bi bi-link-45deg"></i></span>
-              <input type="text" value="{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}" class="form-control invite-link-input" readonly />
-            </div>
-            <button onclick="navigator.clipboard.writeText('{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}')" class="btn btn-bg-subtle-outline">
-              <i class="bi bi-clipboard-fill"></i>
-              Копировать
-            </button>
+        <p class="invite-text">Поделитесь этой ссылкой с друзьями:</p>
+        <div class="invite-link">
+          <div class="input-group input-group-base">
+            <span class="input-group-icon"><i class="bi bi-link-45deg"></i></span>
+            <input type="text" value="{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}" class="form-control invite-link-input" readonly />
           </div>
+          <button onclick="navigator.clipboard.writeText('{{ request.scheme }}://{{ request.get_host }}{% url 'users:friends:add_by_username' request.user.username %}')" class="btn btn-bg-subtle-outline">
+            <i class="bi bi-clipboard-fill"></i>
+            <span>Копировать</span>
+          </button>
         </div>
       </section>
     </div>
@@ -116,9 +113,13 @@
       <div class="messages">
         {% for message in messages %}
           <div class="message {% if message.tags == 'success' %}
+              
               message-success
+
             {% else %}
+              
               message-error
+
             {% endif %}">{{ message }}</div>
         {% endfor %}
       </div>
@@ -141,21 +142,15 @@
             'X-Requested-With': 'XMLHttpRequest'
           }
         })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log('Search results:', data)
-            searchResultsSection.innerHTML = ''
-    
-            if (data.users && data.users.length > 0) {
-              data.users.forEach((selected_user) => {
-                console.log('Fetching user card for:', selected_user)
-                searchResultsSection.innerHTML += `
-                  {% include 'friends/user_card.html' with selected_user=selected_user %}
-                `
-              })
-            } else {
-              searchResultsSection.innerHTML = '<div class="no-results-message container-secondary container-rounded-x1_5">Пользователи не найдены</div>'
-            }
+          .then((response) => response.text())
+          .then((html) => {
+            console.log('Search results:', html)
+            searchResultsSection.innerHTML = html
+          })
+          .catch((error) => {
+            console.error('Error during search:', error)
+            searchResultsSection.innerHTML =
+              '<div class="no-results-message container-secondary container-rounded-x1_5">Ошибка поиска</div>'
           })
       } else {
         searchResultsSection.innerHTML = ''

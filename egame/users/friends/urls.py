@@ -7,7 +7,6 @@ from users.friends.views import (
     RejectFriendRequestView,
     RemoveFriendView,
     SearchResultsView,
-    UserCardView,
 )
 
 app_name = "friends"
@@ -32,5 +31,4 @@ urlpatterns = [
         RejectFriendRequestView.as_view(),
         name="reject",
     ),
-    path("user_card/", UserCardView.as_view(), name="user_card"),
 ]

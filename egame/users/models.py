@@ -1,3 +1,5 @@
+from typing import Optional
+
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import UserManager as BaseUserManager
 from django.db import models
@@ -15,7 +17,11 @@ class UserManager(BaseUserManager):
 
         return get_object_or_404(self.model, pk=pk)
 
-    def search_by_username(self, username: str, exclude_user: "User" = None):
+    def search_by_username(
+        self,
+        username: str,
+        exclude_user: Optional["User"] = None,
+    ):
         queryset = self.filter(username__icontains=username)
         if exclude_user:
             return queryset.exclude(

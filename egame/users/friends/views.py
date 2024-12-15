@@ -4,14 +4,10 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, RedirectView, TemplateView
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.views import APIView
 
 from users.forms import UserSearchForm
 from users.message import Message
 from users.models import FriendRequest, User
-from users.serializers import UserSerializer
 
 
 class FriendsListView(LoginRequiredMixin, ListView):
@@ -67,24 +63,29 @@ class UserSearchView(LoginRequiredMixin, ListView):
         return context
 
 
-class SearchResultsView(LoginRequiredMixin, APIView):
-    def get(self, request, *args, **kwargs):
-        form = UserSearchForm(request.GET)
+class SearchResultsView(LoginRequiredMixin, ListView):
+    template_name = "friends/search_results.html"
+    context_object_name = "users"
+    paginate_by = 10
+
+    def get_queryset(self):
+        form = UserSearchForm(self.request.GET)
         if form.is_valid():
             username = form.cleaned_data["username"]
             if username and username.strip():
-                users = User.objects.search_by_username(
+                return User.objects.search_by_username(
                     username,
-                    exclude_user=request.user,
+                    exclude_user=self.request.user,
                 ).prefetch_related("exams")[:5]
-                serializer = UserSerializer(users, many=True)
-                return Response({"users": serializer.data})
 
-            return Response({"users": []})
+            return User.objects.none()
 
-        return Response(
-            {"error": "Invalid request"},
-            status=status.HTTP_400_BAD_REQUEST,
+        return User.objects.none()
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(
+            form=UserSearchForm(self.request.GET),
+            **kwargs,
         )
 
 
