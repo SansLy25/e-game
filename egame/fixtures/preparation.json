@@ -1,35 +1,12 @@
 [
   {
-    "model": "preparation.test",
-    "pk": 2,
-    "fields": {
-        "exam": 1,
-        "title": "Правописание корней с чередующимися гласными"
-    }
-  },
-  {
       "model": "preparation.test",
       "pk": 1,
       "fields": {
           "exam": 2,
+          "order": 1,
           "title": "Свойства степеней"
       }
-  },
-  {
-    "model": "preparation.test",
-    "pk": 3,
-    "fields": {
-        "exam": 3,
-        "title": "Сила тяжести"
-    }
-  },
-  {
-    "model": "preparation.test",
-    "pk": 4,
-    "fields": {
-      "exam": 2,
-      "title": "Формулы сокращенного умножения"
-    }
   },
   {
     "model": "preparation.task",
@@ -135,6 +112,15 @@
     }
   },
   {
+    "model": "preparation.test",
+    "pk": 2,
+    "fields": {
+        "exam": 1,
+        "order": 1,
+        "title": "Правописание корней с чередующимися гласными"
+    }
+  },
+  {
     "model": "preparation.task",
     "pk": 8,
     "fields": {
@@ -196,6 +182,15 @@
         "От согласной(-ых) на конце корня",
         "От смысла"
       ]
+    }
+  },
+  {
+    "model": "preparation.test",
+    "pk": 3,
+    "fields": {
+        "exam": 3,
+        "order": 1,
+        "title": "Сила тяжести"
     }
   },
   {
@@ -276,6 +271,15 @@
           "9.81 \\(\\frac{м}{с^2}\\)", 
           "10.1 \\(\\frac{м}{с^2}\\)"
         ]
+    }
+  },
+  {
+    "model": "preparation.test",
+    "pk": 4,
+    "fields": {
+      "exam": 2,
+      "order": 2,
+      "title": "Формулы сокращенного умножения"
     }
   },
   {
