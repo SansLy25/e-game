@@ -9,13 +9,11 @@
             <span class="text-danger"><b>*</b></span>
         {% endif %}
     </label>
-    <div class="input-group">
-        <span class="input-group-text">
+    <div class="input-group input-group-base">
+        <span class="input-group-icon">
             <i class="bi {{ field|get_field_icon }}"></i>
         </span>
-            <div class="is-invalid">
-                {{ field }}
-            </div>
+        {{ field }}
         {% comment %} {% if field.errors %} // FIXME
             <div class="invalid-feedback">
                 {% for error in field.errors %}

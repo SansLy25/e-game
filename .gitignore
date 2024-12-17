@@ -102,5 +102,4 @@ dmypy.json
 # Other
 other
 sketches
-ruff.toml
 pytest.ini

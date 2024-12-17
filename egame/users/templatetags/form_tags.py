@@ -1,8 +1,5 @@
 import django.template
 
-__all__ = ()
-
-
 register = django.template.Library()
 
 
