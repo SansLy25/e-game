@@ -6,6 +6,7 @@ import django.urls
 from django.urls import include, path
 
 import homepage.urls
+import leaderboard.urls
 import practice.urls
 import preparation.urls
 import statistic.urls
@@ -27,6 +28,7 @@ urlpatterns = [
         include(statistic.urls, namespace="statistic"),
     ),
     path("<slug:exam_slug>/preparation/", include(preparation.urls)),
+    path("leaderboard/", include(leaderboard.urls)),
 ]
 
 if settings.DEBUG:

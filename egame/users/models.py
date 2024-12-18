@@ -52,9 +52,12 @@ class User(AbstractUser):
         verbose_name="друзья",
     )
 
+    score = models.PositiveIntegerField(default=0)
+
     objects = UserManager()
 
     class Meta:
+        ordering = ["-score"]
         verbose_name = "пользователь"
         verbose_name_plural = "пользователи"
 

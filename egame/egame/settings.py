@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "practice.apps.PracticeConfig",
     "preparation.apps.PreparationConfig",
     "users.apps.UsersConfig",
+    "leaderboard.apps.LeaderboardConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -69,6 +70,26 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
+    },
+}
+
+# Redis settings
+
+if "test" in os.sys.argv:
+    REDIS_DB = 2
+else:
+    REDIS_DB = 1
+
+REDIS_HOST = "localhost"
+REDIS_PORT = 6379
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
     },
 }
 
