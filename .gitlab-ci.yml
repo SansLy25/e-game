@@ -4,9 +4,9 @@ stages:
 
 variables:
   PYTHON_VERSION: "3.11"
-  DOCKER_HOST: tcp://localhost:2375
+  DOCKER_HOST: tcp://docker:2375
   DOCKER_DRIVER: overlay2
-  DOCKER_TLS_CERTDIR: ""
+
 
 black:
   stage: linting
@@ -39,13 +39,20 @@ test:
   services:
     - name: docker:20.10.24-dind
       alias: docker
-  script:
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+  before_script:
     - apk add --no-cache docker-compose make
     - docker version
     - docker info
-    - echo $DOCKER_HOST
-    - docker-compose up -d
+    - docker-compose version
+  script:
+    - docker-compose down
+    - docker-compose pull redis
+    - docker-compose up -d redis
     - make check-test-requirements
     - make test
   after_script:
     - docker-compose down
+
