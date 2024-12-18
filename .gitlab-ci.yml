@@ -6,6 +6,7 @@ variables:
   PYTHON_VERSION: "3.11"
   DOCKER_HOST: tcp://docker:2375
   DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
 
 
 black:
@@ -35,17 +36,16 @@ flake8:
 
 test:
   stage: test
-  image: docker:20.10.24
+  image: docker:24
   services:
-    - name: docker:20.10.24-dind
+    - name: docker:24-dind
       alias: docker
-  variables:
-    DOCKER_HOST: tcp://docker:2375
-    DOCKER_DRIVER: overlay2
+      command: ["--host=tcp://0.0.0.0:2375"]
   before_script:
-    - apk add --no-cache docker-compose make
-    - docker version
-    - docker info
+    - apk add --no-cache docker-compose make iputils curl
+    - ping -c 4 docker || echo "Cannot resolve docker"
+    - nslookup docker || echo "NSLookup failed"
+    - until docker info; do sleep 1; done
     - docker-compose version
   script:
     - docker-compose down
