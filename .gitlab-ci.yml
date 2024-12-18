@@ -6,6 +6,7 @@ variables:
   PYTHON_VERSION: "3.11"
   DOCKER_HOST: tcp://localhost:2375
   DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
 
 black:
   stage: linting
@@ -40,7 +41,9 @@ test:
       alias: docker
   script:
     - apk add --no-cache docker-compose make
+    - docker version
     - docker info
+    - echo $DOCKER_HOST
     - docker-compose up -d
     - make check-test-requirements
     - make test
