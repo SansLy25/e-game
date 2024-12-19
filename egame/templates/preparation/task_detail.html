@@ -1,0 +1,32 @@
+{% extends "base-tw.html" %}
+
+{% block title %}Тест{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto mt-8 px-6 pb-6 bg-gray-900 rounded-lg" style="color: #FFFFFF;">
+    <h2 class="text-2xl font-bold mb-4 text-center">
+        {{ test.title }}
+    </h2>
+    <p class="mb-6 text-lg text-gray-300">{{ task.question }}</p>
+
+    <form class="py-3" id="task-form" method="post" action="{% url 'preparation:task_detail' test.exam.slug test.order task.order %}">
+        {% csrf_token %}
+        <div class="space-y-4">
+            {% for option in options %}
+                <div class="p-4 border rounded-lg hover:bg-gray-800 transition" style="border-color: #4a148c;">
+                    <label class="flex items-center space-x-3">
+                        <input type="radio" name="answer" value="{{ option }}" class="h-5 w-5 text-purple-600 focus:ring-0" onclick="submitForm()">
+                        <span class="text-gray-200">{{ option|safe }}</span>
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+    </form>
+</div>
+
+<script>
+    function submitForm() {
+        document.getElementById('task-form').submit();
+    }
+</script>
+{% endblock %}

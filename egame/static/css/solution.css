@@ -884,3 +884,8 @@ img {
     margin-right: calc(.75rem * var(--tw-space-x-reverse));
     margin-left: calc(.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+}

@@ -237,6 +237,9 @@ class VariantSolutionView(TemplateView):
             self.linear_to_coefficient(total_seconds // 60) * 10 * score,
         )
 
+        self.request.user.score += context["rating"]
+        self.request.user.save()
+
         variant.delete()
 
         return render(request, "practice/result.html", context)

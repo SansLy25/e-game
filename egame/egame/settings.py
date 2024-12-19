@@ -20,11 +20,15 @@ DEBUG = load_bool("DJANGO_DEBUG", True)
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
 
 INSTALLED_APPS = [
+    "django_jsonform",
     "rest_framework",
+    "planning.apps.PlanningConfig",
     "statistic.apps.StatisticConfig",
     "homepage.apps.HomepageConfig",
     "practice.apps.PracticeConfig",
+    "preparation.apps.PreparationConfig",
     "users.apps.UsersConfig",
+    "leaderboard.apps.LeaderboardConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -41,6 +45,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "egame.middleware.VisitingMiddleware",
 ]
 
 ROOT_URLCONF = "egame.urls"
@@ -69,6 +74,7 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     },
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -117,5 +123,3 @@ if DEBUG is True:
     INTERNAL_IPS = [
         "127.0.0.1",
     ]
-
-__all__ = ()

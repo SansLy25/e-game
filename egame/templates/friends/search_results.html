@@ -1,82 +1,24 @@
-{% extends 'base-bs.html' %}
-{% load static %}
-
-{% block content %}
-  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/base.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/form.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/friends.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
-
-  <div class="container py-5">
-    <div class="friends-container">
-      <section>
-        <h2 class="section-title">Поиск пользователей</h2>
-        <form method="get" action="{% url 'users:friends:search' %}" class="search-form">
-          <div class="flex-grow-1">
-            <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-search"></i></span>
-              {{ form }}
-            </div>
-          </div>
-          <button type="submit" class="btn btn-solid">
-            <i class="bi bi-search me-1"></i>
-            Найти
-          </button>
-        </form>
-      </section>
-
-      <section>
-        <h2 class="section-title">Результаты поиска</h2>
-        <div class="search-results-list">
-          {% for user in users %}
-            <div class="friend-card">
-              <div class="friend-info">
-                <div class="profile-avatar">
-                  <span>{{ user.username|make_list|first|upper }}</span>
-                </div>
-                <div class="friend-details">
-                  <h3 class="friend-username" title="{{ user.username }}">{{ user.username }}</h3>
-                  <p class="friend-exams">
-                    Экзамены:{% for exam in user.exams.all %}
-                      <span title="{{ exam.name }}">{{ exam.name }}</span>
-                    {% endfor %}
-                  </p>
-                </div>
-              </div>
-              <form method="post" action="{% url 'users:friends:add' user.id %}">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-bg-subtle-outline">
-                  <i class="bi bi-person-plus me-1"></i>
-                  Пригласить
-                </button>
-              </form>
-            </div>
-          {% empty %}
-            <div class="no-results-message">Пользователи не найдены</div>
-          {% endfor %}
-        </div>
-      </section>
-    </div>
-
-    {% if messages %}
-      <div class="messages">
-        {% for message in messages %}
-          <div class="message {% if message.tags == 'success' %}
-              
-              
-              message-success
-
-
-            {% else %}
-              
-              
-              message-error
-
-
-            {% endif %}">{{ message }}</div>
-        {% endfor %}
+{% for user in users %}
+  <div class="friend-card">
+    <div class="friend-info container-secondary container-rounded p-2">
+      <div class="profile-avatar">
+        <span>{{ user.username|make_list|first|upper }}</span>
       </div>
-    {% endif %}
+      <div class="friend-details">
+        <h3 class="friend-username" title="{{ user.username }}">{{ user.username }}</h3>
+        <p class="friend-exams">
+          Экзамены:{% for exam in user.exams.all %}
+            <span title="{{ exam }}">{{ exam }}</span>
+          {% endfor %}
+        </p>
+      </div>
+      {% csrf_token %}
+      <button onclick="window.location.href='{% url 'users:friends:add' user.id %}'" class="btn btn-bg-subtle-outline">
+        <i class="bi bi-person-plus"></i>
+        <span>Пригласить</span>
+      </button>
+    </div>
   </div>
-{% endblock %}
+{% empty %}
+  <div class="no-results-message container-secondary container-rounded-x1_5">Пользователи не найдены</div>
+{% endfor %}

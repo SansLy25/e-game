@@ -1,6 +1,6 @@
 import random
 
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 
 PHRASES = {
@@ -38,7 +38,7 @@ class HomePageView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return render(request, self.template_name_for_authed)
+            return redirect("homepage:exam_home", exam_slug="math")
 
         return render(request, self.template_name)
 
@@ -61,6 +61,3 @@ class ExamHomePageView(TemplateView):
         context["verbose_exam"] = verbose
         context["phrase"] = random.choice(PHRASES[context["exam_slug"]])
         return context
-
-
-__all__ = ()

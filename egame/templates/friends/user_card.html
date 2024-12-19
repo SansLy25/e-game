@@ -1,0 +1,29 @@
+<div class="friend-card">
+    {{ selected_user }}
+  <div class="friend-info container-secondary container-rounded p-2">
+    <div class="profile-avatar">
+      <span>{{ selected_user.username|make_list|first|upper }}</span>
+    </div>
+    <div class="friend-details">
+      <h3 class="friend-username" title="{{ selected_user.username }}">
+        {{ selected_user.username }}
+      </h3>
+      <p class="friend-exams">
+        Экзамены:
+        {% for exam in selected_user.exams %}
+          <span title="{{ exam }}">{{ exam }}</span>
+        {% endfor %}
+      </p>
+    </div>
+  </div>
+  {% if selected_user.id %}
+    {% csrf_token %}
+    <button
+      onclick="window.location.href='{% url 'users:friends:add' selected_user.id %}'"
+      class="btn btn-bg-subtle-outline"
+    >
+      <i class="bi bi-person-plus"></i>
+      Пригласить
+    </button>
+  {% endif %}
+</div>

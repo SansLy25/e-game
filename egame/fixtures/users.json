@@ -1,22 +1,8925 @@
 [
-    {
-        "model": "users.user",
-        "pk": 1,
-        "fields": {
-            "password": "pbkdf2_sha256$720000$f9boOy8qlrZRUq5zoolu9G$K/5lUkFyfusIBMgZwHtdh3Y6uztS+SwRvfM3crzNaMk=",
-            "last_login": "2024-12-06T15:35:01.103Z",
-            "is_superuser": true,
-            "username": "admin",
-            "first_name": "",
-            "last_name": "",
-            "email": "admin@mail.com",
-            "is_staff": true,
-            "is_active": true,
-            "date_joined": "2024-12-06T15:34:56.939Z",
-            "groups": [],
-            "user_permissions": [],
-            "exams": [],
-            "friends": []
-        }
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": "2024-12-15T04:08:35.379Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@mail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-12-06T15:34:56.939Z",
+      "score": 0,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [],
+      "friends": [
+        6
+      ],
+      "days_of_lessons": []
     }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": "2024-12-15T04:08:25.829Z",
+      "is_superuser": false,
+      "username": "Redek",
+      "first_name": "",
+      "last_name": "",
+      "email": "some@my.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:06:13.383Z",
+      "score": 100,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [
+        16,
+        6
+      ],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Sonashe",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:06:35.443Z",
+      "score": 60,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [
+        16,
+        6
+      ],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": "2024-12-15T04:21:34.160Z",
+      "is_superuser": false,
+      "username": "kolik",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:06:50.130Z",
+      "score": 80,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [
+        16,
+        6
+      ],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Flilany",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:07:41.719Z",
+      "score": 10,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [
+        6
+      ],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Klo",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:07:55.006Z",
+      "score": 111,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [],
+      "friends": [
+        2,
+        4,
+        3,
+        5,
+        1
+      ],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Hiexikin",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:08:59.681Z",
+      "score": 16,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [
+        16
+      ],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Zandellen",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:09:33.329Z",
+      "score": 44,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [
+        16
+      ],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Panandah",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:10:15.585Z",
+      "score": 97,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Zelg",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:10:28.403Z",
+      "score": 77,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Jedetele",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:10:45.475Z",
+      "score": 11,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [
+        16
+      ],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Besah",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:11:05.965Z",
+      "score": 88,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "oryda",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:11:33.206Z",
+      "score": 12,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 14,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Eyonacera",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:12:13.567Z",
+      "score": 11,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 15,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "felitoe",
+      "first_name": "",
+      "last_name": "",
+      "email": "my_generium@some.ur",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:12:42.831Z",
+      "score": 1,
+      "score_planning": 0,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [],
+      "days_of_lessons": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 16,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
+      "last_login": "2024-12-19T19:58:58.717Z",
+      "is_superuser": false,
+      "username": "plov",
+      "first_name": "",
+      "last_name": "",
+      "email": "plov@some.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-12-15T04:13:17.074Z",
+      "score": 10560,
+      "score_planning": 2250,
+      "groups": [],
+      "user_permissions": [],
+      "exams": [
+        1,
+        2,
+        3
+      ],
+      "friends": [
+        2,
+        4,
+        3,
+        8,
+        7,
+        11
+      ],
+      "days_of_lessons": [
+        1,
+        4,
+        5,
+        7
+      ]
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 1,
+    "fields": {
+      "day": 0
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 2,
+    "fields": {
+      "day": 1
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 3,
+    "fields": {
+      "day": 2
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 4,
+    "fields": {
+      "day": 3
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 5,
+    "fields": {
+      "day": 4
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 6,
+    "fields": {
+      "day": 5
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 7,
+    "fields": {
+      "day": 6
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 7,
+    "fields": {
+      "day": "2024-12-14",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 9,
+    "fields": {
+      "day": "2024-12-16",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 11,
+    "fields": {
+      "day": "2024-12-10",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 12,
+    "fields": {
+      "day": "2024-12-06",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 13,
+    "fields": {
+      "day": "2024-12-04",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 14,
+    "fields": {
+      "day": "2024-12-08",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 15,
+    "fields": {
+      "day": "2024-12-13",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 16,
+    "fields": {
+      "day": "2024-12-12",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 18,
+    "fields": {
+      "day": "2024-12-19",
+      "user": 3
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 21,
+    "fields": {
+      "day": "2024-12-19",
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 1,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 14,
+      "score": 0,
+      "duration": "00:00:07.375499",
+      "full_variant": false,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 2,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 19,
+      "duration": "00:39:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 3,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:44:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 4,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "01:39:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 5,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "01:26:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 6,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "01:58:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 7,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 8,
+      "duration": "01:22:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 8,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "02:12:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 9,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 7,
+      "duration": "01:39:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 10,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "01:27:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 11,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:24:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 12,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 10,
+      "duration": "02:24:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 13,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 6,
+      "duration": "02:31:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 14,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "01:15:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 15,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "00:34:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 16,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "02:21:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 17,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:26:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 18,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "00:46:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 19,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "01:46:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 20,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 26,
+      "duration": "01:48:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 21,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "02:24:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 22,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "02:20:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 23,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "02:33:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 24,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "03:04:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 25,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "01:26:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 26,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "02:06:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 27,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:57:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 28,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 19,
+      "duration": "01:21:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 29,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 12,
+      "duration": "02:31:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 30,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "02:57:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 31,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 6,
+      "duration": "01:40:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 32,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 13,
+      "duration": "01:17:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 33,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "00:37:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 34,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "02:52:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 35,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "02:45:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 36,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 14,
+      "duration": "00:48:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 37,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "01:29:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 38,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "01:37:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 39,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 15,
+      "duration": "02:50:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 40,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 15,
+      "duration": "03:00:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 41,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:15:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 42,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "00:48:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 43,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "02:31:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 44,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "01:29:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 45,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "00:35:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 46,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:08:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 47,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "01:59:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 48,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "01:05:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 49,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "02:25:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 50,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "00:51:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 51,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 5,
+      "duration": "02:01:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 52,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 18,
+      "duration": "01:07:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 53,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 18,
+      "duration": "02:50:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 54,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:20:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 55,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:39:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 56,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 9,
+      "duration": "01:52:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 57,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "01:15:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 58,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "02:22:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 59,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 8,
+      "duration": "01:22:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 60,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "02:30:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 61,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "01:26:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 62,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "02:39:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 63,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "03:00:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 64,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 12,
+      "duration": "00:51:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 65,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 16,
+      "duration": "00:36:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 66,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "01:05:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 67,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 21,
+      "duration": "02:52:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 68,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "00:46:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 69,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "00:58:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 70,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "02:55:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 71,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "00:44:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 72,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 3,
+      "duration": "01:45:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 73,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 10,
+      "duration": "01:01:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 74,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 9,
+      "duration": "01:00:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 75,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 11,
+      "duration": "02:40:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 76,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "02:55:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 77,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:04:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 78,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "02:21:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 79,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 8,
+      "duration": "02:51:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 80,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 4,
+      "duration": "00:50:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 81,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:27:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 82,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "02:28:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 83,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "02:41:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 84,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 11,
+      "duration": "02:39:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 85,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 7,
+      "duration": "00:34:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 86,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 15,
+      "duration": "00:39:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 87,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "02:27:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 88,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 15,
+      "duration": "01:06:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 89,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 18,
+      "duration": "00:53:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 90,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "02:19:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 91,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 6,
+      "duration": "02:03:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 92,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:45:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 93,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "02:22:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 94,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "01:49:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 95,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "02:33:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 96,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "02:24:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 97,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 9,
+      "duration": "01:26:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 98,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 15,
+      "duration": "00:40:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 99,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 10,
+      "duration": "01:33:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 100,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:25:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 101,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:32:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 102,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "01:16:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 103,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 6,
+      "duration": "01:25:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 104,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 10,
+      "duration": "02:52:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 105,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 3,
+      "duration": "00:53:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 106,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 5,
+      "duration": "01:52:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 107,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "02:42:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 108,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 5,
+      "duration": "03:05:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 109,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 26,
+      "duration": "01:05:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 110,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:36:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 111,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "02:58:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 112,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "01:06:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 113,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "02:10:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 114,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "00:41:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 115,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:53:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 116,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 11,
+      "duration": "03:02:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 117,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "01:29:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 118,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 6,
+      "duration": "02:49:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 119,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 7,
+      "duration": "01:32:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 120,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 14,
+      "duration": "01:20:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 121,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "03:00:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 122,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:41:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 123,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 26,
+      "duration": "02:15:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 124,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "02:24:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 125,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 10,
+      "duration": "03:02:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 126,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 17,
+      "duration": "00:32:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 127,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "01:55:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 128,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "00:31:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 129,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 12,
+      "duration": "02:42:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 130,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "02:33:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 131,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "02:49:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 132,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "00:33:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 133,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "00:54:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 134,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "00:58:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 135,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 10,
+      "duration": "00:40:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 136,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 17,
+      "duration": "00:43:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 137,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 21,
+      "duration": "01:34:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 138,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 8,
+      "duration": "00:47:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 139,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 7,
+      "duration": "01:46:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 140,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 13,
+      "duration": "01:48:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 141,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "00:44:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 142,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "02:19:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 143,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:37:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 144,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 13,
+      "duration": "01:04:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 145,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "01:06:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 146,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "02:31:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 147,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "01:31:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 148,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 9,
+      "duration": "03:01:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 149,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:31:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 150,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 8,
+      "duration": "01:42:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 151,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 9,
+      "duration": "00:32:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 152,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "00:52:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 153,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "03:05:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 154,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 7,
+      "duration": "01:42:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 155,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "01:13:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 156,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 13,
+      "duration": "01:46:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 157,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "02:40:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 158,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 8,
+      "duration": "00:39:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 159,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "01:16:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 160,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:03:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 161,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "00:59:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 162,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "00:59:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 163,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "00:32:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 164,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "01:04:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 165,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 7,
+      "duration": "00:51:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 166,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "01:02:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 167,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:51:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 168,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "02:55:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 169,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 8,
+      "duration": "02:06:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 170,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "02:31:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 171,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 15,
+      "duration": "00:40:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 172,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "01:17:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 173,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "02:10:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 174,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "00:50:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 175,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "01:13:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 176,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "02:47:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 177,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "02:42:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 178,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 17,
+      "duration": "02:24:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 179,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "00:44:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 180,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 5,
+      "duration": "00:36:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 181,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 17,
+      "duration": "03:04:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 182,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "01:58:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 183,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "01:50:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 184,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 23,
+      "duration": "01:11:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 185,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 10,
+      "duration": "01:17:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 186,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "02:15:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 187,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "02:31:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 188,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "01:51:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 189,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 4,
+      "duration": "01:20:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 190,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "01:30:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 191,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "00:35:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 192,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 12,
+      "duration": "00:37:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 193,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "00:32:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 194,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:02:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 195,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 11,
+      "duration": "02:27:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 196,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "02:04:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 197,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "01:33:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 198,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "00:31:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 199,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "00:40:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 200,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 3,
+      "duration": "02:15:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 201,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "00:49:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 202,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "01:06:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 203,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "02:15:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 204,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 5,
+      "duration": "02:52:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 205,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 12,
+      "duration": "01:53:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 206,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "02:59:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 207,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "00:50:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 208,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "01:27:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 209,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "01:50:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 210,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "00:54:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 211,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 7,
+      "duration": "02:33:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 212,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "02:49:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 213,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "02:26:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 214,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 19,
+      "duration": "02:36:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 215,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 24,
+      "duration": "02:22:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 216,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "02:30:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 217,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 11,
+      "duration": "02:56:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 218,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:14:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 219,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "00:48:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 220,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "00:36:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 221,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:03:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 222,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "00:50:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 223,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 21,
+      "duration": "01:39:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 224,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 10,
+      "duration": "00:33:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 225,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "00:57:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 226,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "01:19:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 227,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "00:54:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 228,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "00:34:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 229,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 6,
+      "duration": "02:06:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 230,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 17,
+      "duration": "00:50:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 231,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:25:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 232,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "02:58:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 233,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "00:32:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 234,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:19:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 235,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "02:06:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 236,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 13,
+      "duration": "02:01:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 237,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 13,
+      "duration": "02:53:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 238,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "00:43:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 239,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 3,
+      "duration": "03:01:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 240,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "02:00:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 241,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "02:11:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 242,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 6,
+      "duration": "01:00:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 243,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "00:52:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 244,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 11,
+      "duration": "02:46:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 245,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "01:08:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 246,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 18,
+      "duration": "02:18:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 247,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "02:09:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 248,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 17,
+      "duration": "01:36:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 249,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "01:25:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 250,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 11,
+      "duration": "01:26:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 251,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:25:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 252,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 18,
+      "duration": "01:30:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 253,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "01:31:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 254,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "01:44:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 255,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "02:28:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 256,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "02:35:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 257,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 7,
+      "duration": "02:21:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 258,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 4,
+      "duration": "01:55:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 259,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "02:57:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 260,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "03:02:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 261,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "01:02:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 262,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 13,
+      "duration": "01:57:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 263,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 26,
+      "duration": "01:14:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 264,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 7,
+      "duration": "00:37:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 265,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:30:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 266,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "01:18:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 267,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 23,
+      "duration": "01:31:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 268,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "00:44:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 269,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "01:48:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 270,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 15,
+      "duration": "00:30:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 271,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:45:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 272,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 12,
+      "duration": "02:54:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 273,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "02:38:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 274,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 17,
+      "duration": "00:57:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 275,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "00:45:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 276,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "03:02:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 277,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 3,
+      "duration": "02:47:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 278,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "01:17:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 279,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:51:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 280,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "02:08:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 281,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "02:35:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 282,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "00:55:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 283,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "01:02:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 284,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "00:59:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 285,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 19,
+      "duration": "00:31:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 286,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "02:37:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 287,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "01:27:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 288,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 3,
+      "duration": "01:42:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 289,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 26,
+      "duration": "01:16:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 290,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:28:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 291,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "00:56:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 292,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 23,
+      "duration": "01:26:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 293,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:49:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 294,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 11,
+      "duration": "00:55:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 295,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 23,
+      "duration": "01:57:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 296,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 3,
+      "duration": "02:28:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 297,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 12,
+      "duration": "01:51:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 298,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "02:12:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 299,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "00:32:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 300,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "01:37:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 301,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "01:49:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 302,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "02:48:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 303,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:34:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 304,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "02:13:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 305,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "01:41:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 306,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "02:21:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 307,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "02:37:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 308,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 9,
+      "duration": "01:38:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 309,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "02:00:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 310,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "01:53:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 311,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "02:59:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 312,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "02:20:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 313,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "02:11:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 314,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:43:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 315,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:08:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 316,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "00:50:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 317,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "02:06:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 318,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "01:02:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 319,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "00:54:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 320,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "01:35:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 321,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "02:08:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 322,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "03:03:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 323,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "00:56:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 324,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 10,
+      "duration": "01:12:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 325,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 17,
+      "duration": "01:31:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 326,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "00:58:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 327,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "01:23:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 328,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 10,
+      "duration": "01:00:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 329,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "02:18:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 330,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "00:37:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 331,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "03:01:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 332,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "01:16:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 333,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 18,
+      "duration": "00:37:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 334,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "00:31:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 335,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 6,
+      "duration": "03:04:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 336,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 18,
+      "duration": "01:49:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 337,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:41:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 338,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "01:23:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 339,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "01:34:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 340,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 18,
+      "duration": "01:06:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 341,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 21,
+      "duration": "02:04:00",
+      "full_variant": true,
+      "user": 1
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 342,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "02:30:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 343,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "01:10:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 344,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 12,
+      "duration": "01:53:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 345,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "02:08:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 346,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "02:45:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 347,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 16,
+      "duration": "00:36:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 348,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 23,
+      "duration": "02:22:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 349,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "01:06:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 350,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "00:31:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 351,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 3,
+      "duration": "01:20:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 352,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 7,
+      "duration": "00:33:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 353,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "00:51:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 354,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:14:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 355,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "02:05:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 356,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:36:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 357,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 24,
+      "duration": "03:01:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 358,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "01:31:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 359,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "00:54:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 360,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 10,
+      "duration": "02:58:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 361,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "01:24:00",
+      "full_variant": true,
+      "user": 2
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 362,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "01:30:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 363,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "02:16:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 364,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "00:42:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 365,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "02:35:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 366,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:04:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 367,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "01:58:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 368,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 9,
+      "duration": "01:37:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 369,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "02:58:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 370,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "00:55:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 371,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "01:56:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 372,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "03:05:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 373,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:16:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 374,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 10,
+      "duration": "02:18:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 375,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "01:57:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 376,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 7,
+      "duration": "01:45:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 377,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "03:00:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 378,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "00:32:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 379,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 4,
+      "duration": "02:26:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 380,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "02:15:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 381,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "02:02:00",
+      "full_variant": true,
+      "user": 3
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 382,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 4,
+      "duration": "02:41:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 383,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "02:48:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 384,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "01:14:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 385,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 18,
+      "duration": "00:30:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 386,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 26,
+      "duration": "01:27:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 387,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 21,
+      "duration": "02:55:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 388,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "02:23:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 389,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 3,
+      "duration": "00:39:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 390,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 18,
+      "duration": "01:13:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 391,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:20:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 392,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "01:26:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 393,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "03:00:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 394,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "02:04:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 395,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "01:19:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 396,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "01:53:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 397,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "01:13:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 398,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:49:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 399,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 16,
+      "duration": "02:51:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 400,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:38:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 401,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "01:02:00",
+      "full_variant": true,
+      "user": 4
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 402,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "01:51:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 403,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 4,
+      "duration": "00:54:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 404,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "02:54:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 405,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 13,
+      "duration": "01:33:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 406,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "01:08:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 407,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "02:46:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 408,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 24,
+      "duration": "01:18:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 409,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:35:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 410,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "00:49:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 411,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "02:29:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 412,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:00:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 413,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "02:08:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 414,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "01:42:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 415,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "02:07:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 416,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "00:56:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 417,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "02:16:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 418,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "01:33:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 419,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 26,
+      "duration": "02:00:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 420,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "02:44:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 421,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 23,
+      "duration": "01:35:00",
+      "full_variant": true,
+      "user": 5
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 422,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "00:53:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 423,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 21,
+      "duration": "01:42:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 424,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "00:34:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 425,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 26,
+      "duration": "00:56:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 426,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "03:02:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 427,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "02:00:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 428,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 18,
+      "duration": "01:03:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 429,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 23,
+      "duration": "02:29:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 430,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "01:52:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 431,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "01:17:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 432,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "01:22:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 433,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "00:34:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 434,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "02:10:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 435,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "01:38:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 436,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 16,
+      "duration": "00:42:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 437,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "00:33:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 438,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:23:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 439,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "00:50:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 440,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "00:34:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 441,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:03:00",
+      "full_variant": true,
+      "user": 6
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 442,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 10,
+      "duration": "02:58:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 443,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "01:21:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 444,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 7,
+      "duration": "02:41:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 445,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 16,
+      "duration": "01:04:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 446,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "00:42:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 447,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "00:40:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 448,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 3,
+      "duration": "02:55:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 449,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 3,
+      "duration": "00:34:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 450,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 21,
+      "duration": "01:10:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 451,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "02:51:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 452,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:55:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 453,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "02:34:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 454,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "00:34:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 455,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 13,
+      "duration": "01:45:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 456,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:02:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 457,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "01:30:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 458,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "01:30:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 459,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 8,
+      "duration": "00:43:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 460,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "02:29:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 461,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 7,
+      "duration": "02:41:00",
+      "full_variant": true,
+      "user": 7
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 462,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 17,
+      "duration": "00:59:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 463,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 5,
+      "duration": "02:25:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 464,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "02:10:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 465,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 11,
+      "duration": "02:26:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 466,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "01:39:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 467,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 7,
+      "duration": "01:06:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 468,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "00:47:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 469,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "02:02:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 470,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "01:58:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 471,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "02:53:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 472,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 5,
+      "duration": "00:43:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 473,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 15,
+      "duration": "02:47:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 474,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 8,
+      "duration": "02:26:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 475,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "01:12:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 476,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:20:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 477,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 18,
+      "duration": "01:41:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 478,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 10,
+      "duration": "01:10:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 479,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 3,
+      "duration": "02:51:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 480,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "02:53:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 481,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "01:17:00",
+      "full_variant": true,
+      "user": 8
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 482,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "01:40:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 483,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "01:49:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 484,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "03:00:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 485,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "00:49:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 486,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 19,
+      "duration": "03:03:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 487,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "00:31:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 488,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "00:52:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 489,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 9,
+      "duration": "02:03:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 490,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "02:56:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 491,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "00:56:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 492,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "00:42:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 493,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "02:48:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 494,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "02:14:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 495,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 16,
+      "duration": "01:21:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 496,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 6,
+      "duration": "01:22:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 497,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "01:47:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 498,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "02:45:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 499,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "01:16:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 500,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "01:57:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 501,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:20:00",
+      "full_variant": true,
+      "user": 9
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 502,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 3,
+      "duration": "01:30:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 503,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:34:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 504,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "02:04:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 505,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "00:54:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 506,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "01:13:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 507,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "03:02:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 508,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "01:40:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 509,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "02:24:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 510,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 11,
+      "duration": "01:30:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 511,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "01:08:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 512,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 16,
+      "duration": "01:41:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 513,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 3,
+      "duration": "00:50:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 514,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 7,
+      "duration": "02:45:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 515,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 18,
+      "duration": "02:41:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 516,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 7,
+      "duration": "01:37:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 517,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "00:38:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 518,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "01:15:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 519,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "02:56:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 520,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "01:24:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 521,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 21,
+      "duration": "01:33:00",
+      "full_variant": true,
+      "user": 10
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 522,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "00:34:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 523,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "02:38:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 524,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 20,
+      "duration": "02:15:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 525,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:27:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 526,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "01:27:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 527,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "02:48:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 528,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 17,
+      "duration": "02:09:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 529,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "02:52:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 530,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "02:39:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 531,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 21,
+      "duration": "01:56:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 532,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 18,
+      "duration": "01:16:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 533,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "02:42:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 534,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "01:38:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 535,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 4,
+      "duration": "02:20:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 536,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "01:51:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 537,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 18,
+      "duration": "00:45:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 538,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "02:38:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 539,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "01:06:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 540,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 3,
+      "duration": "01:53:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 541,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "03:00:00",
+      "full_variant": true,
+      "user": 11
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 542,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:19:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 543,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 10,
+      "duration": "01:13:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 544,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 16,
+      "duration": "01:57:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 545,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 24,
+      "duration": "02:42:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 546,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 4,
+      "duration": "02:25:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 547,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 17,
+      "duration": "03:02:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 548,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 9,
+      "duration": "01:00:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 549,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "01:02:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 550,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "01:28:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 551,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:13:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 552,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 19,
+      "duration": "02:31:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 553,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "01:56:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 554,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "03:04:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 555,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "01:50:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 556,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 13,
+      "duration": "02:28:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 557,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "01:31:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 558,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 10,
+      "duration": "01:50:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 559,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 20,
+      "duration": "02:06:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 560,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 18,
+      "duration": "02:58:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 561,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 6,
+      "duration": "02:07:00",
+      "full_variant": true,
+      "user": 12
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 562,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "02:27:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 563,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:09:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 564,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 15,
+      "duration": "01:28:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 565,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:11:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 566,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 3,
+      "duration": "00:30:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 567,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "00:43:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 568,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 19,
+      "duration": "03:04:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 569,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 19,
+      "duration": "01:30:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 570,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 7,
+      "duration": "01:44:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 571,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:02:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 572,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 13,
+      "duration": "01:10:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 573,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 16,
+      "duration": "02:05:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 574,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 10,
+      "duration": "01:34:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 575,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "01:15:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 576,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 9,
+      "duration": "01:35:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 577,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 25,
+      "duration": "01:20:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 578,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "01:16:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 579,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 13,
+      "duration": "01:17:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 580,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "00:34:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 581,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "01:50:00",
+      "full_variant": true,
+      "user": 13
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 582,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 9,
+      "duration": "01:56:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 583,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "01:21:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 584,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "00:30:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 585,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "02:32:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 586,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "01:47:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 587,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 14,
+      "duration": "01:28:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 588,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "00:37:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 589,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 3,
+      "duration": "01:03:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 590,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "00:50:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 591,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 21,
+      "duration": "01:00:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 592,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 18,
+      "duration": "02:57:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 593,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "02:39:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 594,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 14,
+      "duration": "01:33:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 595,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 17,
+      "duration": "01:09:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 596,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "01:48:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 597,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 5,
+      "duration": "00:55:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 598,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "02:26:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 599,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:22:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 600,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 8,
+      "duration": "01:11:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 601,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "02:05:00",
+      "full_variant": true,
+      "user": 14
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 602,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:50:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 603,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "01:11:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 604,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 5,
+      "duration": "01:58:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 605,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 8,
+      "duration": "02:20:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 606,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 22,
+      "duration": "02:41:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 607,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 8,
+      "duration": "02:50:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 608,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "01:17:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 609,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 11,
+      "duration": "00:59:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 610,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 11,
+      "duration": "01:19:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 611,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 9,
+      "duration": "01:45:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 612,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "02:44:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 613,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 9,
+      "duration": "02:16:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 614,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 13,
+      "duration": "02:38:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 615,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 18,
+      "duration": "02:33:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 616,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 22,
+      "duration": "01:56:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 617,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 6,
+      "duration": "00:40:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 618,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 10,
+      "duration": "01:58:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 619,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 5,
+      "duration": "02:31:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 620,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:47:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 621,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "02:11:00",
+      "full_variant": true,
+      "user": 15
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 622,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 15,
+      "duration": "02:24:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 623,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 3,
+      "duration": "00:45:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 624,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 7,
+      "duration": "02:50:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 625,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 18,
+      "duration": "03:02:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 626,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 12,
+      "duration": "01:43:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 627,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "01:57:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 628,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 10,
+      "duration": "01:41:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 629,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 9,
+      "duration": "01:05:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 630,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 9,
+      "duration": "02:50:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 631,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "00:48:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 632,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "02:51:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 633,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 6,
+      "duration": "01:10:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 634,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 15,
+      "duration": "01:33:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 635,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 16,
+      "duration": "00:39:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 636,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 12,
+      "duration": "01:00:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 637,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 23,
+      "duration": "01:36:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 638,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 4,
+      "duration": "01:24:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 639,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 1,
+      "max_score": 26,
+      "score": 17,
+      "duration": "02:57:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 640,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 3,
+      "max_score": 23,
+      "score": 23,
+      "duration": "00:53:00",
+      "full_variant": true,
+      "user": 16
+    }
+  },
+  {
+    "model": "practice.solution",
+    "pk": 641,
+    "fields": {
+      "date": "2024-12-15",
+      "exam": 2,
+      "max_score": 12,
+      "score": 9,
+      "duration": "00:52:00",
+      "full_variant": true,
+      "user": 16
+    }
+  }
 ]

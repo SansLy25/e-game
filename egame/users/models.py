@@ -1,9 +1,35 @@
+from typing import Optional
+
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import UserManager as BaseUserManager
 from django.db import models
-from django.db.models import QuerySet
+from django.db.models import Q, QuerySet
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 
+from planning.models import DayOfWeek
 from practice.models import Exam, Solution
+
+
+class UserManager(BaseUserManager):
+    def get_by_username_or_pk(self, username: str = None, pk: int = None):
+        if username:
+            return get_object_or_404(self.model, username=username)
+
+        return get_object_or_404(self.model, pk=pk)
+
+    def search_by_username(
+        self,
+        username: str,
+        exclude_user: Optional["User"] = None,
+    ):
+        queryset = self.filter(username__icontains=username)
+        if exclude_user:
+            return queryset.exclude(
+                Q(pk=exclude_user.pk) | Q(friends=exclude_user),
+            )
+
+        return queryset
 
 
 def division(a, b):  # Нужно, чтобы избежать деления на 0
@@ -27,7 +53,19 @@ class User(AbstractUser):
         verbose_name="друзья",
     )
 
+    score = models.PositiveIntegerField(default=0)
+    score_planning = models.PositiveIntegerField(default=0)
+
+    days_of_lessons = models.ManyToManyField(
+        DayOfWeek,
+        related_name="users",
+        verbose_name="Дни занятий",
+    )
+
+    objects = UserManager()
+
     class Meta:
+        ordering = ["-score"]
         verbose_name = "пользователь"
         verbose_name_plural = "пользователи"
 
@@ -65,7 +103,9 @@ class User(AbstractUser):
         return int(round(division(sum(durations), len(durations)), 0))
 
     def get_score_dynamic(self, exam_slug) -> list:
-        solutions = self.get_solutions(exam_slug).order_by("date")[:8]
+        solutions = self.get_solutions(exam_slug).order_by("-date", "-id")[
+            :8:-1
+        ]
 
         dynamic = []
         for solution in solutions:
@@ -81,7 +121,9 @@ class User(AbstractUser):
         return round(division(sum(task_counts), len(task_counts)), 1)
 
     def get_time_dynamic(self, exam_slug) -> list:
-        solutions = self.get_solutions(exam_slug).order_by("date")[:8]
+        solutions = self.get_solutions(exam_slug).order_by("-date", "-id")[
+            :8:-1
+        ]
 
         dynamic = []
         for solution in solutions:
@@ -102,21 +144,51 @@ class User(AbstractUser):
 
     @classmethod
     def get_all_users_average_score(cls, exam_slug) -> float:
-        average_scores = []
+        exam = Exam.objects.get(slug=exam_slug)
 
-        users = cls.objects.filter(solutions__isnull=False)
-        for user in users:
-            average_scores.append(user.get_exam_average_score(exam_slug))
+        solutions = Solution.objects.filter(exam=exam, full_variant=True)
+        scores = [solution.get_score_percent() for solution in solutions]
 
-        return round(division(sum(average_scores), len(average_scores)), 0)
+        return round(division(sum(scores), solutions.count()), 0)
 
     @classmethod
     def get_all_users_average_duration(cls, exam_slug) -> int:
-        average_durations = []
-        users = cls.objects.filter(solutions__isnull=False)
-        for user in users:
-            average_durations.append(user.get_exam_average_duration(exam_slug))
+        exam = Exam.objects.get(slug=exam_slug)
 
-        return int(
-            round(division(sum(average_durations), len(average_durations)), 0),
-        )
+        solutions = Solution.objects.filter(exam=exam, full_variant=True)
+        durations = [solution.duration.seconds for solution in solutions]
+
+        return round(division(sum(durations), solutions.count()), 0)
+
+
+class FriendRequest(models.Model):
+    from_user = models.ForeignKey(
+        User,
+        related_name="sent_friend_requests",
+        on_delete=models.CASCADE,
+    )
+    to_user = models.ForeignKey(
+        User,
+        related_name="received_friend_requests",
+        on_delete=models.CASCADE,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    accepted = models.BooleanField(default=False)
+    rejected = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = "заявка в друзья"
+        verbose_name_plural = "заявки в друзья"
+        unique_together = ("from_user", "to_user")
+
+    def __str__(self):
+        return f"От {self.from_user.username} к {self.to_user.username}"
+
+    def accept(self):
+        self.from_user.friends.add(self.to_user)
+        self.accepted = True
+        self.save()
+
+    def reject(self):
+        self.rejected = True
+        self.save()

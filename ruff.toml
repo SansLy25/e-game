@@ -1,0 +1,21 @@
+fix-only = true
+line-length = 79
+preview = true
+exclude = ["migrations", "venv"]
+
+[lint]
+select = ["N", "F", "W", "E", "N", "DJ", "Q", "TID", "COM", "C4", "ERA", "RET", "PTH"]
+fixable = ["ALL"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+
+[lint.flake8-quotes]
+inline-quotes = "double"
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "all"
