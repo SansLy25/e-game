@@ -56,7 +56,6 @@ class GlobalLeaderboardView(django.views.generic.TemplateView):
                 "total_users": total_users,
             },
         )
-
         return context
 
 

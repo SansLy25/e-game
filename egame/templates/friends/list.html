@@ -65,7 +65,7 @@
         <h2 class="section-title">Мои друзья</h2>
         <div class="friends-list">
           {% for friend in friends %}
-            <div class="friend-card container-secondary container-rounded-x1_5">
+            <div class="friend-card container-secondary container-rounded-x1_5" style="padding: 20px">
               <div class="friend-info">
                 <div class="profile-avatar">
                   <span>{{ friend.username|make_list|first|upper }}</span>

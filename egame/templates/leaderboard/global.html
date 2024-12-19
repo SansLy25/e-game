@@ -2,14 +2,9 @@
 {% extends 'base-tw.html' %}
 
 {% block content %}
-<div class="container mx-auto px-4 py-8 bg-black text-white min-h-screen bg-gray-900">
-    <h2 class="text-3xl font-bold text-center mb-6">Таблица лидеров</h2>
+<div class="container mx-auto px-4 py-8 bg-black text-white min-h-screen bg-gray-900" style="width: 65%">
+    <h2 class="text-3xl font-bold text-center mb-6">Таблица лидеров, всего {{ total_users }} пользователей</h2>
 
-    <div class="mb-6 p-2 bg-gray-800 text-white rounded-lg shadow-md">
-        <span class="text-xl ">Всего</span>
-        <span class="text-xl ">{{ total_users }} пользователей</span>
-    </div>
-    
     {% if current_user_data %}
     <div 
         class="relative flex items-center p-4 bg-gray-800 rounded-xl shadow-md hover:-translate-y-1 transition-all duration-300 mb-7 h-full max-h-24 bg-white text-black">
@@ -52,7 +47,7 @@
                 {{ user.rank }}
             </div>
             <div class="ml-4 flex flex-col z-20">
-                <span class="text-xl font-bold">{{ user.user.username }}</span>
+                <span class="text-xl font-bold">{% if request.user != user.user %}{{ user.user.username }}{% else %}Вы{% endif %}</span>
                 <span class="text-sm text-gray-400 ">{{ user.score }} баллов</span>
             </div>
             {% if user.rank == 1 %}

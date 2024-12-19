@@ -54,6 +54,7 @@ class User(AbstractUser):
     )
 
     score = models.PositiveIntegerField(default=0)
+    score_planning = models.PositiveIntegerField(default=0)
 
     days_of_lessons = models.ManyToManyField(
         DayOfWeek,
