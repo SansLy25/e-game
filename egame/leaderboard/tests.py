@@ -1,97 +1,165 @@
 import django.conf
 import django.contrib.auth
 import django.test
+import django.urls
 
-import leaderboard.managers
+import leaderboard.views
+import users.models
 
 User = django.contrib.auth.get_user_model()
 
 
-class LeaderboardTestCase(django.test.TestCase):
-    def setUp(self):
-        self.leaderboard = leaderboard.managers.LeaderboardManagerWithDB()
-        self.redis_conn = self.leaderboard.redis_conn
+class LeaderboardViewsTestCase(django.test.TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.users = [
+            User.objects.create_user(username=f"user{i}", score=i * 10)
+            for i in range(1, 105)
+        ]
 
-        self.redis_conn.flushdb()
+        cls.test_user = cls.users[0]
+        cls.test_user.friends.set(cls.users[1:51])
+        cls.test_user_friends = cls.test_user.friends.all().count()
 
-        self.user1 = User.objects.create_user(username="user1", score=100)
-        self.user2 = User.objects.create_user(username="user2", score=200)
-        self.user3 = User.objects.create_user(username="user3", score=300)
+        cls.test_user_2 = cls.users[51]
+        cls.test_user_2.friends.set(cls.users[1:101])
+        cls.test_user_2_friends = cls.test_user_2.friends.all().count()
 
-        self.leaderboard.update_score_with_db(self.user1.id, self.user1.score)
-        self.leaderboard.update_score_with_db(self.user2.id, self.user2.score)
-        self.leaderboard.update_score_with_db(self.user3.id, self.user3.score)
-
-    def tearDown(self):
-        self.redis_conn.flushdb()
-
-    def test_update_score(self):
-        new_score = 500
-
-        self.leaderboard.update_score_with_db(
-            user_id=self.user1.id,
-            score=new_score,
+        cls.global_leaderboard_url = django.urls.reverse(
+            "leaderboard:global_leaderboard",
+        )
+        cls.friends_leaderboard_url = django.urls.reverse(
+            "leaderboard:friends_leaderboard",
         )
 
-        redis_score = int(
-            self.redis_conn.zscore(
-                self.leaderboard.global_leaderboard,
-                self.user1.id,
+    def setUp(self):
+        self.client.force_login(self.test_user)
+
+    def tearDown(self):
+        users.models.User.objects.all().delete()
+
+        super(LeaderboardViewsTestCase, self).tearDown()
+
+    def test_global_leaderboard_accessible(self):
+        response = self.client.get(self.global_leaderboard_url)
+        self.assertEqual(
+            response.status_code,
+            200,
+            msg="Глобальная таблица лидеров недоступна. Ожидался статус 200.",
+        )
+
+    def test_global_leaderboard_context(self):
+        response = self.client.get(self.global_leaderboard_url)
+        top_users = response.context["top_users"]
+        total_users = response.context["total_users"]
+
+        self.assertEqual(
+            len(top_users),
+            leaderboard.views.GLOBAL_TOP_LIMIT,
+            msg=(
+                f"Неверное количество пользователей в глобальном лидерборде. "
+                f"Ожидалось {leaderboard.views.GLOBAL_TOP_LIMIT}, "
+                f"получено {len(top_users)}."
             ),
         )
         self.assertEqual(
-            redis_score,
-            new_score,
-            "Score в Redis должен обновиться",
+            total_users,
+            User.objects.count(),
+            msg=(
+                f"Общее количество пользователей неверно. "
+                f"Ожидалось {User.objects.count()}, получено {total_users}."
+            ),
         )
 
-        self.user1.refresh_from_db()
+        scores = [user["score"] for user in top_users]
+        self.assertTrue(
+            all(scores[i] >= scores[i + 1] for i in range(len(scores) - 1)),
+            msg=(
+                "Пользователи в глобальном лидерборде "
+                "не отсортированы по убыванию баллов."
+            ),
+        )
+
+    def test_friends_leaderboard_accessible(self):
+        response = self.client.get(self.friends_leaderboard_url)
         self.assertEqual(
-            self.user1.score,
-            new_score,
-            "Score в базе данных должен обновиться",
+            response.status_code,
+            200,
+            msg="Таблица друзей недоступна. Ожидался статус 200.",
         )
 
-    def test_get_top_users(self):
-        top_users = self.leaderboard.get_top_users(3)
+    def test_friends_leaderboard_context(self):
+        response = self.client.get(self.friends_leaderboard_url)
+        friends_leaderboard = response.context["friends_leaderboard"]
+        total_user_friends = response.context["total_user_friends"]
 
-        expected_order = [self.user3.id, self.user2.id, self.user1.id]
-        actual_order = [int(user_id) for user_id, _ in top_users]
-
-        self.assertEqual(
-            expected_order,
-            actual_order,
-            "Пользователи должны быть в порядке убывания очков",
+        expected_count = (
+            self.test_user_friends + 1
+            if self.test_user
+            in [friend["user"] for friend in friends_leaderboard]
+            else leaderboard.views.FRIENDS_TOP_LIMIT
         )
-
-    def test_get_user_rank(self):
-        rank_user1 = self.leaderboard.get_user_rank(self.user1.id)
-        rank_user2 = self.leaderboard.get_user_rank(self.user2.id)
-        rank_user3 = self.leaderboard.get_user_rank(self.user3.id)
-
-        self.assertEqual(rank_user3, 1, "user3 должен быть на 1 месте")
-        self.assertEqual(rank_user2, 2, "user2 должен быть на 2 месте")
-        self.assertEqual(rank_user1, 3, "user1 должен быть на 3 месте")
-
-    def test_load_initial_data(self):
-        self.redis_conn.flushdb()
-        self.leaderboard.load_initial_data()
-
-        redis_count = self.redis_conn.zcard(
-            self.leaderboard.global_leaderboard,
-        )
-        db_count = User.objects.count()
 
         self.assertEqual(
-            redis_count,
-            db_count,
-            "Количество пользователей в Redis и БД должно совпадать",
+            len(friends_leaderboard),
+            expected_count,
+            msg=(
+                f"Неверное количество друзей в таблице друзей. "
+                f"Ожидалось {expected_count} друзей и сам пользователь, "
+                f"получено {len(friends_leaderboard)}."
+            ),
+        )
+        self.assertEqual(
+            total_user_friends,
+            self.test_user.friends.count(),
+            msg=(
+                f"Общее количество друзей неверно. "
+                f"Ожидалось {self.test_user.friends.count()}, "
+                f"получено {total_user_friends}."
+            ),
         )
 
-    def test_nonexistent_user_rank(self):
-        non_user_id = 999
-        rank = self.leaderboard.get_user_rank(non_user_id)
-        self.assertIsNone(
-            rank,
-            "Ранг несуществующего пользователя должен быть None",
+        scores = [friend["score"] for friend in friends_leaderboard]
+        self.assertTrue(
+            all(scores[i] >= scores[i + 1] for i in range(len(scores) - 1)),
+            msg="Друзья в таблице друзей не отсортированы по убыванию баллов.",
+        )
+
+    def test_friends_leaderboard_large_friend_list(self):
+        self.client.force_login(self.test_user_2)
+        response = self.client.get(self.friends_leaderboard_url)
+        friends_leaderboard = response.context["friends_leaderboard"]
+
+        expected_count = (
+            self.test_user_2_friends
+            if self.test_user_2
+            in [friend["user"] for friend in friends_leaderboard]
+            else leaderboard.views.FRIENDS_TOP_LIMIT
+        )
+
+        self.assertEqual(
+            len(friends_leaderboard),
+            expected_count,
+            msg=(
+                f"Неверное количество друзей в таблице друзей для "
+                f"пользователя с более чем 100 друзьями. "
+                f"Ожидалось {expected_count}, "
+                f"у пользователя низкий рейтинг, "
+                f"он не должен входить в топ "
+                f"{leaderboard.views.FRIENDS_TOP_LIMIT}, "
+                f"получено {len(friends_leaderboard)}."
+            ),
+        )
+
+    def test_current_user_container_visibility(self):
+        self.client.force_login(self.users[0])
+        response = self.client.get(self.global_leaderboard_url)
+        current_user_data = response.context["current_user_data"]
+
+        self.assertIsNotNone(
+            current_user_data,
+            msg=(
+                "Контейнер текущего пользователя не отображается, "
+                "хотя он не входит в топ-100."
+            ),
         )

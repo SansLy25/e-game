@@ -2,6 +2,3 @@
 line-length = 79
 exclude = ".venv"
 target-version = ['py311']
-
-[[runners]]
-  privileged = true

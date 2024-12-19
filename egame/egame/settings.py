@@ -73,25 +73,6 @@ DATABASES = {
     },
 }
 
-# Redis settings
-
-if "test" in os.sys.argv:
-    REDIS_DB = 2
-else:
-    REDIS_DB = 1
-
-REDIS_HOST = "localhost"
-REDIS_PORT = 6379
-
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/1",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        },
-    },
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {

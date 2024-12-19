@@ -4,10 +4,6 @@ stages:
 
 variables:
   PYTHON_VERSION: "3.11"
-  DOCKER_HOST: tcp://localhost:2375
-  DOCKER_DRIVER: overlay2
-  DOCKER_TLS_CERTDIR: ""
-
 
 black:
   stage: linting
@@ -36,14 +32,7 @@ flake8:
 
 test:
   stage: test
-  image: docker:20.10.24
-  services:
-    - name: docker:20.10.24-dind
-      alias: docker
+  image: python:${PYTHON_VERSION}
   script:
-    - apk add --no-cache docker-compose make
-    - docker info
-    - docker-compose up -d
     - make check-test-requirements
     - make test
-
