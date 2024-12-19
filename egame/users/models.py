@@ -7,6 +7,7 @@ from django.db.models import Q, QuerySet
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 
+from planning.models import DayOfWeek
 from practice.models import Exam, Solution
 
 
@@ -53,6 +54,12 @@ class User(AbstractUser):
     )
 
     score = models.PositiveIntegerField(default=0)
+
+    days_of_lessons = models.ManyToManyField(
+        DayOfWeek,
+        related_name="users",
+        verbose_name="Дни занятий",
+    )
 
     objects = UserManager()
 

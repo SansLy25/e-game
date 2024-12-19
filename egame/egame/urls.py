@@ -6,6 +6,7 @@ import django.urls
 from django.urls import include, path
 
 import homepage.urls
+import planning.urls
 import leaderboard.urls
 import practice.urls
 import preparation.urls
@@ -17,8 +18,9 @@ urlpatterns = [
     path("", include(homepage.urls, namespace="homepage")),
     path("", include(users.urls, namespace="users")),
     path("", include(django.contrib.auth.urls)),
-    path("api/practice/", include(practice.urls, namespace="api")),
-    path("api/statistic/", include(statistic.urls, namespace="api")),
+    path("planning/", include(planning.urls, namespace="planning")),
+    path("api/practice/", include(practice.urls, namespace="api_practice")),
+    path("api/statistic/", include(statistic.urls, namespace="api_statistic")),
     path(
         "<slug:exam_slug>/practice/",
         include(practice.urls, namespace="practice"),
