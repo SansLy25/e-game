@@ -1,0 +1,103 @@
+{% extends 'base-tw.html' %}
+{% load static %}
+
+{% block head_meta %}
+    <link rel="stylesheet" crossorigin="" href="{% static 'css/result.css' %}">
+    <link rel="stylesheet" crossorigin="" href="{% static 'css/solution.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="max-w-2xl mx-auto p-6">
+        <div class="bg-gray-800 rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold mb-6 text-white">Редактирование расписания занятий</h2>
+
+            <form method="post" class="space-y-6">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="bg-red-500 text-white p-4 rounded-md">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                <div>
+                    <label for="{{ form.days_of_lessons.id_for_label }}" class="block text-gray-300 font-semibold mb-4">
+                        {{ form.days_of_lessons.label }}
+                    </label>
+                    <div class="flex flex-wrap gap-4">
+                        {% for checkbox in form.days_of_lessons %}
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" name="days_of_lessons" id="{{ checkbox.id_for_label }}"
+                                       value="{{ checkbox.data.value }}"
+                                        {% if checkbox.data.value in active_days %}
+                                        checked
+                                        {% endif %}
+                                       class="custom-checkbox">
+
+                                <label for="{{ checkbox.id_for_label }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="checkmark" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor"
+                                         stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </label>
+                                <span class="text-gray-300 cursor-pointer">{{ checkbox.choice_label }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-end">
+                    <button type="submit"
+                            class="bg-blue-600 text-white px-6 py-2 rounded-md bg-gradient-to-r from-green-500 to-emerald-500">
+                        Сохранить изменения
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <style>
+        /* Скрытие стандартного чекбокса */
+        input[type="checkbox"].custom-checkbox {
+            display: none;
+        }
+
+        /* Кастомный чекбокс */
+        input[type="checkbox"].custom-checkbox + label {
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #4b5563;
+            background-color: #1f2937;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+
+        input[type="checkbox"].custom-checkbox:checked + label {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+
+
+        input[type="checkbox"].custom-checkbox:checked + label .checkmark {
+            display: block;
+        }
+
+
+        .checkmark {
+            width: 1rem;
+            height: 1rem;
+            display: none;
+            fill: white;
+        }
+
+
+        input[type="checkbox"].custom-checkbox:checked + label .checkmark {
+            display: block;
+        }
+    </style>
+{% endblock %}

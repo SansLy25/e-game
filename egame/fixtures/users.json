@@ -404,6 +404,12 @@
         7,
         8,
         11
+      ],
+      "days_of_lessons": [
+        1,
+        2,
+        5,
+        7
       ]
     }
   },
@@ -8738,6 +8744,135 @@
       "duration": "00:52:00",
       "full_variant": true,
       "user": 16
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 1,
+    "fields": {
+      "day": 0
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 2,
+    "fields": {
+      "day": 1
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 3,
+    "fields": {
+      "day": 2
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 4,
+    "fields": {
+      "day": 3
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 5,
+    "fields": {
+      "day": 4
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 6,
+    "fields": {
+      "day": 5
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 7,
+    "fields": {
+      "day": 6
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 7,
+    "fields": {
+      "day": "2024-12-14",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 8,
+    "fields": {
+      "day": "2024-12-19",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 9,
+    "fields": {
+      "day": "2024-12-16",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 11,
+    "fields": {
+      "day": "2024-12-10",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 12,
+    "fields": {
+      "day": "2024-12-06",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 13,
+    "fields": {
+      "day": "2024-12-04",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 14,
+    "fields": {
+      "day": "2024-12-08",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 15,
+    "fields": {
+      "day": "2024-12-13",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 16,
+    "fields": {
+      "day": "2024-12-12",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 18,
+    "fields": {
+      "day": "2024-12-19",
+      "user": 3
     }
   }
 ]

@@ -3,12 +3,12 @@ from typing import Optional
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import UserManager as BaseUserManager
 from django.db import models
-from django.db.models import QuerySet
-from django.db.models import Q
+from django.db.models import Q, QuerySet
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 
-from practice.models import Exam
+from planning.models import DayOfWeek
+from practice.models import Exam, Solution
 
 
 class UserManager(BaseUserManager):
@@ -30,7 +30,6 @@ class UserManager(BaseUserManager):
             )
 
         return queryset
-from practice.models import Exam, Solution
 
 
 def division(a, b):  # Нужно, чтобы избежать деления на 0
@@ -52,6 +51,12 @@ class User(AbstractUser):
         blank=True,
         symmetrical=True,
         verbose_name="друзья",
+    )
+
+    days_of_lessons = models.ManyToManyField(
+        DayOfWeek,
+        related_name="users",
+        verbose_name="Дни занятий",
     )
 
     objects = UserManager()

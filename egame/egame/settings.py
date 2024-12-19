@@ -21,6 +21,7 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
 
 INSTALLED_APPS = [
     "rest_framework",
+    "planning.apps.PlanningConfig",
     "statistic.apps.StatisticConfig",
     "homepage.apps.HomepageConfig",
     "practice.apps.PracticeConfig",
@@ -42,6 +43,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "egame.middleware.VisitingMiddleware",
 ]
 
 ROOT_URLCONF = "egame.urls"
