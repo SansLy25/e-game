@@ -6,8 +6,8 @@ import django.urls
 from django.urls import include, path
 
 import homepage.urls
-import planning.urls
 import leaderboard.urls
+import planning.urls
 import practice.urls
 import preparation.urls
 import statistic.urls
