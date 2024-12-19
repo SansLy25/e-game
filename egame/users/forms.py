@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 from typing import Any, Literal, Optional
 
-import django
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 import django.forms
 from django.views.generic import FormView
 
+from planning.models import DayOfWeek
 from practice.models import Exam
 from users.models import User
 
@@ -82,6 +82,13 @@ class FormContext(dict):
 
 
 class CustomUserCreationForm(BootstrapFormMixin, UserCreationForm):
+    days_of_lessons = forms.ModelMultipleChoiceField(
+        queryset=DayOfWeek.objects.all(),
+        required=True,
+        label="Выберите дни недели для занятий",
+        widget=forms.CheckboxSelectMultiple,
+    )
+
     exams = forms.ModelMultipleChoiceField(
         queryset=Exam.objects.all(),
         required=True,
@@ -91,7 +98,7 @@ class CustomUserCreationForm(BootstrapFormMixin, UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = UserCreationForm.Meta.fields + ("exams",)
+        fields = UserCreationForm.Meta.fields + ("exams", "days_of_lessons")
 
 
 class CustomAuthenticationForm(
