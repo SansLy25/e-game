@@ -9,7 +9,7 @@
     </h2>
     <p class="mb-6 text-lg text-gray-300">{{ task.question }}</p>
 
-    <form class="py-3" id="task-form" method="post" action="{% url 'preparation:task_detail' test.exam.slug test.id task.order %}">
+    <form class="py-3" id="task-form" method="post" action="{% url 'preparation:task_detail' test.exam.slug test.order task.order %}">
         {% csrf_token %}
         <div class="space-y-4">
             {% for option in options %}

@@ -19,11 +19,12 @@ class PreparationTests(django.test.TestCase):
         self.test = preparation.models.Test.objects.create(
             exam=self.exam,
             title="Свойства степеней",
+            order=1,
         )
 
         self.task1 = preparation.models.Task.objects.create(
             test=self.test,
-            question="Какова степень произведения \\(2^3 \\cdot 2^4\\?",
+            question="Какова степень произведения \\(2^3 \\cdot 2^4\\)?",
             correct_answer="\\(2^7\\)",
             options=["\\(2^5\\)", "\\(2^6\\)", "\\(2^7\\)", "\\(2^8\\)"],
             order=1,
@@ -32,7 +33,7 @@ class PreparationTests(django.test.TestCase):
             test=self.test,
             question="Каково значение \\((3^2)^3\\)?",
             correct_answer="\\(3^6\\)",
-            options=["\\(3^5\\)", "\\(3^6\\)", "\\(3^7\\)", "\\(3^8\\"],
+            options=["\\(3^5\\)", "\\(3^6\\)", "\\(3^7\\)", "\\(3^8\\)"],
             order=2,
         )
 
@@ -65,8 +66,8 @@ class PreparationTests(django.test.TestCase):
 
     def test_task_view_redirects_to_first_task(self):
         url = django.urls.reverse(
-            "preparation:test",
-            args=[self.exam.slug, self.test.id],
+            "preparation:test_detail",
+            args=[self.exam.slug, self.test.order],
         )
         response = self.client.get(url)
 
@@ -75,14 +76,14 @@ class PreparationTests(django.test.TestCase):
             response,
             django.urls.reverse(
                 "preparation:task_detail",
-                args=[self.exam.slug, self.test.id, self.task1.id],
+                args=[self.exam.slug, self.test.order, self.task1.order],
             ),
         )
 
     def test_task_detail_view(self):
         url = django.urls.reverse(
             "preparation:task_detail",
-            args=[self.exam.slug, self.test.id, self.task1.id],
+            args=[self.exam.slug, self.test.order, self.task1.order],
         )
         response = self.client.get(url)
 
@@ -92,7 +93,7 @@ class PreparationTests(django.test.TestCase):
     def test_task_detail_post_next_task(self):
         url = django.urls.reverse(
             "preparation:task_detail",
-            args=[self.exam.slug, self.test.id, self.task1.id],
+            args=[self.exam.slug, self.test.order, self.task1.order],
         )
         response = self.client.post(url, {"answer": "\\(2^7\\)"})
 
@@ -101,7 +102,7 @@ class PreparationTests(django.test.TestCase):
             response,
             django.urls.reverse(
                 "preparation:task_detail",
-                args=[self.exam.slug, self.test.id, self.task2.id],
+                args=[self.exam.slug, self.test.order, self.task2.order],
             ),
         )
 
@@ -109,7 +110,7 @@ class PreparationTests(django.test.TestCase):
         self.client.post(
             django.urls.reverse(
                 "preparation:task_detail",
-                args=[self.exam.slug, self.test.id, self.task1.id],
+                args=[self.exam.slug, self.test.order, self.task1.order],
             ),
             {"answer": "\\(2^7\\)"},
         )
@@ -117,30 +118,30 @@ class PreparationTests(django.test.TestCase):
         response = self.client.post(
             django.urls.reverse(
                 "preparation:task_detail",
-                args=[self.exam.slug, self.test.id, self.task2.id],
+                args=[self.exam.slug, self.test.order, self.task2.order],
             ),
             {"answer": "\\(3^6\\)"},
         )
 
         result_url = django.urls.reverse(
             "preparation:test_result",
-            args=[self.exam.slug, self.test.id],
+            args=[self.exam.slug, self.test.order],
         )
 
         self.assertEqual(response.status_code, http.HTTPStatus.FOUND)
         self.assertRedirects(response, result_url)
 
     def test_test_result_view(self):
-        """Тест отображения результатов"""
-        # Заполняем ответы в сессии
+        session_key = f"test_{self.exam.slug}_{self.test.order}_answers"
+
         session = self.client.session
-        session[f"test_{self.test.id}_answers"] = {
-            str(self.task1.id): {
+        session[session_key] = {
+            str(self.task1.order): {
                 "question": self.task1.question,
                 "user_answer": "\\(2^7\\)",
                 "correct_answer": self.task1.correct_answer,
             },
-            str(self.task2.id): {
+            str(self.task2.order): {
                 "question": self.task2.question,
                 "user_answer": "\\(3^6\\)",
                 "correct_answer": self.task2.correct_answer,
@@ -150,7 +151,7 @@ class PreparationTests(django.test.TestCase):
 
         url = django.urls.reverse(
             "preparation:test_result",
-            args=[self.exam.slug, self.test.id],
+            args=[self.exam.slug, self.test.order],
         )
         response = self.client.get(url)
         self.assertEqual(response.status_code, http.HTTPStatus.OK)
@@ -166,8 +167,8 @@ class PreparationTests(django.test.TestCase):
             kwargs={"exam_slug": "math"},
         )
         detail_url = django.urls.reverse(
-            "preparation:test",
-            kwargs={"exam_slug": "math", "order": self.task1.order},
+            "preparation:test_detail",
+            kwargs={"exam_slug": "math", "test_order": self.test.order},
         )
 
         response = self.client.get(list_url)
@@ -176,5 +177,9 @@ class PreparationTests(django.test.TestCase):
         response = self.client.get(detail_url)
         self.assertRedirects(response, "/")
 
-
-__all__ = ()
+    def test_session_key_format(self):
+        session_key = f"test_{self.exam.slug}_{self.test.order}_answers"
+        self.assertEqual(
+            session_key,
+            "test_math_1_answers",
+        )

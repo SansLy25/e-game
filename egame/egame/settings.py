@@ -20,6 +20,7 @@ DEBUG = load_bool("DJANGO_DEBUG", True)
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
 
 INSTALLED_APPS = [
+    "django_jsonform",
     "rest_framework",
     "planning.apps.PlanningConfig",
     "statistic.apps.StatisticConfig",
