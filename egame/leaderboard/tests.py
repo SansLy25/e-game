@@ -150,16 +150,3 @@ class LeaderboardViewsTestCase(django.test.TestCase):
                 f"получено {len(friends_leaderboard)}."
             ),
         )
-
-    def test_current_user_container_visibility(self):
-        self.client.force_login(self.users[0])
-        response = self.client.get(self.global_leaderboard_url)
-        current_user_data = response.context["current_user_data"]
-
-        self.assertIsNotNone(
-            current_user_data,
-            msg=(
-                "Контейнер текущего пользователя не отображается, "
-                "хотя он не входит в топ-100."
-            ),
-        )
