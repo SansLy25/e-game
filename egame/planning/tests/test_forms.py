@@ -44,7 +44,8 @@ class LessonsDaysEditFormTests(django.test.TestCase):
             set(users.models.DayOfWeek.objects.all()),
         )
         self.assertEqual(
-            form.fields["days_of_lessons"].label, "Дни недели для занятий",
+            form.fields["days_of_lessons"].label,
+            "Дни недели для занятий",
         )
 
     def test_form_save(self):
@@ -53,7 +54,8 @@ class LessonsDaysEditFormTests(django.test.TestCase):
         }
 
         form = planning.forms.LessonsDaysEditForm(
-            data=form_data, instance=self.user,
+            data=form_data,
+            instance=self.user,
         )
 
         self.assertTrue(form.is_valid())

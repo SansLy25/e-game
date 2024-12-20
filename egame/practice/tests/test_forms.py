@@ -14,7 +14,8 @@ class TaskFormTests(django.test.TestCase):
         form = practice.forms.TaskForm()
         self.assertIn("theme_id", form.fields)
         self.assertIsInstance(
-            form.fields["theme_id"].widget, django.forms.HiddenInput,
+            form.fields["theme_id"].widget,
+            django.forms.HiddenInput,
         )
 
     def test_task_form_counter_field(self):
@@ -38,7 +39,8 @@ class AnswerFormTests(django.test.TestCase):
         form = practice.forms.AnswerForm()
         self.assertIn("answer", form.fields)
         self.assertIsInstance(
-            form.fields["answer"].widget, django.forms.TextInput,
+            form.fields["answer"].widget,
+            django.forms.TextInput,
         )
         self.assertIn("placeholder", form.fields["answer"].widget.attrs)
         self.assertEqual(
@@ -55,5 +57,6 @@ class SolutionTimeFormTests(django.test.TestCase):
         self.assertEqual(expiration_field.min_value, 10)
         self.assertEqual(expiration_field.max_value, 320)
         self.assertIsInstance(
-            expiration_field.widget, django.forms.NumberInput,
+            expiration_field.widget,
+            django.forms.NumberInput,
         )

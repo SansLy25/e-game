@@ -9,7 +9,8 @@ class ScheduleEditingViewTests(django.test.TestCase):
     def setUp(self):
         self.factory = django.test.RequestFactory()
         self.user = users.models.User.objects.create_user(
-            username="testuser", password="password",
+            username="testuser",
+            password="password",
         )
 
         super(ScheduleEditingViewTests, self).setUp()
@@ -30,7 +31,8 @@ class ScheduleEditingViewTests(django.test.TestCase):
     def test_get_success_url(self):
         view = planning.views.ScheduleEditingView()
         self.assertEqual(
-            view.get_success_url(), django.urls.reverse("homepage:home"),
+            view.get_success_url(),
+            django.urls.reverse("homepage:home"),
         )
 
 
@@ -38,7 +40,8 @@ class VisitingViewTests(django.test.TestCase):
     def setUp(self):
         self.factory = django.test.RequestFactory()
         self.user = users.models.User.objects.create_user(
-            username="testuser", password="password",
+            username="testuser",
+            password="password",
         )
 
         super(VisitingViewTests, self).setUp()
