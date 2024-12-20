@@ -162,36 +162,6 @@ main {
     --base-color-subtle: var(--bs-success-bg-subtle)
 }
 
-
-
-.page-header {
-    background-color: var(--bg-color-secondary);
-    padding: 3rem 0;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--base-border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.page-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 45%, var(--base-color) 45%, var(--base-color) 55%, transparent 55%);
-    opacity: 0.1;
-}
-
-.page-header h1 {
-    color: var(--text-main);
-    font-weight: 600;
-    margin: 0;
-    position: relative;
-}
-
 a {
   text-decoration: none;
 }

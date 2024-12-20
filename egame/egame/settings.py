@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "practice.apps.PracticeConfig",
     "preparation.apps.PreparationConfig",
     "users.apps.UsersConfig",
+    "achievements.apps.AchievementsConfig",
     "leaderboard.apps.LeaderboardConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -46,6 +47,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "egame.middleware.VisitingMiddleware",
+    "users.middleware.UpdateLastActivityMiddleware",
 ]
 
 ROOT_URLCONF = "egame.urls"

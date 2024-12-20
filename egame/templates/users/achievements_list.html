@@ -1,0 +1,13 @@
+{% extends 'base-bs.html' %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/achievements.css' %}" />
+
+  <div class="container-lg">
+    {% include 'users/includes/achievements_grid.html' %}
+  </div>
+{% endblock %} 

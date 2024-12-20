@@ -4,6 +4,7 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
 
+from achievements.models import Achievement
 from users.forms import (
     CustomAuthenticationForm,
     CustomUserCreationForm,
@@ -79,3 +80,21 @@ class ProfileView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return self.request.user.friends.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["achievements"] = self.request.user.achievements.all()
+        return context
+
+
+class AchievementsListView(LoginRequiredMixin, ListView):
+    template_name = "users/achievements_list.html"
+    context_object_name = "achievements"
+
+    def get_queryset(self):
+        return Achievement.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["user_achievements"] = self.request.user.achievements.all()
+        return context
