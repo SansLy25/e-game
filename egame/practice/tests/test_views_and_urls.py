@@ -1,8 +1,9 @@
 from django.test import TestCase
-from rest_framework.test import APITestCase
-from rest_framework import status
 from django.utils.timezone import now, timedelta
-from practice.models import Exam, Theme, Subtopic, Task, Variant
+from rest_framework import status
+from rest_framework.test import APITestCase
+
+from practice.models import Exam, Subtopic, Task, Theme, Variant
 
 
 class VariantCreationViewTests(TestCase):

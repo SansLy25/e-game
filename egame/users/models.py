@@ -62,6 +62,9 @@ class User(AbstractUser):
         verbose_name="Дни занятий",
     )
 
+    last_seen = models.DateTimeField("последний вход", null=True, blank=True)
+    total_time_spent = models.PositiveIntegerField("время на сайте", default=0)
+
     objects = UserManager()
 
     class Meta:

@@ -1,0 +1,47 @@
+.achievement-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border: 2px solid var(--text-border);
+    border-radius: var(--base-border-radius-x1_5);
+    background-color: var(--bg-color-main);
+    box-shadow: var(--container-sm-shadow);
+    transition: transform var(--base-transition), box-shadow var(--base-transition);
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--container-md-shadow);
+}
+
+.achievement-icon {
+    font-size: 2.5rem;
+    color: var(--base-color);
+    margin-bottom: 0.5rem;
+}
+
+.achievement-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.achievement-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-points {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.achievement-card-unowned {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}

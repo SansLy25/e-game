@@ -9,7 +9,7 @@
         {% if request.user.is_authenticated %}
           <a href="{% url 'users:friends:list' %}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Друзья</a>
         {% endif %}
-        <a href="/stats" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Достижения</a>
+        <a href="{% url 'users:achievements_list' %}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Достижения</a>
         <div class="relative group">
           <button class="flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
             <span>О нас</span>

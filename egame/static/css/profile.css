@@ -268,3 +268,20 @@ body {
         height: 110px;
     }
 }
+
+.profile-achievements {
+    margin-top: 2rem;
+}
+
+.profile-achievements-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}

@@ -1,14 +1,15 @@
 from django.test import TestCase
 from django.utils.timezone import now, timedelta
+
 from practice.models import (
+    Answer,
     Exam,
-    Theme,
+    Fine,
+    Solution,
     Subtopic,
     Task,
-    Answer,
+    Theme,
     Variant,
-    Solution,
-    Fine,
 )
 
 

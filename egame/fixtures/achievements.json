@@ -1,0 +1,146 @@
+[
+    {
+        "model": "achievements.achievement",
+        "pk": 1,
+        "fields": {
+            "name": "Мастер математики",
+            "slug": "math-master",
+            "description": "Решить 100 задач по теме 'Алгебра' (Математика)",
+            "points": 1000,
+            "bootstrap_icon": "calculator",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 2,
+        "fields": {
+            "name": "Спринтер",
+            "slug": "sprinter",
+            "description": "Решить вариант менее чем за 30 минут",
+            "points": 500,
+            "bootstrap_icon": "stopwatch",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 4,
+        "fields": {
+            "name": "Непогрешимый",
+            "slug": "perfect",
+            "description": "Решить вариант без единой ошибки",
+            "points": 1500,
+            "bootstrap_icon": "check2-circle",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 6,
+        "fields": {
+            "name": "Марафонец",
+            "slug": "marathoner",
+            "description": "Решить 10 вариантов по любому предмету",
+            "points": 1000,
+            "bootstrap_icon": "flag",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 7,
+        "fields": {
+            "name": "Точность - вежливость королей",
+            "slug": "accurate",
+            "description": "Достигнуть 90% правильных ответов в 5 вариантах подряд",
+            "points": 750,
+            "bootstrap_icon": "bullseye",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 8,
+        "fields": {
+            "name": "Быстрый и точный",
+            "slug": "fast-and-accurate",
+            "description": "Решить вариант менее чем за 45 минут с процентом правильных ответов не менее 80%",
+            "points": 1250,
+            "bootstrap_icon": "lightning-charge",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 9,
+        "fields": {
+            "name": "Вундеркинд",
+            "slug": "wunderkind",
+            "description": "Получить максимальный балл за полный вариант по всем выбранным предметам",
+            "points": 3000,
+            "bootstrap_icon": "stars",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 10,
+        "fields": {
+            "name": "Сила в постоянстве",
+            "slug": "consistent",
+            "description": "Решать по одному варианту каждый день в течение недели",
+            "points": 500,
+            "bootstrap_icon": "calendar-check",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 11,
+        "fields": {
+            "name": "Душа компании",
+            "slug": "social-butterfly",
+            "description": "Добавить 10 друзей",
+            "points": 500,
+            "bootstrap_icon": "people",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 12,
+        "fields": {
+            "name": "Завсегдатай",
+            "slug": "regular",
+            "description": "Провести на сайте более 100 часов",
+            "points": 1000,
+            "bootstrap_icon": "clock-history",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 13,
+        "fields": {
+            "name": "Дружелюбный",
+            "slug": "friendly",
+            "description": "Принять 5 заявок в друзья",
+            "points": 250,
+            "bootstrap_icon": "person-plus",
+            "users": []
+        }
+    },
+    {
+        "model": "achievements.achievement",
+        "pk": 14,
+        "fields": {
+            "name": "Общительный",
+            "slug": "outgoing",
+            "description": "Отправить 5 заявок в друзья",
+            "points": 250,
+            "bootstrap_icon": "person-lines-fill",
+            "users": []
+        }
+    }
+]
