@@ -29,6 +29,8 @@ class CustomUserCreationFormTest(django.test.TestCase):
         users.models.DayOfWeek.objects.create(day=0)
         users.models.Exam.objects.create(name="Math")
 
+        super(CustomUserCreationFormTest, self).setUp()
+
     def tearDown(self):
         users.models.Exam.objects.all().delete()
         users.models.DayOfWeek.objects.all().delete()
@@ -82,6 +84,8 @@ class CustomAuthenticationFormTest(django.test.TestCase):
             username="testuser",
             password="password",
         )
+
+        super(CustomAuthenticationFormTest, self).setUp()
 
     def tearDown(self):
         users.models.User.objects.all().delete()

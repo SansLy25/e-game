@@ -17,6 +17,8 @@ class FriendsListViewTest(django.test.TestCase):
         )
         self.client.login(username="testuser", password="password")
 
+        super(FriendsListViewTest, self).setUp()
+
     def tearDown(self):
         users.models.User.objects.all().delete()
 
@@ -42,6 +44,8 @@ class UserSearchViewTest(django.test.TestCase):
             password="password",
         )
         self.client.login(username="testuser", password="password")
+
+        super(UserSearchViewTest, self).setUp()
 
     def tearDown(self):
         users.models.User.objects.all().delete()
@@ -70,6 +74,8 @@ class AddFriendViewTest(django.test.TestCase):
             password="password",
         )
         self.client.login(username="testuser", password="password")
+
+        super(AddFriendViewTest, self).setUp()
 
     def tearDown(self):
         users.models.User.objects.all().delete()
@@ -108,6 +114,8 @@ class RemoveFriendViewTest(django.test.TestCase):
         self.user.friends.add(self.friend)
         self.client.login(username="testuser", password="password")
 
+        super(RemoveFriendViewTest, self).setUp()
+
     def tearDown(self):
         users.models.User.objects.all().delete()
 
@@ -143,6 +151,8 @@ class AcceptFriendRequestViewTest(django.test.TestCase):
         )
         self.client.login(username="testuser", password="password")
 
+        super(AcceptFriendRequestViewTest, self).setUp()
+
     def tearDown(self):
         users.models.User.objects.all().delete()
 
@@ -177,6 +187,8 @@ class RejectFriendRequestViewTest(django.test.TestCase):
             to_user=self.user,
         )
         self.client.login(username="testuser", password="password")
+
+        super(RejectFriendRequestViewTest, self).setUp()
 
     def tearDown(self):
         users.models.User.objects.all().delete()
