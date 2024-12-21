@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="{% static 'css/base.css' %}" />
   <link rel="stylesheet" href="{% static 'css/form.css' %}" />
   <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/achievements.css' %}" />
 
   <div class="container-lg">
     <div class="profile-container container-main container-rounded-x3">
@@ -21,8 +22,8 @@
               <span class="profile-stat-value">{{ user.friends.count }}</span>
             </div>
             <div class="profile-stat">
-              <span class="profile-stat-label">Заданий решено</span>
-              <span class="profile-stat-value">0</span>
+              <span class="profile-stat-label">Достижений</span>
+              <span class="profile-stat-value">{{ user.achievements.count }}</span>
             </div>
           </div>
         </div>
@@ -61,6 +62,11 @@
             <p class="profile-no-data">У вас пока нет друзей</p>
           {% endif %}
         </div>
+      </div>
+
+      <div class="profile-achievements profile-section container-secondary container-rounded-x1_5">
+        <h2 class="profile-achievements-title">Достижения</h2>
+        {% include 'users/includes/achievements_grid.html' %}
       </div>
 
       <div class="profile-actions">

@@ -9,7 +9,7 @@
         {% if request.user.is_authenticated %}
           <a href="{% url 'users:friends:list' %}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Друзья</a>
         {% endif %}
-        <a href="/stats" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Статистика</a>
+        <a href="{% url 'users:achievements_list' %}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Достижения</a>
         <div class="relative group">
           <button class="flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
             <span>О нас</span>
@@ -23,19 +23,6 @@
         {% else %}
           <a href="{% url 'users:profile' %}" class="px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:shadow-xl transition-shadow">Профиль</a>
         {% endif %}
-        <button id="themeSwitch" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
-          <i id="lightIcon" class="bi bi-sun-fill"></i>
-          <i id="darkIcon" class="bi bi-moon-stars-fill d-none"></i>
-        </button>
-      </div>
-      <div class="flex md:hidden items-center">
-        <button class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6">
-            <line x1="4" x2="20" y1="12" y2="12"></line>
-            <line x1="4" x2="20" y1="6" y2="6"></line>
-            <line x1="4" x2="20" y1="18" y2="18"></line>
-          </svg>
-        </button>
       </div>
     </div>
   </div>

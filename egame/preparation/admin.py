@@ -1,4 +1,5 @@
 import django.contrib
+import django.forms
 
 import practice.models
 import preparation.models
@@ -21,8 +22,9 @@ class TestAdmin(django.contrib.admin.ModelAdmin):
     name_field = practice.models.Exam.name.field.name
 
     list_display = (
-        preparation.models.Test.title.field.name,
         exam_field,
+        preparation.models.Test.title.field.name,
+        preparation.models.Test.order.field.name,
     )
 
     search_fields = (
@@ -31,6 +33,7 @@ class TestAdmin(django.contrib.admin.ModelAdmin):
     )
     list_filter = (exam_field,)
     inlines = [TaskInline]
+    ordering = (preparation.models.Test.order.field.name,)
 
 
 @django.contrib.admin.register(preparation.models.Task)
@@ -66,6 +69,3 @@ class TaskAdmin(django.contrib.admin.ModelAdmin):
 
     get_exam.short_description = "Exam"
     get_exam.admin_order_field = f"{test_field}__{exam_field}"
-
-
-__all__ = ()

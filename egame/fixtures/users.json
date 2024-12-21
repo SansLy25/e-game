@@ -13,12 +13,15 @@
       "is_staff": true,
       "is_active": true,
       "date_joined": "2024-12-06T15:34:56.939Z",
+      "score": 0,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [],
       "friends": [
         6
-      ]
+      ],
+      "days_of_lessons": []
     }
   },
   {
@@ -35,6 +38,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:06:13.383Z",
+      "score": 100,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -43,9 +48,10 @@
         3
       ],
       "friends": [
-        6,
-        16
-      ]
+        16,
+        6
+      ],
+      "days_of_lessons": []
     }
   },
   {
@@ -62,6 +68,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:06:35.443Z",
+      "score": 60,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -70,9 +78,10 @@
         3
       ],
       "friends": [
-        6,
-        16
-      ]
+        16,
+        6
+      ],
+      "days_of_lessons": []
     }
   },
   {
@@ -89,6 +98,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:06:50.130Z",
+      "score": 80,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -97,9 +108,10 @@
         3
       ],
       "friends": [
-        6,
-        16
-      ]
+        16,
+        6
+      ],
+      "days_of_lessons": []
     }
   },
   {
@@ -116,6 +128,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:07:41.719Z",
+      "score": 10,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -125,7 +139,8 @@
       ],
       "friends": [
         6
-      ]
+      ],
+      "days_of_lessons": []
     }
   },
   {
@@ -142,16 +157,19 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:07:55.006Z",
+      "score": 111,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [],
       "friends": [
-        1,
         2,
-        3,
         4,
-        5
-      ]
+        3,
+        5,
+        1
+      ],
+      "days_of_lessons": []
     }
   },
   {
@@ -168,6 +186,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:08:59.681Z",
+      "score": 16,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -177,7 +197,8 @@
       ],
       "friends": [
         16
-      ]
+      ],
+      "days_of_lessons": []
     }
   },
   {
@@ -194,6 +215,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:09:33.329Z",
+      "score": 44,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -203,7 +226,8 @@
       ],
       "friends": [
         16
-      ]
+      ],
+      "days_of_lessons": []
     }
   },
   {
@@ -220,6 +244,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:10:15.585Z",
+      "score": 97,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -227,7 +253,8 @@
         2,
         3
       ],
-      "friends": []
+      "friends": [],
+      "days_of_lessons": []
     }
   },
   {
@@ -244,6 +271,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:10:28.403Z",
+      "score": 77,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -251,7 +280,8 @@
         2,
         3
       ],
-      "friends": []
+      "friends": [],
+      "days_of_lessons": []
     }
   },
   {
@@ -268,6 +298,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:10:45.475Z",
+      "score": 11,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -277,7 +309,8 @@
       ],
       "friends": [
         16
-      ]
+      ],
+      "days_of_lessons": []
     }
   },
   {
@@ -294,6 +327,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:11:05.965Z",
+      "score": 88,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -301,7 +336,8 @@
         2,
         3
       ],
-      "friends": []
+      "friends": [],
+      "days_of_lessons": []
     }
   },
   {
@@ -318,6 +354,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:11:33.206Z",
+      "score": 12,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -325,7 +363,8 @@
         2,
         3
       ],
-      "friends": []
+      "friends": [],
+      "days_of_lessons": []
     }
   },
   {
@@ -342,6 +381,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:12:13.567Z",
+      "score": 11,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -349,7 +390,8 @@
         2,
         3
       ],
-      "friends": []
+      "friends": [],
+      "days_of_lessons": []
     }
   },
   {
@@ -366,6 +408,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:12:42.831Z",
+      "score": 1,
+      "score_planning": 0,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -373,7 +417,8 @@
         2,
         3
       ],
-      "friends": []
+      "friends": [],
+      "days_of_lessons": []
     }
   },
   {
@@ -381,7 +426,7 @@
     "pk": 16,
     "fields": {
       "password": "pbkdf2_sha256$600000$uClXEkpSF9dQINxZZ1nPNy$lrVhxJVfabMv2c1OWLq7XjiTCigxRVxOM0JJDXxn9tY=",
-      "last_login": "2024-12-15T04:22:45.995Z",
+      "last_login": "2024-12-19T19:58:58.717Z",
       "is_superuser": false,
       "username": "plov",
       "first_name": "",
@@ -390,6 +435,8 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-12-15T04:13:17.074Z",
+      "score": 10560,
+      "score_planning": 2250,
       "groups": [],
       "user_permissions": [],
       "exams": [
@@ -399,12 +446,147 @@
       ],
       "friends": [
         2,
-        3,
         4,
-        7,
+        3,
         8,
+        7,
         11
+      ],
+      "days_of_lessons": [
+        1,
+        4,
+        5,
+        7
       ]
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 1,
+    "fields": {
+      "day": 0
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 2,
+    "fields": {
+      "day": 1
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 3,
+    "fields": {
+      "day": 2
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 4,
+    "fields": {
+      "day": 3
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 5,
+    "fields": {
+      "day": 4
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 6,
+    "fields": {
+      "day": 5
+    }
+  },
+  {
+    "model": "planning.dayofweek",
+    "pk": 7,
+    "fields": {
+      "day": 6
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 7,
+    "fields": {
+      "day": "2024-12-14",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 9,
+    "fields": {
+      "day": "2024-12-16",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 11,
+    "fields": {
+      "day": "2024-12-10",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 12,
+    "fields": {
+      "day": "2024-12-06",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 13,
+    "fields": {
+      "day": "2024-12-04",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 14,
+    "fields": {
+      "day": "2024-12-08",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 15,
+    "fields": {
+      "day": "2024-12-13",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 16,
+    "fields": {
+      "day": "2024-12-12",
+      "user": 16
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 18,
+    "fields": {
+      "day": "2024-12-19",
+      "user": 3
+    }
+  },
+  {
+    "model": "planning.visitedday",
+    "pk": 21,
+    "fields": {
+      "day": "2024-12-19",
+      "user": 16
     }
   },
   {

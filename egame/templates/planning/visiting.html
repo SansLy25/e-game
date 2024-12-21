@@ -1,0 +1,111 @@
+{% extends 'base-tw.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl mt-3"
+             style="opacity: 1; transform: none; width: 700px">
+            <div class="grid grid-cols-7 gap-2">
+                <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Пн</div>
+                <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Вт</div>
+                <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Ср</div>
+                <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Чт</div>
+                <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Пт</div>
+                <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Сб</div>
+                <div class="text-sm font-semibold text-center text-gray-500 dark:text-gray-400">Вс</div>
+                {% for _ in skipped_days %}
+                    <div></div>
+                {% endfor %}
+
+                {% for day in all_month_days %}
+                    <div class="aspect-square rounded-lg p-2 flex items-center justify-center
+
+                {% if day.is_today %}
+                    bg-blue-500
+                {% elif day.required %}
+                    {% if day.visited %}
+                    bg-gradient-to-br from-purple-500 to-pink-500
+                    {% else %}
+                    bg-red-500
+                    {% endif %}
+                {% elif day.visited %}
+                     bg-gradient-to-br from-green-500 to-emerald-500
+                {% else %}
+                 dark:bg-gray-700
+                {% endif %}
+                 text-white"
+                         style="transform: none;">
+                    <span class="text-sm font-medium">
+                        {{ day.day }}
+                    </span>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="mt-6 flex flex-wrap items-center justify-center space-x-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-4 h-4 rounded bg-gradient-to-br from-green-500 to-emerald-500"></div>
+                    <span class="text-sm text-gray-600 dark:text-gray-300">Посещено</span></div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-4 h-4 rounded bg-gradient-to-br from-purple-500 to-pink-500"></div>
+                    <span class="text-sm text-gray-600 dark:text-gray-300">Посещено по расписанию</span></div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-4 h-4 rounded bg-red-500"></div>
+                    <span class="text-sm text-gray-600 dark:text-gray-300">Пропущено</span></div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-4 h-4 rounded bg-blue-500"></div>
+                    <span class="text-sm text-gray-600 dark:text-gray-300">Сегодня</span></div>
+            </div>
+        </div>
+        <div class="space-y-6" style="opacity: 1; transform: none;">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8"
+                style="opacity: 1; transform: none;">Календарь посещений</h2>
+            <div class="flex items-start space-x-4" style="margin-bottom: 3rem">
+                <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-calendar w-6 h-6 text-blue-600 dark:text-blue-400">
+                        <path d="M8 2v4"></path>
+                        <path d="M16 2v4"></path>
+                        <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                        <path d="M3 10h18"></path>
+                    </svg>
+                </div>
+                <div><h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Гибкое расписание</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Вы можете отредактировать расписание в любой момент, чем
+                        больше дней в расписании, тем эффективнее ваша подготовка</p></div>
+            </div>
+            <div class="flex items-start space-x-4" style="margin-bottom: 3rem">
+                <div class="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-trophy w-6 h-6 text-green-600 dark:text-green-400">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                        <path d="M4 22h16"></path>
+                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                    </svg>
+                </div>
+                <div><h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Система поощрений</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Получайте рейтинг за соблюдение
+                        расписания, за простое посещение вы получаете 50 рейтинга, за посещение по расписанию 100</p>
+                </div>
+            </div>
+            <h2 class="text-xl font-bold text-center text-gray-900 dark:text-white"
+                style="opacity: 1; transform: none;">Всего получено рейтинга за посещение (за все время):</h2>
+            <div class="flex items-center justify-center" style="margin: 0">
+            <span id="variant_message"
+                  class="font-bold text-center bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent font-bold" style="font-size: 60px;">{{ request.user.score_planning }}</span>
+            </div>
+            <div class="flex items-center justify-center">
+
+                <a href="{% url 'planning:editing' %}"
+                   class="rounded-lg bg-gradient-to-r from-green-500 to-purple-600 text-white font-medium text-lg shadow-lg hover:shadow-xl transition-shadow"
+                   style="width: 500px; height: 60px; padding-left: 100px; padding-top: 14px">Редактировать расписание
+                    занятий</a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

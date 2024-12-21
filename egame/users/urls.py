@@ -16,4 +16,9 @@ urlpatterns = [
     ),
     path("profile/", views.ProfileView.as_view(), name="profile"),
     path("friends/", include(users.friends.urls, namespace="friends")),
+    path(
+        "achievements/",
+        views.AchievementsListView.as_view(),
+        name="achievements_list",
+    ),
 ]
