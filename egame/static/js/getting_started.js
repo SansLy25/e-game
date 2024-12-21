@@ -12458,13 +12458,9 @@ function hB() {
                     animate: {opacity: 1, y: 0},
                     transition: {duration: .3, delay: .3},
                     children: [P.jsxs("a", {
-                        className: "w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl text-lg font-semibold hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-2",
+                        className: "w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl text-lg font-semibold hover:shadow-xl transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-2 signup_button",
                         children: [P.jsx("span", {children: "Создать аккаунт"}), P.jsx(MM, {className: "w-5 h-5"})],
                         href: "signup/",
-                    }), P.jsx("a", {
-                        className: "w-full sm:w-auto px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-lg font-semibold hover:shadow-lg transition-all duration-200 border-2 border-gray-200 dark:border-gray-700 hover:scale-105",
-                        children: "Попробовать демо",
-                        href: "/",
                     })]
                 })]
             })

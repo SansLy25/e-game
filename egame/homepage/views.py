@@ -3,6 +3,7 @@ import random
 from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 
+
 PHRASES = {
     "physics": [
         "Сила тяжести — это сила, которая притягивает физиков к земле",

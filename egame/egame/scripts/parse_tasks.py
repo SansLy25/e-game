@@ -119,7 +119,11 @@ for exam_name, exam_item in EXAMS.items():
             tasks_soup = bs4.BeautifulSoup(response, "lxml")
             tasks_divs = tasks_soup.find_all("div", class_="exercise")
 
-            for task_div in tasks_divs:
+            for i, task_div in enumerate(tasks_divs):
+                if i >= 6:
+                    task_progress.update(1)
+                    break
+
                 try:
                     try:
                         task_html = task_div.find(
