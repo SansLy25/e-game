@@ -48,15 +48,14 @@ class ExamHomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        match context["exam_slug"]:
-            case "math":
-                verbose = "Математикой"
-            case "russian":
-                verbose = "Русским языком"
-            case "physics":
-                verbose = "Физикой"
-            case _:
-                verbose = ""
+        if context["exam_slug"] == "math":
+            verbose = "Математикой"
+        elif context["exam_slug"] == "russian":
+            verbose = "Русским языком"
+        elif context["exam_slug"] == "physics":
+            verbose = "Физикой"
+        else:
+            verbose = ""
 
         context["verbose_exam"] = verbose
         context["phrase"] = random.choice(PHRASES[context["exam_slug"]])
