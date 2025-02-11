@@ -1,7 +1,5 @@
 from django import forms
 
-__all__ = ["forms"]
-
 
 class TaskForm(forms.Form):
     def __init__(self, *args, **kwargs):
