@@ -40,7 +40,7 @@ class Theme(models.Model):
 
 
 class Subtopic(models.Model):
-    name = models.CharField("подтема", max_length=100)
+    name = models.CharField("подтема", max_length=300)
     number = models.PositiveIntegerField("номер подтемы")
     theme = models.ForeignKey(
         Theme,
@@ -75,7 +75,7 @@ class Task(models.Model):
 
 
 class Answer(models.Model):
-    answer = models.CharField("текст ответа", max_length=40)
+    answer = models.TextField("текст ответа")
     task = models.ForeignKey(
         Task,
         on_delete=models.CASCADE,
