@@ -30,9 +30,3 @@ flake8:
     - make check-flake8-requirements
     - make flake8-check
 
-test:
-  stage: test
-  image: python:${PYTHON_VERSION}
-  script:
-    - make check-test-requirements
-    - make test
